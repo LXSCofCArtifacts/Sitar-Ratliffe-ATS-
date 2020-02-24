@@ -15,9 +15,9 @@ import javafx.scene.text.Text;
 
 
 public class WeightAdjust extends Application  {
-	protected int tallness = 0;
+	protected int tallness = 500;
 	protected int width = 54;
-	protected int height = 150;
+	protected int height = 160;
 	
 	@Override
 	public void start (Stage primaryStage) {
