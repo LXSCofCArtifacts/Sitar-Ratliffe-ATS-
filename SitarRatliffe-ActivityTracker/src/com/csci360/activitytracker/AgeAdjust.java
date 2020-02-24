@@ -17,7 +17,7 @@ import javafx.scene.text.Text;
 public class AgeAdjust extends Application  {
 	final protected int width = 54;
 	final protected int height = 160;
-	protected static int age = 70;
+	protected static int age =400;
 	
 	@Override
 	public void start (Stage primaryStage) {
