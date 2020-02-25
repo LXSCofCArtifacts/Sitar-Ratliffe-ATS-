@@ -14,6 +14,11 @@ public class ClockFace extends Application {
 	
 	final protected int width = 54;
 	final protected int height = 160;
+	public static int sysMin = 50;
+	public static int sysHour = 5;
+	public static int sysDay = 01;
+	public static int sysMonth = 05;
+	public static int sysYear = 2012;
 	
 	@Override
 	public void start(Stage primaryStage) {
