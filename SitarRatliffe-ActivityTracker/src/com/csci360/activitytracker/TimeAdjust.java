@@ -17,8 +17,7 @@ import javafx.scene.text.Text;
 public class TimeAdjust extends Application  {
 	protected int width = 54;
 	protected int height = 150;
-	protected static int sysMin = 50;
-	protected static int sysHour = 5;
+	
 	
 	@Override
 	public void start (Stage primaryStage) {
@@ -26,8 +25,8 @@ public class TimeAdjust extends Application  {
 			primaryStage.setTitle("TimeAdjust");
 			StackPane p = new StackPane();
 			Scene scene = new Scene(p,width,height,Color.AZURE);
-			String minTxt = Integer.toString(sysMin);
-			String hourTxt = Integer.toString(sysHour);
+			String minTxt = Integer.toString(ClockFace.sysMin);
+			String hourTxt = Integer.toString(ClockFace.sysHour);
 			Text t1 = new Text (minTxt);
 			Text t2 = new Text (hourTxt);
 			Text t3 = new Text (":");
