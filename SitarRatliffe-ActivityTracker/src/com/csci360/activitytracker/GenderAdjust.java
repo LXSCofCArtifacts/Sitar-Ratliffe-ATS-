@@ -11,6 +11,7 @@ public class GenderAdjust extends Application {
 	final protected int width = 54;
 	final protected int height = 160;
 	
+	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
