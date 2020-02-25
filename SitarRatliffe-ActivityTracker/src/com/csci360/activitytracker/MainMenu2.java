@@ -14,7 +14,7 @@ public class MainMenu2 extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			primaryStage.setTitle("Main Menu Cont...");
+			primaryStage.setTitle("Main Menu 2");
 			StackPane sp = new StackPane();
 			Scene scene = new Scene(sp,width,height);
 			Button info = new Button("Personal \nInformation"); 
