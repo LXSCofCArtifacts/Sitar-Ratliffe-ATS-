@@ -17,9 +17,7 @@ import javafx.scene.text.Text;
 public class DateAdjust extends Application  {
 	protected int width = 54;
 	protected int height = 150;
-	protected int day = 01;
-	protected int month = 05;
-	protected int year = 2012;
+
 	
 	@Override
 	public void start (Stage primaryStage) {
@@ -27,9 +25,9 @@ public class DateAdjust extends Application  {
 			primaryStage.setTitle("TimeAdjust");
 			StackPane p = new StackPane();
 			Scene scene = new Scene(p,width,height,Color.AZURE);
-			String monthTxt = Integer.toString(month);
-			String dayTxt = Integer.toString(day);
-			String yearTxt = Integer.toString(year);
+			String monthTxt = Integer.toString(ClockFace.sysMonth);
+			String dayTxt = Integer.toString(ClockFace.sysDay);
+			String yearTxt = Integer.toString(ClockFace.sysYear);
 
 			Button decrement = new Button("v");
 			decrement.setTranslateY((height/8)*3);
