@@ -17,9 +17,9 @@ public class PersonalInfoMenu extends Application {
 			primaryStage.setTitle("Personal Info Menu");
 			StackPane sp = new StackPane();
 			Scene scene = new Scene(sp,width,height);
-			Button personaldata = new Button("Personal Data"); 
+			Button personaldata = new Button("Personal Data Menu"); 
 			Button gender = new Button("Gender");
-			Button goals = new Button("Activity \nGoals"); 
+			Button goals = new Button("Goal Menu"); 
 			Button back = new Button("Back"); 
 
 			personaldata.setTranslateY((-height/8)*3);
