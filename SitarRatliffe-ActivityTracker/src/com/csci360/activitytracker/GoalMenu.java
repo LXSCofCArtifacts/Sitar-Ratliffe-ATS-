@@ -19,15 +19,20 @@ public class GoalMenu extends Application {
 			Scene scene = new Scene(sp,width,height);
 			Button stepgoal = new Button("Activity \nGoal"); 
 			Button sleepgoal = new Button("Sleep \nGoal"); 
+			Button caloriegoal = new Button("Calorie \nGoal");
 			Button back = new Button("Back"); 
 
-			stepgoal.setTranslateY((-height/8)*2.5);
-			stepgoal.setMaxSize(width, height/2.7);
+			stepgoal.setTranslateY((-height/8)*3);
+			stepgoal.setMaxSize(width, height/4);
 			sp.getChildren().add(stepgoal);
 			
-			sleepgoal.setTranslateY(height/15);
-			sleepgoal.setMaxSize(width, height/2.7);
+			sleepgoal.setTranslateY(-height/8);
+			sleepgoal.setMaxSize(width, height/4);
 			sp.getChildren().add(sleepgoal);
+			
+			caloriegoal.setTranslateY(height/8);
+			caloriegoal.setMaxSize(width, height/4);
+			sp.getChildren().add(caloriegoal);
 			
 			back.setTranslateY((height/8)*3);
 			back.setMaxSize(width, height/4);
