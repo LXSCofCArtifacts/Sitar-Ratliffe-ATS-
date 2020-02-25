@@ -17,14 +17,14 @@ import javafx.scene.text.Text;
 public class CalorieGoalAdjust extends Application  {
 	protected int width = 54;
 	protected int height = 150;
-	protected static int stepGoal = 2000;
+	protected int calorieGoal = 2000;
 	@Override
 	public void start (Stage primaryStage) {
 		try {
 			primaryStage.setTitle("AgeAdjust");
 			StackPane p = new StackPane();
 			Scene scene = new Scene(p,width,height);
-			String heightTxt = Integer.toString(stepGoal);
+			String heightTxt = Integer.toString(calorieGoal);
 			Text t = new Text (width/2, height/2, " Calories:\n  "+heightTxt);
 			t.setTranslateY((-height/8));
 			
