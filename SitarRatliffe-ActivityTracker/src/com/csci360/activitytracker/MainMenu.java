@@ -19,7 +19,7 @@ public class MainMenu extends Application {
 			Scene scene = new Scene(sp,width,height);
 			Button steps = new Button("Step \n Tracker"); 
 			Button sleep = new Button("Sleep \n Tracker");
-			Button settings = new Button("Settings"); 
+			Button settings = new Button("Main Menu 2"); 
 			Button back = new Button("Back"); 
 
 			steps.setTranslateY((-height/8)*3);
