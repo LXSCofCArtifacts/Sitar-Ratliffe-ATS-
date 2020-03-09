@@ -8,12 +8,13 @@ import javafx.scene.text.Text;
 
 public class StepTracker{
 	
-	final protected int width = 54;
-	final protected int height = 160;
+	final static int width = 54;
+	final static int height = 160;
 	
-	public StepTracker() {
+	public static void stepTracker(){
 		try {
 			Stage window = new Stage();
+			window.setTitle("Step Tracker");
 			StackPane sp = new StackPane();
 			Scene scene = new Scene(sp,width,height);
 			Text burnedCals = new Text("Calories Burned: \n1000"); 
@@ -31,8 +32,9 @@ public class StepTracker{
 			back.setTranslateY((height/8)*3);
 			back.setMaxSize(width, height/4);
 			sp.getChildren().add(back);	
+			back.setOnAction(e -> window.close());
 			
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			window.setScene(scene);
 			window.show();
 			
