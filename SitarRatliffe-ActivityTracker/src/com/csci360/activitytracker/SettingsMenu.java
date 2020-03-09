@@ -31,7 +31,7 @@ public class SettingsMenu{
 			datesetting.setTranslateY(-height/8);
 			datesetting.setMaxSize(width, height/4);
 			sp.getChildren().add(datesetting);
-			datesetting.setOnAction(e -> DateAdjust.DateAdjust());
+			datesetting.setOnAction(e -> DateAdjust.DateAdjustMenu());
 
 			
 			connectivity.setTranslateY(height/8);
