@@ -27,15 +27,7 @@ public class MainMenu extends Application{
 			steps.setTranslateY((-height/8)*3);
 			steps.setMaxSize(width, height/4);
 			sp.getChildren().add(steps);
-			steps.setOnAction(new EventHandler<ActionEvent> ()
-				{
-					@Override
-					public void handle(ActionEvent event) {
-						primaryStage.setScene(newscene);
-						primaryStage.show();
-					}
-				});
-			
+
 			sleep.setTranslateY(-height/8);
 			sleep.setMaxSize(width, height/4);
 			sp.getChildren().add(sleep);
