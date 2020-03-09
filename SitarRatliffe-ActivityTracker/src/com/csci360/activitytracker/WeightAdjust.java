@@ -40,6 +40,8 @@ public class WeightAdjust extends Application  {
 			Button back = new Button("Back");
 			back.setMaxSize(width, height/4);
 			back.setTranslateY((height/8)*3);
+			back.setOnAction(e -> window.close());
+
 			
 			p.getChildren().add(up);
 			p.getChildren().add(down);
