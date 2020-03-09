@@ -14,15 +14,16 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
 
-public class AgeAdjust extends Application  {
-	final protected int width = 54;
-	final protected int height = 160;
-	final protected int age = 21;
+public class AgeAdjust{
+	
+	final static int width = 54;
+	final static int height = 160;
+	final static int age = 21;
 
-	@Override
-	public void start (Stage primaryStage) {
+	public static void AgeAdjust() {
 		try {
-			primaryStage.setTitle("AgeAdjust");
+			Stage window = new Stage();
+			window.setTitle("AgeAdjust");
 			StackPane p = new StackPane();
 			Scene scene = new Scene(p,width,height);
 			String ageTxt = Integer.toString(age);
@@ -40,21 +41,18 @@ public class AgeAdjust extends Application  {
 			Button back = new Button("Back");
 			back.setMaxSize(width, height/4);
 			back.setTranslateY((height/8)*3);
+			back.setOnAction(e -> window.close());
 			
 			p.getChildren().add(up);
 			p.getChildren().add(down);
 			p.getChildren().add(t);
 			p.getChildren().add(back);
 			
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
+			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			window.setScene(scene);
+			window.show();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-	}
-	
-	public static void main(String[] args) {
-		launch(args);
 	}
 }
