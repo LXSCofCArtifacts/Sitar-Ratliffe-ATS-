@@ -31,8 +31,7 @@ public class ClockFace extends Application {
 			b.setLayoutY(height/2);
 			b.setMaxSize(width, height);
 			sp.getChildren().add(b);
-			
-			b.setOnAction(e -> MainMenu.mainMenu());
+			b.setOnAction(e -> MainMenu.MainMenu());
 			
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
