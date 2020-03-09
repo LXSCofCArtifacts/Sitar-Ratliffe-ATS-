@@ -26,7 +26,7 @@ public class HeightAdjust{
 			StackPane p = new StackPane();
 			Scene scene = new Scene(p,width,height,Color.AZURE);
 			String tallnessTxt = Integer.toString(StepTracker.tallness);
-			Text t = new Text (width/2, height/2, " Age:\n  "+tallnessTxt);
+			Text t = new Text (width/2, height/2, " Height:\n  "+tallnessTxt);
 			t.setTranslateY(-height/8);
 
 			Button up = new Button("    ^   ");
