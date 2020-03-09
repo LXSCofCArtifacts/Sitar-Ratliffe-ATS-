@@ -14,17 +14,16 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
 
-public class HeightAdjust extends Application  {
-	protected int width = 54;
-	protected int height = 150;
-	protected int tallness = 20;
+public class HeightAdjust{
 	
+	final static int width = 54;
+	final static int height = 150;
+	final static int tallness = 20;
 	
-	
-	@Override
-	public void start (Stage primaryStage) {
+	public static void HeightAdjust() {
 		try {
-			primaryStage.setTitle("AgeAdjust");
+			Stage window = new Stage();
+			window.setTitle("AgeAdjust");
 			StackPane p = new StackPane();
 			Scene scene = new Scene(p,width,height,Color.AZURE);
 			String tallnessTxt = Integer.toString(tallness);
@@ -39,21 +38,18 @@ public class HeightAdjust extends Application  {
 			Button back = new Button("Back");
 			back.setMaxSize(width, height/4);
 			back.setTranslateY((height/8)*3);
+			back.setOnAction(e -> window.close());
 			
 			p.getChildren().add(up);
 			p.getChildren().add(down);
 			p.getChildren().add(t);
 			p.getChildren().add(back);
 			
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
+			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			window.setScene(scene);
+			window.show();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-	}
-	
-	public static void main(String[] args) {
-		launch(args);
 	}
 }
