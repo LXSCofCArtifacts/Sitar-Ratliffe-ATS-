@@ -10,6 +10,7 @@ public class StepTracker{
 	
 	final static int width = 54;
 	final static int height = 160;
+	final static int tallness = 72;
 	
 	public static void StepTracker(){
 		try {
