@@ -32,15 +32,15 @@ public class DateAdjustMenu{
 			back.setTranslateY((height/8)*3);
 			back.setMaxSize(width, height/4);
 			
-			Button day = new Button("D:"+dayTxt);
+			Button day = new Button("Day");
 			day.setTranslateY((-height/8)*3);
 			day.setMaxSize(width, height/4);
 			
-			Button month = new Button("M:"+monthTxt);
+			Button month = new Button("Month");
 			month.setTranslateY(-height/8);
 			month.setMaxSize(width, height/4);
 			
-			Button year = new Button("Y:"+yearTxt);
+			Button year = new Button("Year");
 			year.setTranslateY(height/8);
 			year.setMaxSize(width, height/4);
 			
