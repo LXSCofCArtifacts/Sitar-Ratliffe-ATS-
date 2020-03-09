@@ -1,6 +1,6 @@
 package com.csci360.activitytracker;
 	
-import javafx.application.Application;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.stage.Stage;
@@ -8,15 +8,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 
-public class MainMenu extends Application{
+public class MainMenu{
 	
-	final protected int width = 54;
-	final protected int height = 160;
+	final static int width = 54;
+	final static int height = 160;
 	
-	@Override
-	public void start(Stage primaryStage) {
+	public static void mainMenu() {
 		try {
-			primaryStage.setTitle("Main Menu");
+			Stage window = new Stage();
+			window.setTitle("Main Menu");
 			StackPane sp = new StackPane();
 			Scene scene = new Scene(sp,width,height);
 			Button steps = new Button("Step \n Tracker"); 
@@ -40,18 +40,14 @@ public class MainMenu extends Application{
 			back.setMaxSize(width, height/4);
 			sp.getChildren().add(back);	
 			
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
+			back.setOnAction(e -> window.close());
+			
+			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			window.setScene(scene);
+			window.show();
 			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
-	public static void main(String[] args) {
-		launch(args);	
-	}
-	
-	
 }
