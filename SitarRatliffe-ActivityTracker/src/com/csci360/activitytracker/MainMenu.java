@@ -16,7 +16,7 @@ public class MainMenu{
 	public static void MainMenu() {
 		try {
 			Stage window = new Stage();
-			window.setTitle("Main Menu");
+			window.setTitle("Menu");
 			StackPane sp = new StackPane();
 			Scene scene = new Scene(sp,width,height);
 			Button steps = new Button("Step \n Tracker"); 
