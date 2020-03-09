@@ -17,13 +17,13 @@ public class MainMenu2{
 			Button settings = new Button("Settings"); 
 			Button back = new Button("Back"); 
 
-			info.setTranslateY((-ClockFace.height/8)*2.5);
-			info.setMaxSize(ClockFace.width, ClockFace.height/2.7);
+			info.setTranslateY((-ClockFace.height/16)*5);
+			info.setMaxSize(ClockFace.width, (ClockFace.height/8)*3);
 			sp.getChildren().add(info);
 			info.setOnAction(e -> PersonalInfoMenu.PersonalInfoMenu());
 			
-			settings.setTranslateY(ClockFace.height/15);
-			settings.setMaxSize(ClockFace.width, ClockFace.height/2.7);
+			settings.setTranslateY(ClockFace.height/16);
+			settings.setMaxSize(ClockFace.width, (ClockFace.height/8)*3);
 			sp.getChildren().add(settings);
 			settings.setOnAction(e -> SettingsMenu.SettingsMenu());
 			
