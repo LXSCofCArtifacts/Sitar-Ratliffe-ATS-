@@ -14,16 +14,17 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
 
-public class SleepGoalAdjust extends Application  {
-	protected int width = 54;
-	protected int height = 150;
-	protected static int min = 50;
-	protected static int hour = 5;
+public class SleepGoalAdjust{
 	
-	@Override
-	public void start (Stage primaryStage) {
+	final static int width = 54;
+	final static int height = 150;
+	final static int min = 50;
+	final static int hour = 5;
+	
+	public static void SleepGoalAdjust() {
 		try {
-			primaryStage.setTitle("TimeAdjust");
+			Stage window = new Stage();
+			window.setTitle("TimeAdjust");
 			StackPane p = new StackPane();
 			Scene scene = new Scene(p,width,height,Color.AZURE);
 			String minTxt = Integer.toString(min);
@@ -63,7 +64,7 @@ public class SleepGoalAdjust extends Application  {
 			Button back = new Button("Back");
 			back.setMaxSize(width, height/4);
 			back.setTranslateY((height/8)*3);
-		
+			back.setOnAction(e -> window.close());
 			
 			p.getChildren().add(hrDown);
 			p.getChildren().add(hrUp);
@@ -75,15 +76,11 @@ public class SleepGoalAdjust extends Application  {
 			p.getChildren().add(t4);
 			p.getChildren().add(back);
 			
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
+			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			window.setScene(scene);
+			window.show();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-	}
-	
-	public static void main(String[] args) {
-		launch(args);
 	}
 }
