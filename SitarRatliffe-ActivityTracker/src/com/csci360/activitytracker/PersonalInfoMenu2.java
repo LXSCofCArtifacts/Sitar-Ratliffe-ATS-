@@ -6,15 +6,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 
-public class PersonalInfoMenu2 extends Application {
+public class PersonalInfoMenu2{
 	
-	final protected int width = 54;
-	final protected int height = 160;
+	final static int width = 54;
+	final static int height = 160;
 	
-	@Override
-	public void start(Stage primaryStage) {
+	public static void PersonalInfoMenu2() {
 		try {
-			primaryStage.setTitle("Personal Data");
+			Stage window = new Stage();
+			window.setTitle("Personal Data");
 			StackPane sp = new StackPane();
 			Scene scene = new Scene(sp,width,height);
 			Button userage = new Button("Age"); 
@@ -25,29 +25,29 @@ public class PersonalInfoMenu2 extends Application {
 			userage.setTranslateY((-height/8)*3);
 			userage.setMaxSize(width, height/4);
 			sp.getChildren().add(userage);
+			userage.setOnAction(e -> AgeAdjust.AgeAdjust());
 			
 			userweight.setTranslateY(-height/8);
 			userweight.setMaxSize(width, height/4);
 			sp.getChildren().add(userweight);
+			userweight.setOnAction(e -> WeightAdjust.WeightAdjust());
 			
 			userheight.setTranslateY(height/8);
 			userheight.setMaxSize(width, height/4);
 			sp.getChildren().add(userheight);
+			userheight.setOnAction(e -> HeightAdjust.HeightAdjust());
 			
 			back.setTranslateY((height/8)*3);
 			back.setMaxSize(width, height/4);
 			sp.getChildren().add(back);	
+			back.setOnAction(e -> window.close());
 			
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
+			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			window.setScene(scene);
+			window.show();
 			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-	}
-	
-	public static void main(String[] args) {
-		launch(args);
 	}
 }
