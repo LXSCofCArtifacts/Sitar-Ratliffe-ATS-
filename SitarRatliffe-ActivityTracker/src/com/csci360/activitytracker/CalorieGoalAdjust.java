@@ -12,13 +12,12 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
-
 public class CalorieGoalAdjust{
-	protected int width = 54;
-	protected int height = 150;
-	protected int calorieGoal = 2000;
+	final static int width = 54;
+	final static int height = 150;
+	final static int calorieGoal = 2000;
 	
-	public CalorieGoalAdjust() {
+	public static void CalorieGoalAdjust() {
 		try {
 			Stage window = new Stage();
 			StackPane p = new StackPane();
@@ -38,13 +37,14 @@ public class CalorieGoalAdjust{
 			Button back = new Button("Back");
 			back.setMaxSize(width, height/4);
 			back.setTranslateY((height/8)*3);
+			back.setOnAction(e -> window.close());
 			
 			p.getChildren().add(up);
 			p.getChildren().add(down);
 			p.getChildren().add(t);
 			p.getChildren().add(back);
 			
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			window.setScene(scene);
 			window.show();
 		} catch(Exception e) {
