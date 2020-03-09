@@ -1,6 +1,5 @@
 package com.csci360.activitytracker;
 	
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.*;
@@ -14,14 +13,14 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
 
-public class CalorieGoalAdjust extends Application  {
+public class CalorieGoalAdjust{
 	protected int width = 54;
 	protected int height = 150;
 	protected int calorieGoal = 2000;
-	@Override
-	public void start (Stage primaryStage) {
+	
+	public CalorieGoalAdjust() {
 		try {
-			primaryStage.setTitle("AgeAdjust");
+			Stage window = new Stage();
 			StackPane p = new StackPane();
 			Scene scene = new Scene(p,width,height);
 			String heightTxt = Integer.toString(calorieGoal);
@@ -46,14 +45,10 @@ public class CalorieGoalAdjust extends Application  {
 			p.getChildren().add(back);
 			
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
+			window.setScene(scene);
+			window.show();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-	}
-	
-	public static void main(String[] args) {
-		launch(args);
 	}
 }
