@@ -12,7 +12,7 @@ public class SleepTracker {
 	final static int width = 54;
 	final static int height = 160;
 	
-	public static void sleepTracker() {
+	public static void SleepTracker() {
 		try {
 			Stage window = new Stage();
 			window.setTitle("Sleep Tracker");
