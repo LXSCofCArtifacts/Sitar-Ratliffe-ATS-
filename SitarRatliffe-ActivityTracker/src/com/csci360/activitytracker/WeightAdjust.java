@@ -27,7 +27,7 @@ public class WeightAdjust{
 			StackPane p = new StackPane();
 			Scene scene = new Scene(p,width,height,Color.AZURE);
 			String heightTxt = Integer.toString(tallness);
-			Text t = new Text (width/2, height/2, " Height:\n  "+heightTxt+ " in.");
+			Text t = new Text (width/2, height/2, "Weight:\n  "+heightTxt+ " in.");
 			t.setTranslateY((-height/8));
 			
 			Button up = new Button("    ^   ");
