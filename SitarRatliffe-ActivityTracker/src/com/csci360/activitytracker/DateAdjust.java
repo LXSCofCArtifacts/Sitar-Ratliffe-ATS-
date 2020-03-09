@@ -44,9 +44,9 @@ public class DateAdjust{
 			year.setTranslateY(height/8);
 			year.setMaxSize(width, height/4);
 			
-			day.setOnAction(e -> MainMenu.MainMenu());
-			month.setOnAction(e -> MainMenu.MainMenu());
-			year.setOnAction(e -> MainMenu.MainMenu());
+			day.setOnAction(e -> MainMenu.DayAdjust());
+			month.setOnAction(e -> MainMenu.MonthAdjust());
+			year.setOnAction(e -> MainMenu.YearAdjust());
 			
 			p.getChildren().add(day);
 			p.getChildren().add(month);
