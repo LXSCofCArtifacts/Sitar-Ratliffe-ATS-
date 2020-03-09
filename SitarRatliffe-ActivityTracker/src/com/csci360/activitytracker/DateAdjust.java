@@ -14,15 +14,15 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
 
-public class DateAdjust extends Application  {
-	protected int width = 54;
-	protected int height = 150;
+public class DateAdjust{
+	final static int width = 54;
+	final static int height = 150;
 
 	
-	@Override
-	public void start (Stage primaryStage) {
+	public static void DateAdjust() {
 		try {
-			primaryStage.setTitle("TimeAdjust");
+			Stage window = new Stage();
+			window.setTitle("TimeAdjust");
 			StackPane p = new StackPane();
 			Scene scene = new Scene(p,width,height,Color.AZURE);
 			String monthTxt = Integer.toString(ClockFace.sysMonth);
@@ -58,15 +58,11 @@ public class DateAdjust extends Application  {
 			p.getChildren().add(year);
 
 			
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
+			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			window.setScene(scene);
+			window.show();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-	}
-	
-	public static void main(String[] args) {
-		launch(args);
 	}
 }
