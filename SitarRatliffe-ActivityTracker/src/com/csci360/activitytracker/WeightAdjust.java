@@ -22,7 +22,8 @@ public class WeightAdjust extends Application  {
 	@Override
 	public void start (Stage primaryStage) {
 		try {
-			primaryStage.setTitle("AgeAdjust");
+			Stage window = new Stage();
+			window.setTitle("AgeAdjust");
 			StackPane p = new StackPane();
 			Scene scene = new Scene(p,width,height,Color.AZURE);
 			String heightTxt = Integer.toString(tallness);
