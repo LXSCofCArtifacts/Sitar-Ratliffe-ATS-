@@ -1,6 +1,5 @@
 package com.csci360.activitytracker;
 	
-import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.*;
@@ -19,7 +18,7 @@ public class DateAdjust{
 	final static int height = 150;
 
 	
-	public static void DateAdjust() {
+	public static void DateAdjustMenu() {
 		try {
 			Stage window = new Stage();
 			window.setTitle("TimeAdjust");
@@ -29,15 +28,9 @@ public class DateAdjust{
 			String dayTxt = Integer.toString(ClockFace.sysDay);
 			String yearTxt = Integer.toString(ClockFace.sysYear);
 
-			Button decrement = new Button("v");
-			decrement.setTranslateY((height/8)*3);
-			decrement.setTranslateX(-width/4);
-			decrement.setMaxSize(width/2, height/4);
-			
-			Button increment = new Button("^");
-			increment.setTranslateY((height/8)*3);
-			increment.setTranslateX(width/4);
-			increment.setMaxSize(width/2, height/4);
+			Button back = new Button("Back"); 
+			back.setTranslateY((height/8)*3);
+			back.setMaxSize(width, height/4);
 			
 			Button day = new Button("D:"+dayTxt);
 			day.setTranslateY((-height/8)*3);
@@ -51,12 +44,16 @@ public class DateAdjust{
 			year.setTranslateY(height/8);
 			year.setMaxSize(width, height/4);
 			
-			p.getChildren().add(increment);
-			p.getChildren().add(decrement);
+			day.setOnAction(e -> MainMenu.MainMenu());
+			month.setOnAction(e -> MainMenu.MainMenu());
+			year.setOnAction(e -> MainMenu.MainMenu());
+			
 			p.getChildren().add(day);
 			p.getChildren().add(month);
 			p.getChildren().add(year);
-
+			p.getChildren().add(back);
+			
+			back.setOnAction(e -> window.close());
 			
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			window.setScene(scene);
