@@ -13,7 +13,7 @@ public class MainMenu{
 	final static int width = 54;
 	final static int height = 160;
 	
-	public static void mainMenu() {
+	public static void MainMenu() {
 		try {
 			Stage window = new Stage();
 			window.setTitle("Main Menu");
@@ -27,19 +27,22 @@ public class MainMenu{
 			steps.setTranslateY((-height/8)*3);
 			steps.setMaxSize(width, height/4);
 			sp.getChildren().add(steps);
+			steps.setOnAction(e -> StepTracker.stepTracker());
 
 			sleep.setTranslateY(-height/8);
 			sleep.setMaxSize(width, height/4);
 			sp.getChildren().add(sleep);
+			sleep.setOnAction(e -> SleepTracker.sleepTracker());
 			
 			settings.setTranslateY(height/8);
 			settings.setMaxSize(width, height/4);
 			sp.getChildren().add(settings);
+			settings.setOnAction(e -> SettingsMenu.settingsMenu());
+
 			
 			back.setTranslateY((height/8)*3);
 			back.setMaxSize(width, height/4);
 			sp.getChildren().add(back);	
-			
 			back.setOnAction(e -> window.close());
 			
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
