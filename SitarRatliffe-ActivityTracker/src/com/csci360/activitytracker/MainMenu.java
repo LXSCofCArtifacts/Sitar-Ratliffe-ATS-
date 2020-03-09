@@ -27,17 +27,17 @@ public class MainMenu{
 			steps.setTranslateY((-height/8)*3);
 			steps.setMaxSize(width, height/4);
 			sp.getChildren().add(steps);
-			steps.setOnAction(e -> StepTracker.stepTracker());
+			steps.setOnAction(e -> StepTracker.StepTracker());
 
 			sleep.setTranslateY(-height/8);
 			sleep.setMaxSize(width, height/4);
 			sp.getChildren().add(sleep);
-			sleep.setOnAction(e -> SleepTracker.sleepTracker());
+			sleep.setOnAction(e -> SleepTracker.SleepTracker());
 			
 			settings.setTranslateY(height/8);
 			settings.setMaxSize(width, height/4);
 			sp.getChildren().add(settings);
-			settings.setOnAction(e -> SettingsMenu.settingsMenu());
+			settings.setOnAction(e -> SettingsMenu.SettingsMenu());
 
 			
 			back.setTranslateY((height/8)*3);
