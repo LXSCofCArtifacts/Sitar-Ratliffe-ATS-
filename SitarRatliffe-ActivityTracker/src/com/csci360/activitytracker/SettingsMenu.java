@@ -11,7 +11,7 @@ public class SettingsMenu{
 	final static int width = 54;
 	final static int height = 160;
 	
-	public static void settingsMenu(){
+	public static void SettingsMenu(){
 		try {
 			Stage window = new Stage();
 			window.setTitle("Settings");
@@ -25,14 +25,20 @@ public class SettingsMenu{
 			timesetting.setTranslateY((-height/8)*3);
 			timesetting.setMaxSize(width, height/4);
 			sp.getChildren().add(timesetting);
+			timesetting.setOnAction(e -> TimeAdjust.TimeAdjust());
+
 			
 			datesetting.setTranslateY(-height/8);
 			datesetting.setMaxSize(width, height/4);
 			sp.getChildren().add(datesetting);
+			datesetting.setOnAction(e -> DateAdjust.DateAdjust());
+
 			
 			connectivity.setTranslateY(height/8);
 			connectivity.setMaxSize(width, height/4);
 			sp.getChildren().add(connectivity);
+			//connectivity.setOnAction(e -> SleepTracker.sleepTracker());
+
 			
 			back.setTranslateY((height/8)*3);
 			back.setMaxSize(width, height/4);
