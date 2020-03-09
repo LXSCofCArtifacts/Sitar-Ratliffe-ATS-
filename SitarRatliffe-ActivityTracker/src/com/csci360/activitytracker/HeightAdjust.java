@@ -15,16 +15,10 @@ import javafx.scene.text.Text;
 
 
 public class HeightAdjust{
-<<<<<<< HEAD
 
 	final static int width = 54;
 	final static int height = 150;
-	
-=======
-	final static int width = 54;
-	final static int height = 150;
 
->>>>>>> bb0c12451c2e0b14f4a620da671ae79629d07176
 	public static void HeightAdjust() {
 		try {
 			Stage window = new Stage();
@@ -36,9 +30,11 @@ public class HeightAdjust{
 			t.setTranslateY(-height/8);
 
 			Button up = new Button("    ^   ");
+			up.setMaxSize(width, height/4);
 			up.setTranslateY((-height/8)*3);
 
 			Button down = new Button("   v   ");
+			down.setMaxSize(width, height/4);
 			down.setTranslateY(height/8);
 
 			Button back = new Button("Back");
