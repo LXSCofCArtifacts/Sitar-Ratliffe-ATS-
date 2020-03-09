@@ -21,7 +21,7 @@ public class MainMenu{
 			Scene scene = new Scene(sp,width,height);
 			Button steps = new Button("Step \n Tracker"); 
 			Button sleep = new Button("Sleep \n Tracker");
-			Button settings = new Button("Main Menu 2"); 
+			Button main2 = new Button("Main Menu 2"); 
 			Button back = new Button("Back"); 
 
 			steps.setTranslateY((-height/8)*3);
@@ -34,10 +34,10 @@ public class MainMenu{
 			sp.getChildren().add(sleep);
 			sleep.setOnAction(e -> SleepTracker.SleepTracker());
 			
-			settings.setTranslateY(height/8);
-			settings.setMaxSize(width, height/4);
-			sp.getChildren().add(settings);
-			settings.setOnAction(e -> SettingsMenu.SettingsMenu());
+			main2.setTranslateY(height/8);
+			main2.setMaxSize(width, height/4);
+			sp.getChildren().add(main2);
+			main2.setOnAction(e -> MainMenu2.MainMenu2());
 
 			
 			back.setTranslateY((height/8)*3);
