@@ -15,52 +15,49 @@ import javafx.scene.text.Text;
 
 
 public class TimeAdjust{
-	final static int width = 54;
-	final static int height = 150;
-	
 	public static void TimeAdjust() {
 		try {
 			Stage window = new Stage();
 			window.setTitle("TimeAdjust");
 			StackPane p = new StackPane();
-			Scene scene = new Scene(p,width,height,Color.AZURE);
+			Scene scene = new Scene(p,ClockFace.width,ClockFace.height,Color.AZURE);
 			String minTxt = Integer.toString(ClockFace.sysMin);
 			String hourTxt = Integer.toString(ClockFace.sysHour);
 			Text t1 = new Text (minTxt);
 			Text t2 = new Text (hourTxt);
 			Text t3 = new Text (":");
 			Text t4 = new Text ("\n\nAm");
-			t2.setTranslateX(-width/3);
-			t1.setTranslateX(width/3);
-			t2.setTranslateY(-height/8);
-			t1.setTranslateY(-height/8);
-			t3.setTranslateY(-height/8);
-			t4.setTranslateY(-height/7);
+			t2.setTranslateX(-ClockFace.width/3);
+			t1.setTranslateX(ClockFace.width/3);
+			t2.setTranslateY(-ClockFace.height/8);
+			t1.setTranslateY(-ClockFace.height/8);
+			t3.setTranslateY(-ClockFace.height/8);
+			t4.setTranslateY(-ClockFace.height/7);
 			
 			
 			Button hrUp = new Button("^");
-			hrUp.setMaxSize(width/2, height/4);
-			hrUp.setTranslateY((-height/8)*3);
-			hrUp.setTranslateX(-width/4);
+			hrUp.setMaxSize(ClockFace.width/2, ClockFace.height/4);
+			hrUp.setTranslateY((-ClockFace.height/8)*3);
+			hrUp.setTranslateX(-ClockFace.width/4);
 			
 			Button hrDown = new Button("v");
-			hrDown.setMaxSize(width/2, height/4);
-			hrDown.setTranslateY((height/8));
-			hrDown.setTranslateX(-width/4);
+			hrDown.setMaxSize(ClockFace.width/2, ClockFace.height/4);
+			hrDown.setTranslateY((ClockFace.height/8));
+			hrDown.setTranslateX(-ClockFace.width/4);
 			
 			Button minUp = new Button("^");
-			minUp.setMaxSize(width/2, height/4);
-			minUp.setTranslateY((-height/8)*3);
-			minUp.setTranslateX(width/4);
+			minUp.setMaxSize(ClockFace.width/2, ClockFace.height/4);
+			minUp.setTranslateY((-ClockFace.height/8)*3);
+			minUp.setTranslateX(ClockFace.width/4);
 			
 			Button minDown = new Button("v");
-			minDown.setMaxSize(width/2, height/4);
-			minDown.setTranslateY((height/8));
-			minDown.setTranslateX(width/4);
+			minDown.setMaxSize(ClockFace.width/2, ClockFace.height/4);
+			minDown.setTranslateY((ClockFace.height/8));
+			minDown.setTranslateX(ClockFace.width/4);
 			
 			Button back = new Button("Back");
-			back.setMaxSize(width, height/4);
-			back.setTranslateY((height/8)*3);
+			back.setMaxSize(ClockFace.width, ClockFace.height/4);
+			back.setTranslateY((ClockFace.height/8)*3);
 			back.setOnAction(e -> window.close());		
 			
 			p.getChildren().add(hrDown);

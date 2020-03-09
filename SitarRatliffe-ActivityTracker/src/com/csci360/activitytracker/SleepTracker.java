@@ -9,17 +9,17 @@ import javafx.scene.text.Text;
 
 public class SleepTracker {
 	
-	final static int width = 54;
-	final static int height = 160;
+	final static int sleepGoalMin = 54;
+	final static int sleepGoalHr = 160;
 	
 	public static void SleepTracker() {
 		try {
 			Stage window = new Stage();
 			window.setTitle("Sleep Tracker");
 			StackPane sp = new StackPane();
-			Scene scene = new Scene(sp,width,height);
+			Scene scene = new Scene(sp,ClockFace.width,ClockFace.height);
 			Text sleepTimer = new Text("Sleep Timer: \nHH:MM:SS"); 
-			sleepTimer.setTranslateY((-height/10)*3);
+			sleepTimer.setTranslateY((-ClockFace.height/10)*3);
 			Text sleepGoal = new Text("Sleep Goal: \n83%");
 			//sleepGoal.setTranslateY(-height/8);
 			Button back = new Button("Back"); 
@@ -27,8 +27,8 @@ public class SleepTracker {
 			sp.getChildren().add(sleepTimer);
 			sp.getChildren().add(sleepGoal);
 			
-			back.setTranslateY((height/8)*3);
-			back.setMaxSize(width, height/4);
+			back.setTranslateY((ClockFace.height/8)*3);
+			back.setMaxSize(ClockFace.width, ClockFace.height/4);
 			sp.getChildren().add(back);	
 			back.setOnAction(e -> window.close());
 			

@@ -14,31 +14,27 @@ import javafx.scene.text.Text;
 
 
 public class MonthAdjust{
-	final static int width = 54;
-	final static int height = 150;
-
-	
 	public static void MonthAdjust() {
 		try {
 			Stage window = new Stage();
 			window.setTitle("AgeAdjust");
 			StackPane p = new StackPane();
-			Scene scene = new Scene(p,width,height,Color.AZURE);
+			Scene scene = new Scene(p,ClockFace.width,ClockFace.height,Color.AZURE);
 			String monthTxt = Integer.toString(ClockFace.sysMonth);
-			Text t = new Text (width/2, height/2, " Month:\n  "+monthTxt);
-			t.setTranslateY(-height/8);
+			Text t = new Text (ClockFace.width/2, ClockFace.height/2, " Month:\n  "+monthTxt);
+			t.setTranslateY(-ClockFace.height/8);
 			
 			Button up = new Button("    ^   ");
-			up.setMaxSize(width, height/4);
-			up.setTranslateY((-height/8)*3);
+			up.setMaxSize(ClockFace.width, ClockFace.height/4);
+			up.setTranslateY((-ClockFace.height/8)*3);
 			
 			Button down = new Button("   v   ");
-			down.setMaxSize(width, height/4);
-			down.setTranslateY(height/8);
+			down.setMaxSize(ClockFace.width, ClockFace.height/4);
+			down.setTranslateY(ClockFace.height/8);
 			
 			Button back = new Button("Back");
-			back.setMaxSize(width, height/4);
-			back.setTranslateY((height/8)*3);
+			back.setMaxSize(ClockFace.width, ClockFace.height/4);
+			back.setTranslateY((ClockFace.height/8)*3);
 			
 			p.getChildren().add(up);
 			p.getChildren().add(down);

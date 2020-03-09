@@ -7,41 +7,37 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 
 public class SettingsMenu{
-	
-	final static int width = 54;
-	final static int height = 160;
-	
 	public static void SettingsMenu(){
 		try {
 			Stage window = new Stage();
 			window.setTitle("Settings");
 			StackPane sp = new StackPane();
-			Scene scene = new Scene(sp,width,height);
+			Scene scene = new Scene(sp,ClockFace.width,ClockFace.height);
 			Button timesetting = new Button("Time \nSettings"); 
 			Button datesetting = new Button("Date \nSettings");
 			Button connectivity = new Button("Connectivity"); 
 			Button back = new Button("Back"); 
 
-			timesetting.setTranslateY((-height/8)*3);
-			timesetting.setMaxSize(width, height/4);
+			timesetting.setTranslateY((-ClockFace.height/8)*3);
+			timesetting.setMaxSize(ClockFace.width, ClockFace.height/4);
 			sp.getChildren().add(timesetting);
 			timesetting.setOnAction(e -> TimeAdjust.TimeAdjust());
 
 			
-			datesetting.setTranslateY(-height/8);
-			datesetting.setMaxSize(width, height/4);
+			datesetting.setTranslateY(-ClockFace.height/8);
+			datesetting.setMaxSize(ClockFace.width, ClockFace.height/4);
 			sp.getChildren().add(datesetting);
 			datesetting.setOnAction(e -> DateAdjustMenu.DateAdjustMenu());
 
 			
-			connectivity.setTranslateY(height/8);
-			connectivity.setMaxSize(width, height/4);
+			connectivity.setTranslateY(ClockFace.height/8);
+			connectivity.setMaxSize(ClockFace.width, ClockFace.height/4);
 			sp.getChildren().add(connectivity);
 			//connectivity.setOnAction(e -> SleepTracker.sleepTracker());
 
 			
-			back.setTranslateY((height/8)*3);
-			back.setMaxSize(width, height/4);
+			back.setTranslateY((ClockFace.height/8)*3);
+			back.setMaxSize(ClockFace.width, ClockFace.height/4);
 			sp.getChildren().add(back);	
 			back.setOnAction(e -> window.close());
 

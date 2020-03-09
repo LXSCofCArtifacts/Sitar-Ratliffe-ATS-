@@ -12,8 +12,8 @@ import javafx.scene.paint.Color;
 
 public class ClockFace extends Application {
 	
-	final protected int width = 54;
-	final protected int height = 160;
+	final protected static int width = 54;
+	final protected static int height = 160;
 	public static int sysMin = 50;
 	public static int sysHour = 5;
 	public static int sysDay = 01;

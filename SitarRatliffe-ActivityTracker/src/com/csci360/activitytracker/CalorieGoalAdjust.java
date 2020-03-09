@@ -13,30 +13,27 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
 public class CalorieGoalAdjust{
-	final static int width = 54;
-	final static int height = 150;
-	final static int calorieGoal = 2000;
 	
 	public static void CalorieGoalAdjust() {
 		try {
 			Stage window = new Stage();
 			StackPane p = new StackPane();
-			Scene scene = new Scene(p,width,height);
-			String heightTxt = Integer.toString(calorieGoal);
-			Text t = new Text (width/2, height/2, " Calories:\n  "+heightTxt);
-			t.setTranslateY((-height/8));
+			Scene scene = new Scene(p,ClockFace.width,ClockFace.height);
+			String heightTxt = Integer.toString(StepTracker.calorieGoal);
+			Text t = new Text (ClockFace.width/2, ClockFace.height/2, " Calories:\n  "+heightTxt);
+			t.setTranslateY((-ClockFace.height/8));
 			
 			Button up = new Button("    ^   ");
-			up.setMaxSize(width, height/4);
-			up.setTranslateY((-height/8)*3);
+			up.setMaxSize(ClockFace.width, ClockFace.height/4);
+			up.setTranslateY((-ClockFace.height/8)*3);
 			
 			Button down = new Button("   v   ");
-			down.setMaxSize(width, height/4);
-			down.setTranslateY(height/8);
+			down.setMaxSize(ClockFace.width, ClockFace.height/4);
+			down.setTranslateY(ClockFace.height/8);
 
 			Button back = new Button("Back");
-			back.setMaxSize(width, height/4);
-			back.setTranslateY((height/8)*3);
+			back.setMaxSize(ClockFace.width, ClockFace.height/4);
+			back.setTranslateY((ClockFace.height/8)*3);
 			back.setOnAction(e -> window.close());
 			
 			p.getChildren().add(up);
