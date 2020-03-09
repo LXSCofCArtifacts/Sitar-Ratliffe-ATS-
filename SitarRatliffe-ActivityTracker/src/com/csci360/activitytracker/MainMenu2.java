@@ -23,6 +23,7 @@ public class MainMenu2{
 			info.setTranslateY((-height/8)*2.5);
 			info.setMaxSize(width, height/2.7);
 			sp.getChildren().add(info);
+			info.setOnAction(e -> PersonalInfoMenu.PersonalInfoMenu());
 			
 			settings.setTranslateY(height/15);
 			settings.setMaxSize(width, height/2.7);
