@@ -14,7 +14,7 @@ public class PersonalInfoMenu2{
 	public static void PersonalInfoMenu2() {
 		try {
 			Stage window = new Stage();
-			window.setTitle("Personal Data");
+			window.setTitle("Personal Info Menu 2");
 			StackPane sp = new StackPane();
 			Scene scene = new Scene(sp,width,height);
 			Button userage = new Button("Age"); 
