@@ -1,12 +1,14 @@
 package com.csci360.activitytracker;
 	
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 
-public class MainMenu extends Application {
+public class MainMenu extends Application{
 	
 	final protected int width = 54;
 	final protected int height = 160;
@@ -25,6 +27,14 @@ public class MainMenu extends Application {
 			steps.setTranslateY((-height/8)*3);
 			steps.setMaxSize(width, height/4);
 			sp.getChildren().add(steps);
+			steps.setOnAction(new EventHandler<ActionEvent> ()
+				{
+					@Override
+					public void handle(ActionEvent event) {
+						primaryStage.setScene(newscene);
+						primaryStage.show();
+					}
+				});
 			
 			sleep.setTranslateY(-height/8);
 			sleep.setMaxSize(width, height/4);
@@ -48,6 +58,8 @@ public class MainMenu extends Application {
 	}
 	
 	public static void main(String[] args) {
-		launch(args);
+		launch(args);	
 	}
+	
+	
 }
