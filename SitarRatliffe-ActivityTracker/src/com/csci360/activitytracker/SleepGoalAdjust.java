@@ -26,7 +26,7 @@ public class SleepGoalAdjust{
 			Text t1 = new Text (minTxt);
 			Text t2 = new Text (hourTxt);
 			Text t3 = new Text (":");
-			Text t4 = new Text ("\n\nHours");
+			Text t4 = new Text ("\n\nHrs   Mins");
 			t2.setTranslateX(-ClockFace.width/3);
 			t1.setTranslateX(ClockFace.width/3);
 			t2.setTranslateY(-ClockFace.height/8);
@@ -39,21 +39,83 @@ public class SleepGoalAdjust{
 			hrUp.setMaxSize(ClockFace.width/2, ClockFace.height/4);
 			hrUp.setTranslateY((-ClockFace.height/8)*3);
 			hrUp.setTranslateX(-ClockFace.width/4);
+			hrUp.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					if (ClockFace.sysHour == 12) {
+						ClockFace.sysHour = 1;
+						String hourTxt = Integer.toString(ClockFace.sysHour);
+						t2.setText(hourTxt);
+					}
+					else {
+						ClockFace.sysHour += 1;
+						String hourTxt = Integer.toString(ClockFace.sysHour);
+						t2.setText(hourTxt);
+					}
+				}
+			});
 			
 			Button hrDown = new Button("v");
 			hrDown.setMaxSize(ClockFace.width/2, ClockFace.height/4);
 			hrDown.setTranslateY((ClockFace.height/8));
 			hrDown.setTranslateX(-ClockFace.width/4);
+			hrDown.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					if (ClockFace.sysHour == 1) {
+						ClockFace.sysHour = 12;
+						String hourTxt = Integer.toString(ClockFace.sysHour);
+						t2.setText(hourTxt);
+					}
+					else {
+						ClockFace.sysHour -= 1;
+						String hourTxt = Integer.toString(ClockFace.sysHour);
+						t2.setText(hourTxt);
+					}
+				}
+			});
 			
 			Button minUp = new Button("^");
 			minUp.setMaxSize(ClockFace.width/2, ClockFace.height/4);
 			minUp.setTranslateY((-ClockFace.height/8)*3);
 			minUp.setTranslateX(ClockFace.width/4);
+			minUp.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					if (ClockFace.sysMin == 59) {
+						ClockFace.sysMin = 0;
+						ClockFace.sysHour += 1;
+						String minTxt = Integer.toString(ClockFace.sysMin);
+						String hourTxt = Integer.toString(ClockFace.sysHour);
+						t1.setText(minTxt);
+						t2.setText(hourTxt);
+					}
+					else {
+						ClockFace.sysMin += 1;
+						String minTxt = Integer.toString(ClockFace.sysMin);
+						t1.setText(minTxt);
+					}
+				}
+			});
 			
 			Button minDown = new Button("v");
 			minDown.setMaxSize(ClockFace.width/2, ClockFace.height/4);
 			minDown.setTranslateY((ClockFace.height/8));
 			minDown.setTranslateX(ClockFace.width/4);
+			minDown.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					if (ClockFace.sysMin == 0) {
+						ClockFace.sysMin = 59;
+						ClockFace.sysHour -= 1;
+						String minTxt = Integer.toString(ClockFace.sysMin);
+						String hourTxt = Integer.toString(ClockFace.sysHour);
+						t1.setText(minTxt);
+						t2.setText(hourTxt);
+					}
+					else {
+						ClockFace.sysMin -= 1;
+						String minTxt = Integer.toString(ClockFace.sysMin);
+						t1.setText(minTxt);
+					}
+				}
+			});
 			
 			Button back = new Button("Back");
 			back.setMaxSize(ClockFace.width, ClockFace.height/4);
