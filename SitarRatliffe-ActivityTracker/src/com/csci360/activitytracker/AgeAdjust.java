@@ -29,13 +29,24 @@ public class AgeAdjust{
 			Button up = new Button("    ^   ");
 			up.setMaxSize(ClockFace.width, ClockFace.height/4);
 			up.setTranslateY((-ClockFace.height/8)*3);
-			up.setOnAction(e -> StepTracker.age++);
+			up.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					StepTracker.age += 1;
+					String ageTxt = Integer.toString(StepTracker.age);
+					t.setText(" Age:\n  " + ageTxt);
+				}
+			});
 			
 			Button down = new Button("   v   ");
 			down.setMaxSize(ClockFace.width, ClockFace.height/4);
 			down.setTranslateY(ClockFace.height/8);
-			down.setOnAction(e -> StepTracker.age--);
-
+			down.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					StepTracker.age -= 1;
+					String ageTxt = Integer.toString(StepTracker.age);
+					t.setText(" Age:\n  " + ageTxt);
+				}
+			});
 			Button back = new Button("Back");
 			back.setMaxSize(ClockFace.width, ClockFace.height/4);
 			back.setTranslateY((ClockFace.height/8)*3);

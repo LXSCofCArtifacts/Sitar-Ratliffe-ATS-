@@ -18,20 +18,34 @@ public class StepGoalAdjust{
 	public static void StepGoalAdjust() {
 		try {
 			Stage window = new Stage();
-			window.setTitle("AgeAdjust");
+			window.setTitle("StepGoalAdjust");
 			StackPane p = new StackPane();
 			Scene scene = new Scene(p,ClockFace.width,ClockFace.height,Color.AZURE);
-			String heightTxt = Integer.toString(StepTracker.stepGoal);
-			Text t = new Text (ClockFace.width/2, ClockFace.height/2, " Steps:\n  "+heightTxt);
+			String stepGoalTxt = Integer.toString(StepTracker.stepGoal);
+			Text t = new Text (ClockFace.width/2, ClockFace.height/2, " Steps:\n  " + stepGoalTxt);
 			t.setTranslateY((-ClockFace.height/8));
 			
 			Button up = new Button("    ^   ");
 			up.setMaxSize(ClockFace.width, ClockFace.height/4);
 			up.setTranslateY((-ClockFace.height/8)*3);
+			up.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					StepTracker.stepGoal += 1;
+					String stepGoalTxt = Integer.toString(StepTracker.stepGoal);
+					t.setText(" Steps:\n  " + stepGoalTxt);
+				}
+			});
 			
 			Button down = new Button("   v   ");
 			down.setMaxSize(ClockFace.width, ClockFace.height/4);
 			down.setTranslateY(ClockFace.height/8);
+			down.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					StepTracker.stepGoal -= 1;
+					String stepGoalTxt = Integer.toString(StepTracker.stepGoal);
+					t.setText(" Steps:\n  " + stepGoalTxt);
+				}
+			});
 
 			Button back = new Button("Back");
 			back.setMaxSize(ClockFace.width, ClockFace.height/4);

@@ -21,17 +21,31 @@ public class WeightAdjust{
 			window.setTitle("AgeAdjust");
 			StackPane p = new StackPane();
 			Scene scene = new Scene(p,ClockFace.width,ClockFace.height,Color.AZURE);
-			String heightTxt = Integer.toString(StepTracker.weight);
-			Text t = new Text (ClockFace.width/2, ClockFace.height/2, "Weight:\n  "+heightTxt+ " in.");
+			String weightTxt = Integer.toString(StepTracker.weight);
+			Text t = new Text (ClockFace.width/2, ClockFace.height/2, " Weight:\n  " + weightTxt + " lbs");
 			t.setTranslateY((-ClockFace.height/8));
 			
 			Button up = new Button("    ^   ");
 			up.setMaxSize(ClockFace.width, ClockFace.height/4);
 			up.setTranslateY((-ClockFace.height/8)*3);
+			up.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					StepTracker.weight += 1;
+					String weightTxt = Integer.toString(StepTracker.weight);
+					t.setText(" Weight:\n  " + weightTxt + " lbs");
+				}
+			});
 			
 			Button down = new Button("   v   ");
 			down.setMaxSize(ClockFace.width, ClockFace.height/4);
 			down.setTranslateY(ClockFace.height/8);
+			down.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					StepTracker.weight -= 1;
+					String weightTxt = Integer.toString(StepTracker.weight);
+					t.setText(" Weight:\n  " + weightTxt + " lbs");
+				}
+			});
 
 			Button back = new Button("Back");
 			back.setMaxSize(ClockFace.width, ClockFace.height/4);
