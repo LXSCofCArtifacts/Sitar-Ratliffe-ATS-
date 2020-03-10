@@ -13,8 +13,8 @@ import javafx.scene.text.Text;
 
 public class ClockFace extends Application {
 	
-	final protected static int width = 54;
-	final protected static int height = 160;
+	final protected static int width = 81;
+	final protected static int height = 240;
 	public static int sysMin = 50;
 	public static int sysHour = 5;
 	public static int sysDay = 01;
@@ -39,7 +39,7 @@ public class ClockFace extends Application {
 			primaryStage.setTitle("Clock Face");
 			StackPane sp = new StackPane();
 			Scene scene = new Scene(sp,width,height);
-			hourDisplay = new Text(sysHour+"  :");
+			hourDisplay = new Text(sysHour+"   :");
 			minDisplay = new Text(sysMin+"");
 			minDisplay.setTranslateX(width/4);
 			hourDisplay.setTranslateX(-width/4);
