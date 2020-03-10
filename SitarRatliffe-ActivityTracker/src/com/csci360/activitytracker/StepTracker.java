@@ -10,14 +10,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 
 public class StepTracker{
-	static int age = 20;
-	static int weight = 150;
-	static int height = 72;
-	static int stepGoal = 5000;
-	static int stepCounter = 1000;
-	static int calorieGoal = 3000;
-	static int calorieCounter = 1000;
-
+	
 	static boolean genderMale = false;
 	
 	public static void StepTracker(){
@@ -26,15 +19,15 @@ public class StepTracker{
 			window.setTitle("Step Tracker");
 			StackPane sp = new StackPane();
 			Scene scene = new Scene(sp,ClockFace.width,ClockFace.height);
-			Text burnedCals = new Text("Calories Burned: \n"+calorieCounter+" / "+ calorieGoal); 
+			Text burnedCals = new Text("Calories: \n  "+ClockFace.calorieCounter); 
 			burnedCals.setTranslateY((-ClockFace.height/8)*3);
-			Text stepCount = new Text("Step Counter: \n"+stepCounter+" / "+ stepGoal);
+			Text stepCount = new Text("Steps:\n"+ClockFace.stepCounter);
 			stepCount.setTranslateY(-ClockFace.height/8);
 			
-			double percentage = ((stepCounter*1.0/stepGoal)*100);
+			double percentage = ((ClockFace.stepCounter*1.0/ClockFace.stepGoal)*100);
 			DecimalFormat decimalFormat = new DecimalFormat("#.00");
 	        String numberAsString = decimalFormat.format(percentage);
-			Text stepGoal = new Text("Step Goal: "+numberAsString+"%"); 
+			Text stepGoal = new Text("Step Goal:\n  "+numberAsString+"%"); 
 			stepGoal.setTranslateY(ClockFace.height/8);
 			
 			Button back = new Button("Back"); 

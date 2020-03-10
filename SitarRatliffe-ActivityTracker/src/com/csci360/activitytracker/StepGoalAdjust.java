@@ -21,7 +21,7 @@ public class StepGoalAdjust{
 			window.setTitle("StepGoalAdjust");
 			StackPane p = new StackPane();
 			Scene scene = new Scene(p,ClockFace.width,ClockFace.height,Color.AZURE);
-			String stepGoalTxt = Integer.toString(StepTracker.stepGoal);
+			String stepGoalTxt = Integer.toString(ClockFace.stepGoal);
 			Text t = new Text (ClockFace.width/2, ClockFace.height/2, " Steps:\n  " + stepGoalTxt);
 			t.setTranslateY((-ClockFace.height/8));
 			
@@ -30,8 +30,8 @@ public class StepGoalAdjust{
 			up.setTranslateY((-ClockFace.height/8)*3);
 			up.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					StepTracker.stepGoal += 1;
-					String stepGoalTxt = Integer.toString(StepTracker.stepGoal);
+					ClockFace.stepGoal += 1;
+					String stepGoalTxt = Integer.toString(ClockFace.stepGoal);
 					t.setText(" Steps:\n  " + stepGoalTxt);
 				}
 			});
@@ -41,8 +41,8 @@ public class StepGoalAdjust{
 			down.setTranslateY(ClockFace.height/8);
 			down.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					StepTracker.stepGoal -= 1;
-					String stepGoalTxt = Integer.toString(StepTracker.stepGoal);
+					ClockFace.stepGoal -= 1;
+					String stepGoalTxt = Integer.toString(ClockFace.stepGoal);
 					t.setText(" Steps:\n  " + stepGoalTxt);
 				}
 			});

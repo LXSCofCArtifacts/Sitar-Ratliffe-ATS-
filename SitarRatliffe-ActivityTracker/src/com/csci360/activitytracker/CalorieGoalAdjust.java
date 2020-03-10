@@ -19,7 +19,7 @@ public class CalorieGoalAdjust{
 			Stage window = new Stage();
 			StackPane p = new StackPane();
 			Scene scene = new Scene(p,ClockFace.width,ClockFace.height);
-			String calorieTxt = Integer.toString(StepTracker.calorieGoal);
+			String calorieTxt = Integer.toString(ClockFace.calorieGoal);
 			Text t = new Text (ClockFace.width/2, ClockFace.height/2, " Calories:\n  " + calorieTxt);
 			t.setTranslateY((-ClockFace.height/8));
 			
@@ -28,8 +28,8 @@ public class CalorieGoalAdjust{
 			up.setTranslateY((-ClockFace.height/8)*3);
 			up.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					StepTracker.calorieGoal += 1;
-					String calorieTxt = Integer.toString(StepTracker.calorieGoal);
+					ClockFace.calorieGoal += 1;
+					String calorieTxt = Integer.toString(ClockFace.calorieGoal);
 					t.setText(" Calories:\n  " + calorieTxt);
 				}
 			});
@@ -39,8 +39,8 @@ public class CalorieGoalAdjust{
 			down.setTranslateY(ClockFace.height/8);
 			down.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					StepTracker.calorieGoal -= 1;
-					String calorieTxt = Integer.toString(StepTracker.calorieGoal);
+					ClockFace.calorieGoal -= 1;
+					String calorieTxt = Integer.toString(ClockFace.calorieGoal);
 					t.setText(" Calories:\n  " + calorieTxt);
 				}
 			});

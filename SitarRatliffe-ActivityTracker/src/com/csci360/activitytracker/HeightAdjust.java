@@ -21,7 +21,7 @@ public class HeightAdjust{
 			window.setTitle("AgeAdjust");
 			StackPane p = new StackPane();
 			Scene scene = new Scene(p,ClockFace.width,ClockFace.height,Color.AZURE);
-			String heightTxt = Integer.toString(StepTracker.height);
+			String heightTxt = Integer.toString(ClockFace.userHeight);
 			Text t = new Text (ClockFace.width/2, ClockFace.height/2, " Height:\n  "+ heightTxt + " in");
 			t.setTranslateY(-ClockFace.height/8);
 
@@ -30,8 +30,8 @@ public class HeightAdjust{
 			up.setTranslateY((-ClockFace.height/8)*3);
 			up.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					StepTracker.height += 1;
-					String heightTxt = Integer.toString(StepTracker.height);
+					ClockFace.userHeight += 1;
+					String heightTxt = Integer.toString(ClockFace.userHeight);
 					t.setText(" Height:\n  " + heightTxt + " in");
 				}
 			});
@@ -41,8 +41,8 @@ public class HeightAdjust{
 			down.setTranslateY(ClockFace.height/8);
 			down.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					StepTracker.height -= 1;
-					String heightTxt = Integer.toString(StepTracker.height);
+					ClockFace.userHeight -= 1;
+					String heightTxt = Integer.toString(ClockFace.userHeight);
 					t.setText(" Height:\n  " + heightTxt + " in");
 				}
 			});

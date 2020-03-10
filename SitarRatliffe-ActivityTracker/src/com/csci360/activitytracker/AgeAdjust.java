@@ -22,7 +22,7 @@ public class AgeAdjust{
 			window.setTitle("AgeAdjust");
 			StackPane p = new StackPane();
 			Scene scene = new Scene(p,ClockFace.width,ClockFace.height);
-			String ageTxt = Integer.toString(StepTracker.age);
+			String ageTxt = Integer.toString(ClockFace.age);
 			Text t = new Text (ClockFace.width/2, ClockFace.height/2, " Age:\n  "+ageTxt);
 			t.setTranslateY((-ClockFace.height/8));
 			
@@ -31,8 +31,8 @@ public class AgeAdjust{
 			up.setTranslateY((-ClockFace.height/8)*3);
 			up.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					StepTracker.age += 1;
-					String ageTxt = Integer.toString(StepTracker.age);
+					ClockFace.age += 1;
+					String ageTxt = Integer.toString(ClockFace.age);
 					t.setText(" Age:\n  " + ageTxt);
 				}
 			});
@@ -42,8 +42,8 @@ public class AgeAdjust{
 			down.setTranslateY(ClockFace.height/8);
 			down.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					StepTracker.age -= 1;
-					String ageTxt = Integer.toString(StepTracker.age);
+					ClockFace.age -= 1;
+					String ageTxt = Integer.toString(ClockFace.age);
 					t.setText(" Age:\n  " + ageTxt);
 				}
 			});

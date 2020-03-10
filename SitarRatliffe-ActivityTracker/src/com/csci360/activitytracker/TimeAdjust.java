@@ -45,11 +45,16 @@ public class TimeAdjust{
 						ClockFace.sysHour = 1;
 						String hourTxt = Integer.toString(ClockFace.sysHour);
 						t2.setText(hourTxt);
+						ClockFace.hourDisplay.setText(ClockFace.sysHour+"  :");	
+						ClockFace.minDisplay.setText(ClockFace.sysMin+"");						
+
 					}
 					else {
 						ClockFace.sysHour += 1;
 						String hourTxt = Integer.toString(ClockFace.sysHour);
 						t2.setText(hourTxt);
+						ClockFace.hourDisplay.setText(ClockFace.sysHour+"  :");	
+						ClockFace.minDisplay.setText(ClockFace.sysMin+"");
 					}
 				}
 			});
@@ -64,11 +69,15 @@ public class TimeAdjust{
 						ClockFace.sysHour = 12;
 						String hourTxt = Integer.toString(ClockFace.sysHour);
 						t2.setText(hourTxt);
+						ClockFace.hourDisplay.setText(ClockFace.sysHour+"  :");	
+						ClockFace.minDisplay.setText(ClockFace.sysMin+"");
 					}
 					else {
 						ClockFace.sysHour -= 1;
 						String hourTxt = Integer.toString(ClockFace.sysHour);
 						t2.setText(hourTxt);
+						ClockFace.hourDisplay.setText(ClockFace.sysHour+"  :");	
+						ClockFace.minDisplay.setText(ClockFace.sysMin+"");
 					}
 				}
 			});
@@ -86,11 +95,15 @@ public class TimeAdjust{
 						String hourTxt = Integer.toString(ClockFace.sysHour);
 						t1.setText(minTxt);
 						t2.setText(hourTxt);
+						ClockFace.hourDisplay.setText(ClockFace.sysHour+"  :");	
+						ClockFace.minDisplay.setText(ClockFace.sysMin+"");
 					}
 					else {
 						ClockFace.sysMin += 1;
 						String minTxt = Integer.toString(ClockFace.sysMin);
 						t1.setText(minTxt);
+						ClockFace.hourDisplay.setText(ClockFace.sysHour+"  :");	
+						ClockFace.minDisplay.setText(ClockFace.sysMin+"");
 					}
 				}
 			});
@@ -111,11 +124,15 @@ public class TimeAdjust{
 						String hourTxt = Integer.toString(ClockFace.sysHour);
 						t1.setText(minTxt);
 						t2.setText(hourTxt);
+						ClockFace.hourDisplay.setText(ClockFace.sysHour+"  :");	
+						ClockFace.minDisplay.setText(ClockFace.sysMin+"");
 					}
 					else {
 						ClockFace.sysMin -= 1;
 						String minTxt = Integer.toString(ClockFace.sysMin);
 						t1.setText(minTxt);
+						ClockFace.hourDisplay.setText(ClockFace.sysHour+"  :");	
+						ClockFace.minDisplay.setText(ClockFace.sysMin+"");
 					}
 				}
 			});

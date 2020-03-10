@@ -41,14 +41,14 @@ public class SleepGoalAdjust{
 			hrUp.setTranslateX(-ClockFace.width/4);
 			hrUp.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					if (ClockFace.sysHour == 12) {
-						ClockFace.sysHour = 1;
-						String hourTxt = Integer.toString(ClockFace.sysHour);
+					if (ClockFace.sleepGoalHr == 12) {
+						ClockFace.sleepGoalHr = 1;
+						String hourTxt = Integer.toString(ClockFace.sleepGoalHr);
 						t2.setText(hourTxt);
 					}
 					else {
-						ClockFace.sysHour += 1;
-						String hourTxt = Integer.toString(ClockFace.sysHour);
+						ClockFace.sleepGoalHr += 1;
+						String hourTxt = Integer.toString(ClockFace.sleepGoalHr);
 						t2.setText(hourTxt);
 					}
 				}
@@ -60,14 +60,14 @@ public class SleepGoalAdjust{
 			hrDown.setTranslateX(-ClockFace.width/4);
 			hrDown.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					if (ClockFace.sysHour == 1) {
-						ClockFace.sysHour = 12;
-						String hourTxt = Integer.toString(ClockFace.sysHour);
+					if (ClockFace.sleepGoalHr == 1) {
+						ClockFace.sleepGoalHr = 12;
+						String hourTxt = Integer.toString(ClockFace.sleepGoalHr);
 						t2.setText(hourTxt);
 					}
 					else {
-						ClockFace.sysHour -= 1;
-						String hourTxt = Integer.toString(ClockFace.sysHour);
+						ClockFace.sleepGoalHr -= 1;
+						String hourTxt = Integer.toString(ClockFace.sleepGoalHr);
 						t2.setText(hourTxt);
 					}
 				}
@@ -79,17 +79,17 @@ public class SleepGoalAdjust{
 			minUp.setTranslateX(ClockFace.width/4);
 			minUp.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					if (ClockFace.sysMin == 59) {
-						ClockFace.sysMin = 0;
-						ClockFace.sysHour += 1;
-						String minTxt = Integer.toString(ClockFace.sysMin);
-						String hourTxt = Integer.toString(ClockFace.sysHour);
+					if (ClockFace.sleepGoalMin == 59) {
+						ClockFace.sleepGoalMin = 0;
+						ClockFace.sleepGoalHr += 1;
+						String minTxt = Integer.toString(ClockFace.sleepGoalMin);
+						String hourTxt = Integer.toString(ClockFace.sleepGoalHr);
 						t1.setText(minTxt);
 						t2.setText(hourTxt);
 					}
 					else {
-						ClockFace.sysMin += 1;
-						String minTxt = Integer.toString(ClockFace.sysMin);
+						ClockFace.sleepGoalMin += 1;
+						String minTxt = Integer.toString(ClockFace.sleepGoalMin);
 						t1.setText(minTxt);
 					}
 				}
@@ -101,17 +101,17 @@ public class SleepGoalAdjust{
 			minDown.setTranslateX(ClockFace.width/4);
 			minDown.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					if (ClockFace.sysMin == 0) {
-						ClockFace.sysMin = 59;
-						ClockFace.sysHour -= 1;
-						String minTxt = Integer.toString(ClockFace.sysMin);
-						String hourTxt = Integer.toString(ClockFace.sysHour);
+					if (ClockFace.sleepGoalMin == 0) {
+						ClockFace.sleepGoalMin = 59;
+						ClockFace.sleepGoalHr -= 1;
+						String minTxt = Integer.toString(ClockFace.sleepGoalMin);
+						String hourTxt = Integer.toString(ClockFace.sleepGoalHr);
 						t1.setText(minTxt);
 						t2.setText(hourTxt);
 					}
 					else {
-						ClockFace.sysMin -= 1;
-						String minTxt = Integer.toString(ClockFace.sysMin);
+						ClockFace.sleepGoalMin -= 1;
+						String minTxt = Integer.toString(ClockFace.sleepGoalMin);
 						t1.setText(minTxt);
 					}
 				}

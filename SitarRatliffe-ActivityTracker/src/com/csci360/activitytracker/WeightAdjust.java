@@ -21,7 +21,7 @@ public class WeightAdjust{
 			window.setTitle("AgeAdjust");
 			StackPane p = new StackPane();
 			Scene scene = new Scene(p,ClockFace.width,ClockFace.height,Color.AZURE);
-			String weightTxt = Integer.toString(StepTracker.weight);
+			String weightTxt = Integer.toString(ClockFace.weight);
 			Text t = new Text (ClockFace.width/2, ClockFace.height/2, " Weight:\n  " + weightTxt + " lbs");
 			t.setTranslateY((-ClockFace.height/8));
 			
@@ -30,8 +30,8 @@ public class WeightAdjust{
 			up.setTranslateY((-ClockFace.height/8)*3);
 			up.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					StepTracker.weight += 1;
-					String weightTxt = Integer.toString(StepTracker.weight);
+					ClockFace.weight += 1;
+					String weightTxt = Integer.toString(ClockFace.weight);
 					t.setText(" Weight:\n  " + weightTxt + " lbs");
 				}
 			});
@@ -41,8 +41,8 @@ public class WeightAdjust{
 			down.setTranslateY(ClockFace.height/8);
 			down.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					StepTracker.weight -= 1;
-					String weightTxt = Integer.toString(StepTracker.weight);
+					ClockFace.weight -= 1;
+					String weightTxt = Integer.toString(ClockFace.weight);
 					t.setText(" Weight:\n  " + weightTxt + " lbs");
 				}
 			});

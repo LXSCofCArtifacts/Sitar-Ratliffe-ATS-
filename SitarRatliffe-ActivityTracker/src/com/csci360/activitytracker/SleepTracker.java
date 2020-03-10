@@ -11,12 +11,6 @@ import javafx.scene.text.Text;
 
 public class SleepTracker {
 	
-	static int sleepGoalMin = 54;
-	static int sleepGoalHr = 8;
-	
-	static int sleepTrackerMin = 00;
-	static int sleepTrackerHr = 8;
-	
 	public static void SleepTracker() {
 		try {
 			Stage window = new Stage();
@@ -24,18 +18,18 @@ public class SleepTracker {
 			StackPane sp = new StackPane();
 			Scene scene = new Scene(sp,ClockFace.width,ClockFace.height);
 			
-			double sleepTrackTotal = sleepTrackerMin+(sleepTrackerHr*60);
-			double sleepGoalTotal = sleepGoalMin+(sleepGoalHr*60);
+			double sleepTrackTotal = ClockFace.sleepTrackerMin+(ClockFace.sleepTrackerHr*60);
+			double sleepGoalTotal = ClockFace.sleepGoalMin+(ClockFace.sleepGoalHr*60);
 			
 			double percentage = ((sleepTrackTotal*1.0/sleepGoalTotal)*100);
 			DecimalFormat decimalFormat = new DecimalFormat("#.00");
 	        String percentageAsString = decimalFormat.format(percentage);
-	        Text sleepGoal = new Text("Sleep Goal: "+percentageAsString+"%");
+	        Text sleepGoal = new Text("Sleep Goal: \n "+percentageAsString+"%");
 	        
 	        DecimalFormat hrFormat = new DecimalFormat("# hr");
-	        String hrAsString = hrFormat.format(sleepTrackerHr);
+	        String hrAsString = hrFormat.format(ClockFace.sleepTrackerHr);
 	        DecimalFormat minFormat = new DecimalFormat("# min");
-	        String minAsString = minFormat.format(sleepTrackerMin);
+	        String minAsString = minFormat.format(ClockFace.sleepTrackerMin);
 
 			Text sleepTimer = new Text("Sleep Timer: \n"+hrAsString+"  "+minAsString); 
 			sleepTimer.setTranslateY(ClockFace.height/8);
