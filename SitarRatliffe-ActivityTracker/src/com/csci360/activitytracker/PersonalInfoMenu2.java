@@ -15,7 +15,7 @@ public class PersonalInfoMenu2{
 			Scene scene = new Scene(sp,ClockFace.width,ClockFace.height);
 			Button userage = new Button("Age"); 
 			Button userWeight = new Button("Weight");
-			Button userHeight = new Button("ClockFace.height"); 
+			Button userHeight = new Button("Height"); 
 			Button back = new Button("Back"); 
 
 			userage.setTranslateY((-ClockFace.height/8)*3);
