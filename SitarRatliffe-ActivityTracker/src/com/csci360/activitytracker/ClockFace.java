@@ -1,6 +1,7 @@
 package com.csci360.activitytracker;
 	
 import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Calendar;
@@ -39,11 +40,14 @@ public class ClockFace extends Controller{
             Calendar cal = Calendar.getInstance();
 
             Controller.sysMin = cal.get(Calendar.MINUTE);
+            DecimalFormat decimalFormat = new DecimalFormat("#00");
+	        String StrSysMin = decimalFormat.format(sysMin);
+	        
             Controller.sysHour = cal.get(Calendar.HOUR);
             Controller.sysDay = cal.get(Calendar.DAY_OF_MONTH);
             Controller.sysMonth = cal.get(Calendar.MONTH) + 1;
             Controller.sysYear = cal.get(Calendar.YEAR);
-            Controller.timeDisplay = new Text(Controller.sysHour+ " : " + Controller.sysMin);
+            Controller.timeDisplay = new Text(Controller.sysHour+ " : " + StrSysMin);
 			Controller.timeDisplay.setStyle("-fx-font: 24 arial;");
 			sp.getChildren().add(Controller.timeDisplay);
 			

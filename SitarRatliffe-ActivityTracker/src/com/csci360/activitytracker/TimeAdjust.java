@@ -3,6 +3,9 @@ package com.csci360.activitytracker;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+
+import java.text.DecimalFormat;
+
 import javafx.*;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -45,13 +48,17 @@ public class TimeAdjust{
 						Controller.sysHour = 1;
 						String hourTxt = Integer.toString(Controller.sysHour);
 						t2.setText(hourTxt);
-						Controller.timeDisplay.setText(Controller.sysHour + " : " + Controller.sysMin);	
+						DecimalFormat decimalFormat = new DecimalFormat("#00.");
+				        String StrSysMin = decimalFormat.format(Controller.sysMin);
+						Controller.timeDisplay.setText(Controller.sysHour + " : " + StrSysMin);	
 					}
 					else {
 						Controller.sysHour += 1;
 						String hourTxt = Integer.toString(Controller.sysHour);
 						t2.setText(hourTxt);
-						Controller.timeDisplay.setText(Controller.sysHour + " : " + Controller.sysMin);	
+						DecimalFormat decimalFormat = new DecimalFormat("#00.");
+				        String StrSysMin = decimalFormat.format(Controller.sysMin);
+						Controller.timeDisplay.setText(Controller.sysHour + " : " + StrSysMin);		
 					}
 				}
 			});
