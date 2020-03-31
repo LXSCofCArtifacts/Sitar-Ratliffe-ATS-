@@ -11,7 +11,7 @@ import javafx.scene.text.Text;
 
 public class StepTracker{
 	
-	static boolean genderMale = false;
+	
 	
 	public static void StepTracker(){
 		try {

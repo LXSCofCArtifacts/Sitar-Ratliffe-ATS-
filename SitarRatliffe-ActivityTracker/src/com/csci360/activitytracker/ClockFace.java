@@ -24,6 +24,7 @@ public class ClockFace extends Application {
 	static int sleepGoalHr = 8;
 	static int sleepTrackerMin = 00;
 	static int sleepTrackerHr = 8;
+	static boolean genderMale = false;
 	static int age = 20;
 	static int weight = 150;
 	static int userHeight = 72;
