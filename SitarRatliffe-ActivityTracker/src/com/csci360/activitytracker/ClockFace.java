@@ -46,14 +46,12 @@ public class ClockFace extends Controller{
             Controller.timeDisplay = new Text(Controller.sysHour+ " : " + Controller.sysMin);
 			Controller.timeDisplay.setStyle("-fx-font: 24 arial;");
 			sp.getChildren().add(Controller.timeDisplay);
-
+			
 		//	scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			window.setScene(scene);
 			window.show();
-			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
-
 }
