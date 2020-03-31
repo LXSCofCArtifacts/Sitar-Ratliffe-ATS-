@@ -13,9 +13,10 @@ import javafx.scene.text.Text;
 
 public class ClockFace extends Controller{
 	
-	public void start(Stage primaryStage) {
+	public static void ClockFace() {
 		try {
-			primaryStage.setTitle("Clock Face");
+			Stage window = new Stage();
+			window.setTitle("Clock Face");
 			StackPane sp = new StackPane();
 			Scene scene = new Scene(sp,Controller.width,Controller.height);
 			Controller.hourDisplay = new Text(Controller.sysHour+"   :");
@@ -34,14 +35,12 @@ public class ClockFace extends Controller{
 			
 			
 		//	scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			primaryStage.setScene(scene);
-			primaryStage.show();
+			window.setScene(scene);
+			window.show();
 			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
-	public static void main(String[] args) {
-		launch(args);
-	}
+
 }
