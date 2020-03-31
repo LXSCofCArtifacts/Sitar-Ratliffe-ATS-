@@ -27,10 +27,38 @@ public class MonthAdjust{
 			Button up = new Button("    ^   ");
 			up.setMaxSize(Controller.width, Controller.height/4);
 			up.setTranslateY((-Controller.height/8)*3);
+			up.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					if (Controller.sysMonth == 12) {
+						Controller.sysMonth = 1;
+						String monthTxt = Integer.toString(Controller.sysMonth);
+						t.setText(" Month:\n  "+monthTxt);
+					}
+					else {
+						Controller.sysMonth += 1;
+						String monthTxt = Integer.toString(Controller.sysMonth);
+						t.setText(" Month:\n  "+monthTxt);
+					}
+				}
+			});	
 			
 			Button down = new Button("   v   ");
 			down.setMaxSize(Controller.width, Controller.height/4);
 			down.setTranslateY(Controller.height/8);
+			down.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					if (Controller.sysMonth == 1) {
+						Controller.sysMonth = 12;
+						String monthTxt = Integer.toString(Controller.sysMonth);
+						t.setText(" Month:\n  "+monthTxt);
+					}
+					else {
+						Controller.sysMonth -= 1;
+						String monthTxt = Integer.toString(Controller.sysMonth);
+						t.setText(" Month:\n  "+monthTxt);
+					}
+				}
+			});	
 			
 			Button back = new Button("Back");
 			back.setMaxSize(Controller.width, Controller.height/4);

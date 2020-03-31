@@ -27,10 +27,38 @@ public class DayAdjust{
 			Button up = new Button("    ^   ");
 			up.setMaxSize(Controller.width, Controller.height/4);
 			up.setTranslateY((-Controller.height/8)*3);
+			up.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					if (Controller.sysDay == 31) {
+						Controller.sysDay = 1;
+						String dayTxt = Integer.toString(Controller.sysDay);
+						t.setText(" Day:\n  "+dayTxt);
+					}
+					else {
+						Controller.sysDay += 1;
+						String dayTxt = Integer.toString(Controller.sysDay);
+						t.setText(" Day:\n  "+dayTxt);
+					}
+				}
+			});			
 			
 			Button down = new Button("   v   ");
 			down.setMaxSize(Controller.width, Controller.height/4);
 			down.setTranslateY(Controller.height/8);
+			down.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					if (Controller.sysDay == 1) {
+						Controller.sysDay = 31;
+						String dayTxt = Integer.toString(Controller.sysDay);
+						t.setText(" Day:\n  "+dayTxt);
+					}
+					else {
+						Controller.sysDay -= 1;
+						String dayTxt = Integer.toString(Controller.sysDay);
+						t.setText(" Day:\n  "+dayTxt);
+					}
+				}
+			});	
 			
 			Button back = new Button("Back");
 			back.setMaxSize(Controller.width, Controller.height/4);

@@ -27,10 +27,24 @@ public class YearAdjust{
 			Button up = new Button("    ^   ");
 			up.setMaxSize(Controller.width, Controller.height/4);
 			up.setTranslateY((-Controller.height/8)*3);
+			up.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					Controller.sysYear += 1;
+					String yearTxt = Integer.toString(Controller.sysYear);
+					t.setText(" Year:\n  "+yearTxt);
+				}
+			});	
 			
 			Button down = new Button("   v   ");
 			down.setMaxSize(Controller.width, Controller.height/4);
 			down.setTranslateY(Controller.height/8);
+			down.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					Controller.sysYear -= 1;
+					String yearTxt = Integer.toString(Controller.sysYear);
+					t.setText(" Year:\n  "+yearTxt);
+				}
+			});	
 			
 			Button back = new Button("Back");
 			back.setMaxSize(Controller.width, Controller.height/4);

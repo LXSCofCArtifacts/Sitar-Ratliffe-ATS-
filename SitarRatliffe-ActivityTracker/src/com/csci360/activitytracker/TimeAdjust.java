@@ -45,16 +45,13 @@ public class TimeAdjust{
 						Controller.sysHour = 1;
 						String hourTxt = Integer.toString(Controller.sysHour);
 						t2.setText(hourTxt);
-						Controller.hourDisplay.setText(Controller.sysHour+"   :");	
-						Controller.minDisplay.setText(Controller.sysMin+"");						
-
+						Controller.timeDisplay.setText(Controller.sysHour + " : " + Controller.sysMin);	
 					}
 					else {
 						Controller.sysHour += 1;
 						String hourTxt = Integer.toString(Controller.sysHour);
 						t2.setText(hourTxt);
-						Controller.hourDisplay.setText(Controller.sysHour+"   :");	
-						Controller.minDisplay.setText(Controller.sysMin+"");
+						Controller.timeDisplay.setText(Controller.sysHour + " : " + Controller.sysMin);	
 					}
 				}
 			});
@@ -69,15 +66,13 @@ public class TimeAdjust{
 						Controller.sysHour = 12;
 						String hourTxt = Integer.toString(Controller.sysHour);
 						t2.setText(hourTxt);
-						Controller.hourDisplay.setText(Controller.sysHour+"   :");	
-						Controller.minDisplay.setText(Controller.sysMin+"");
+						Controller.timeDisplay.setText(Controller.sysHour + " : " + Controller.sysMin);	
 					}
 					else {
 						Controller.sysHour -= 1;
 						String hourTxt = Integer.toString(Controller.sysHour);
 						t2.setText(hourTxt);
-						Controller.hourDisplay.setText(Controller.sysHour+"   :");	
-						Controller.minDisplay.setText(Controller.sysMin+"");
+						Controller.timeDisplay.setText(Controller.sysHour + " : " + Controller.sysMin);	
 					}
 				}
 			});
@@ -95,15 +90,13 @@ public class TimeAdjust{
 						String hourTxt = Integer.toString(Controller.sysHour);
 						t1.setText(minTxt);
 						t2.setText(hourTxt);
-						Controller.hourDisplay.setText(Controller.sysHour+"   :");	
-						Controller.minDisplay.setText(Controller.sysMin+"");
+						Controller.timeDisplay.setText(Controller.sysHour + " : " + Controller.sysMin);	
 					}
 					else {
 						Controller.sysMin += 1;
 						String minTxt = Integer.toString(Controller.sysMin);
 						t1.setText(minTxt);
-						Controller.hourDisplay.setText(Controller.sysHour+"   :");	
-						Controller.minDisplay.setText(Controller.sysMin+"");
+						Controller.timeDisplay.setText(Controller.sysHour + " : " + Controller.sysMin);	
 					}
 				}
 			});
@@ -124,15 +117,13 @@ public class TimeAdjust{
 						String hourTxt = Integer.toString(Controller.sysHour);
 						t1.setText(minTxt);
 						t2.setText(hourTxt);
-						Controller.hourDisplay.setText(Controller.sysHour+"   :");	
-						Controller.minDisplay.setText(Controller.sysMin+"");
+						Controller.timeDisplay.setText(Controller.sysHour + " : " + Controller.sysMin);	
 					}
 					else {
 						Controller.sysMin -= 1;
 						String minTxt = Integer.toString(Controller.sysMin);
 						t1.setText(minTxt);
-						Controller.hourDisplay.setText(Controller.sysHour+"   :");	
-						Controller.minDisplay.setText(Controller.sysMin+"");
+						Controller.timeDisplay.setText(Controller.sysHour + " : " + Controller.sysMin);	
 					}
 				}
 			});
