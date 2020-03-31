@@ -16,7 +16,7 @@ public class Controller extends Application{
 	static int sleepGoalHr = 8;
 	static int sleepTrackerMin = 00;
 	static int sleepTrackerHr = 8;
-	static boolean genderMale = false;
+	static String gender;
 	static int age = 20;
 	static int weight = 150;
 	static int userHeight = 72;

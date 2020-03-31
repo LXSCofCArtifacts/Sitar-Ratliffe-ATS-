@@ -1,6 +1,8 @@
 package com.csci360.activitytracker;
 	
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -21,14 +23,29 @@ public class GenderAdjust{
 			male.setTranslateY((-Controller.height/8)*3);
 			male.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(male);
+			male.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					Controller.gender = "male";
+				}
+			});
 			
 			female.setTranslateY(-Controller.height/8);
 			female.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(female);
+			female.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					Controller.gender = "female";
+				}
+			});
 			
 			other.setTranslateY(Controller.height/8);
 			other.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(other);
+			other.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					Controller.gender = "other";
+				}
+			});
 			
 			back.setTranslateY((Controller.height/8)*3);
 			back.setMaxSize(Controller.width, Controller.height/4);
