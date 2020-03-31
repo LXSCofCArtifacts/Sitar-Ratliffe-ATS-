@@ -18,17 +18,17 @@ public class StepTracker{
 			Stage window = new Stage();
 			window.setTitle("Step Tracker");
 			StackPane sp = new StackPane();
-			Scene scene = new Scene(sp,ClockFace.width,ClockFace.height);
-			Text burnedCals = new Text("Calories: \n  "+ClockFace.calorieCounter); 
-			burnedCals.setTranslateY((-ClockFace.height/8)*3);
-			Text stepCount = new Text("Steps:\n"+ClockFace.stepCounter);
-			stepCount.setTranslateY(-ClockFace.height/8);
+			Scene scene = new Scene(sp,Controller.width,Controller.height);
+			Text burnedCals = new Text("Calories: \n  "+Controller.calorieCounter); 
+			burnedCals.setTranslateY((-Controller.height/8)*3);
+			Text stepCount = new Text("Steps:\n"+Controller.stepCounter);
+			stepCount.setTranslateY(-Controller.height/8);
 			
-			double percentage = ((ClockFace.stepCounter*1.0/ClockFace.stepGoal)*100);
+			double percentage = ((Controller.stepCounter*1.0/Controller.stepGoal)*100);
 			DecimalFormat decimalFormat = new DecimalFormat("#.00");
 	        String numberAsString = decimalFormat.format(percentage);
 			Text stepGoal = new Text("Step Goal:\n  "+numberAsString+"%"); 
-			stepGoal.setTranslateY(ClockFace.height/8);
+			stepGoal.setTranslateY(Controller.height/8);
 			
 			Button back = new Button("Back"); 
 			
@@ -36,8 +36,8 @@ public class StepTracker{
 			sp.getChildren().add(stepCount);
 			sp.getChildren().add(stepGoal);			
 			
-			back.setTranslateY((ClockFace.height/8)*3);
-			back.setMaxSize(ClockFace.width, ClockFace.height/4);
+			back.setTranslateY((Controller.height/8)*3);
+			back.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(back);	
 			back.setOnAction(e -> window.close());
 			

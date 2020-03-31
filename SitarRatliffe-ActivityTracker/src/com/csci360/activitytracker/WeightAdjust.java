@@ -20,36 +20,36 @@ public class WeightAdjust{
 			Stage window = new Stage();
 			window.setTitle("AgeAdjust");
 			StackPane p = new StackPane();
-			Scene scene = new Scene(p,ClockFace.width,ClockFace.height,Color.AZURE);
-			String weightTxt = Integer.toString(ClockFace.weight);
-			Text t = new Text (ClockFace.width/2, ClockFace.height/2, " Weight:\n  " + weightTxt + " lbs");
-			t.setTranslateY((-ClockFace.height/8));
+			Scene scene = new Scene(p,Controller.width,Controller.height,Color.AZURE);
+			String weightTxt = Integer.toString(Controller.weight);
+			Text t = new Text (Controller.width/2, Controller.height/2, " Weight:\n  " + weightTxt + " lbs");
+			t.setTranslateY((-Controller.height/8));
 			
 			Button up = new Button("    ^   ");
-			up.setMaxSize(ClockFace.width, ClockFace.height/4);
-			up.setTranslateY((-ClockFace.height/8)*3);
+			up.setMaxSize(Controller.width, Controller.height/4);
+			up.setTranslateY((-Controller.height/8)*3);
 			up.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					ClockFace.weight += 1;
-					String weightTxt = Integer.toString(ClockFace.weight);
+					Controller.weight += 1;
+					String weightTxt = Integer.toString(Controller.weight);
 					t.setText(" Weight:\n  " + weightTxt + " lbs");
 				}
 			});
 			
 			Button down = new Button("   v   ");
-			down.setMaxSize(ClockFace.width, ClockFace.height/4);
-			down.setTranslateY(ClockFace.height/8);
+			down.setMaxSize(Controller.width, Controller.height/4);
+			down.setTranslateY(Controller.height/8);
 			down.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					ClockFace.weight -= 1;
-					String weightTxt = Integer.toString(ClockFace.weight);
+					Controller.weight -= 1;
+					String weightTxt = Integer.toString(Controller.weight);
 					t.setText(" Weight:\n  " + weightTxt + " lbs");
 				}
 			});
 
 			Button back = new Button("Back");
-			back.setMaxSize(ClockFace.width, ClockFace.height/4);
-			back.setTranslateY((ClockFace.height/8)*3);
+			back.setMaxSize(Controller.width, Controller.height/4);
+			back.setTranslateY((Controller.height/8)*3);
 			back.setOnAction(e -> window.close());
 			
 			p.getChildren().add(up);

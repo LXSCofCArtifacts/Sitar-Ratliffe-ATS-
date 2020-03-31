@@ -20,126 +20,126 @@ public class TimeAdjust{
 			Stage window = new Stage();
 			window.setTitle("TimeAdjust");
 			StackPane p = new StackPane();
-			Scene scene = new Scene(p,ClockFace.width,ClockFace.height,Color.AZURE);
-			String minTxt = Integer.toString(ClockFace.sysMin);
-			String hourTxt = Integer.toString(ClockFace.sysHour);
+			Scene scene = new Scene(p,Controller.width,Controller.height,Color.AZURE);
+			String minTxt = Integer.toString(Controller.sysMin);
+			String hourTxt = Integer.toString(Controller.sysHour);
 			Text t1 = new Text (minTxt);
 			Text t2 = new Text (hourTxt);
 			Text t3 = new Text (":");
 			Text t4 = new Text ("\n\nAm");
-			t2.setTranslateX(-ClockFace.width/3);
-			t1.setTranslateX(ClockFace.width/3);
-			t2.setTranslateY(-ClockFace.height/8);
-			t1.setTranslateY(-ClockFace.height/8);
-			t3.setTranslateY(-ClockFace.height/8);
-			t4.setTranslateY(-ClockFace.height/7);
+			t2.setTranslateX(-Controller.width/3);
+			t1.setTranslateX(Controller.width/3);
+			t2.setTranslateY(-Controller.height/8);
+			t1.setTranslateY(-Controller.height/8);
+			t3.setTranslateY(-Controller.height/8);
+			t4.setTranslateY(-Controller.height/7);
 			
 			
 			Button hrUp = new Button("^");
-			hrUp.setMaxSize(ClockFace.width/2, ClockFace.height/4);
-			hrUp.setTranslateY((-ClockFace.height/8)*3);
-			hrUp.setTranslateX(-ClockFace.width/4);
+			hrUp.setMaxSize(Controller.width/2, Controller.height/4);
+			hrUp.setTranslateY((-Controller.height/8)*3);
+			hrUp.setTranslateX(-Controller.width/4);
 			hrUp.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					if (ClockFace.sysHour == 12) {
-						ClockFace.sysHour = 1;
-						String hourTxt = Integer.toString(ClockFace.sysHour);
+					if (Controller.sysHour == 12) {
+						Controller.sysHour = 1;
+						String hourTxt = Integer.toString(Controller.sysHour);
 						t2.setText(hourTxt);
-						ClockFace.hourDisplay.setText(ClockFace.sysHour+"   :");	
-						ClockFace.minDisplay.setText(ClockFace.sysMin+"");						
+						Controller.hourDisplay.setText(Controller.sysHour+"   :");	
+						Controller.minDisplay.setText(Controller.sysMin+"");						
 
 					}
 					else {
-						ClockFace.sysHour += 1;
-						String hourTxt = Integer.toString(ClockFace.sysHour);
+						Controller.sysHour += 1;
+						String hourTxt = Integer.toString(Controller.sysHour);
 						t2.setText(hourTxt);
-						ClockFace.hourDisplay.setText(ClockFace.sysHour+"   :");	
-						ClockFace.minDisplay.setText(ClockFace.sysMin+"");
+						Controller.hourDisplay.setText(Controller.sysHour+"   :");	
+						Controller.minDisplay.setText(Controller.sysMin+"");
 					}
 				}
 			});
 			
 			Button hrDown = new Button("v");
-			hrDown.setMaxSize(ClockFace.width/2, ClockFace.height/4);
-			hrDown.setTranslateY((ClockFace.height/8));
-			hrDown.setTranslateX(-ClockFace.width/4);
+			hrDown.setMaxSize(Controller.width/2, Controller.height/4);
+			hrDown.setTranslateY((Controller.height/8));
+			hrDown.setTranslateX(-Controller.width/4);
 			hrDown.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					if (ClockFace.sysHour == 1) {
-						ClockFace.sysHour = 12;
-						String hourTxt = Integer.toString(ClockFace.sysHour);
+					if (Controller.sysHour == 1) {
+						Controller.sysHour = 12;
+						String hourTxt = Integer.toString(Controller.sysHour);
 						t2.setText(hourTxt);
-						ClockFace.hourDisplay.setText(ClockFace.sysHour+"   :");	
-						ClockFace.minDisplay.setText(ClockFace.sysMin+"");
+						Controller.hourDisplay.setText(Controller.sysHour+"   :");	
+						Controller.minDisplay.setText(Controller.sysMin+"");
 					}
 					else {
-						ClockFace.sysHour -= 1;
-						String hourTxt = Integer.toString(ClockFace.sysHour);
+						Controller.sysHour -= 1;
+						String hourTxt = Integer.toString(Controller.sysHour);
 						t2.setText(hourTxt);
-						ClockFace.hourDisplay.setText(ClockFace.sysHour+"   :");	
-						ClockFace.minDisplay.setText(ClockFace.sysMin+"");
+						Controller.hourDisplay.setText(Controller.sysHour+"   :");	
+						Controller.minDisplay.setText(Controller.sysMin+"");
 					}
 				}
 			});
 			
 			Button minUp = new Button("^");
-			minUp.setMaxSize(ClockFace.width/2, ClockFace.height/4);
-			minUp.setTranslateY((-ClockFace.height/8)*3);
-			minUp.setTranslateX(ClockFace.width/4);
+			minUp.setMaxSize(Controller.width/2, Controller.height/4);
+			minUp.setTranslateY((-Controller.height/8)*3);
+			minUp.setTranslateX(Controller.width/4);
 			minUp.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					if (ClockFace.sysMin == 59) {
-						ClockFace.sysMin = 0;
-						ClockFace.sysHour += 1;
-						String minTxt = Integer.toString(ClockFace.sysMin);
-						String hourTxt = Integer.toString(ClockFace.sysHour);
+					if (Controller.sysMin == 59) {
+						Controller.sysMin = 0;
+						Controller.sysHour += 1;
+						String minTxt = Integer.toString(Controller.sysMin);
+						String hourTxt = Integer.toString(Controller.sysHour);
 						t1.setText(minTxt);
 						t2.setText(hourTxt);
-						ClockFace.hourDisplay.setText(ClockFace.sysHour+"   :");	
-						ClockFace.minDisplay.setText(ClockFace.sysMin+"");
+						Controller.hourDisplay.setText(Controller.sysHour+"   :");	
+						Controller.minDisplay.setText(Controller.sysMin+"");
 					}
 					else {
-						ClockFace.sysMin += 1;
-						String minTxt = Integer.toString(ClockFace.sysMin);
+						Controller.sysMin += 1;
+						String minTxt = Integer.toString(Controller.sysMin);
 						t1.setText(minTxt);
-						ClockFace.hourDisplay.setText(ClockFace.sysHour+"   :");	
-						ClockFace.minDisplay.setText(ClockFace.sysMin+"");
+						Controller.hourDisplay.setText(Controller.sysHour+"   :");	
+						Controller.minDisplay.setText(Controller.sysMin+"");
 					}
 				}
 			});
 			
 			Button minDown = new Button("v");
-			minDown.setMaxSize(ClockFace.width/2, ClockFace.height/4);
-			minDown.setTranslateY((ClockFace.height/8));
-			minDown.setTranslateX(ClockFace.width/4);
-			minDown.setMaxSize(ClockFace.width/2, ClockFace.height/4);
-			minDown.setTranslateY((ClockFace.height/8));
-			minDown.setTranslateX(ClockFace.width/4);
+			minDown.setMaxSize(Controller.width/2, Controller.height/4);
+			minDown.setTranslateY((Controller.height/8));
+			minDown.setTranslateX(Controller.width/4);
+			minDown.setMaxSize(Controller.width/2, Controller.height/4);
+			minDown.setTranslateY((Controller.height/8));
+			minDown.setTranslateX(Controller.width/4);
 			minDown.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					if (ClockFace.sysMin == 0) {
-						ClockFace.sysMin = 59;
-						ClockFace.sysHour -= 1;
-						String minTxt = Integer.toString(ClockFace.sysMin);
-						String hourTxt = Integer.toString(ClockFace.sysHour);
+					if (Controller.sysMin == 0) {
+						Controller.sysMin = 59;
+						Controller.sysHour -= 1;
+						String minTxt = Integer.toString(Controller.sysMin);
+						String hourTxt = Integer.toString(Controller.sysHour);
 						t1.setText(minTxt);
 						t2.setText(hourTxt);
-						ClockFace.hourDisplay.setText(ClockFace.sysHour+"   :");	
-						ClockFace.minDisplay.setText(ClockFace.sysMin+"");
+						Controller.hourDisplay.setText(Controller.sysHour+"   :");	
+						Controller.minDisplay.setText(Controller.sysMin+"");
 					}
 					else {
-						ClockFace.sysMin -= 1;
-						String minTxt = Integer.toString(ClockFace.sysMin);
+						Controller.sysMin -= 1;
+						String minTxt = Integer.toString(Controller.sysMin);
 						t1.setText(minTxt);
-						ClockFace.hourDisplay.setText(ClockFace.sysHour+"   :");	
-						ClockFace.minDisplay.setText(ClockFace.sysMin+"");
+						Controller.hourDisplay.setText(Controller.sysHour+"   :");	
+						Controller.minDisplay.setText(Controller.sysMin+"");
 					}
 				}
 			});
 			
 			Button back = new Button("Back");
-			back.setMaxSize(ClockFace.width, ClockFace.height/4);
-			back.setTranslateY((ClockFace.height/8)*3);
+			back.setMaxSize(Controller.width, Controller.height/4);
+			back.setTranslateY((Controller.height/8)*3);
 			back.setOnAction(e -> window.close());		
 			
 			p.getChildren().add(hrDown);

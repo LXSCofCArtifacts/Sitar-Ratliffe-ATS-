@@ -19,22 +19,22 @@ public class YearAdjust{
 			Stage window = new Stage();
 			window.setTitle("AgeAdjust");
 			StackPane p = new StackPane();
-			Scene scene = new Scene(p,ClockFace.width,ClockFace.height,Color.AZURE);
-			String yearTxt = Integer.toString(ClockFace.sysYear);
-			Text t = new Text (ClockFace.width/2, ClockFace.height/2, " Year:\n  "+yearTxt);
-			t.setTranslateY(-ClockFace.height/8);
+			Scene scene = new Scene(p,Controller.width,Controller.height,Color.AZURE);
+			String yearTxt = Integer.toString(Controller.sysYear);
+			Text t = new Text (Controller.width/2, Controller.height/2, " Year:\n  "+yearTxt);
+			t.setTranslateY(-Controller.height/8);
 			
 			Button up = new Button("    ^   ");
-			up.setMaxSize(ClockFace.width, ClockFace.height/4);
-			up.setTranslateY((-ClockFace.height/8)*3);
+			up.setMaxSize(Controller.width, Controller.height/4);
+			up.setTranslateY((-Controller.height/8)*3);
 			
 			Button down = new Button("   v   ");
-			down.setMaxSize(ClockFace.width, ClockFace.height/4);
-			down.setTranslateY(ClockFace.height/8);
+			down.setMaxSize(Controller.width, Controller.height/4);
+			down.setTranslateY(Controller.height/8);
 			
 			Button back = new Button("Back");
-			back.setMaxSize(ClockFace.width, ClockFace.height/4);
-			back.setTranslateY((ClockFace.height/8)*3);
+			back.setMaxSize(Controller.width, Controller.height/4);
+			back.setTranslateY((Controller.height/8)*3);
 			
 			p.getChildren().add(up);
 			p.getChildren().add(down);

@@ -12,32 +12,32 @@ public class SettingsMenu{
 			Stage window = new Stage();
 			window.setTitle("Settings");
 			StackPane sp = new StackPane();
-			Scene scene = new Scene(sp,ClockFace.width,ClockFace.height);
+			Scene scene = new Scene(sp,Controller.width,Controller.height);
 			Button timesetting = new Button("Time \nSettings"); 
 			Button datesetting = new Button("Date \nSettings");
 			Button connectivity = new Button("Connectivity"); 
 			Button back = new Button("Back"); 
 
-			timesetting.setTranslateY((-ClockFace.height/8)*3);
-			timesetting.setMaxSize(ClockFace.width, ClockFace.height/4);
+			timesetting.setTranslateY((-Controller.height/8)*3);
+			timesetting.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(timesetting);
 			timesetting.setOnAction(e -> TimeAdjust.TimeAdjust());
 
 			
-			datesetting.setTranslateY(-ClockFace.height/8);
-			datesetting.setMaxSize(ClockFace.width, ClockFace.height/4);
+			datesetting.setTranslateY(-Controller.height/8);
+			datesetting.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(datesetting);
 			datesetting.setOnAction(e -> DateAdjustMenu.DateAdjustMenu());
 
 			
-			connectivity.setTranslateY(ClockFace.height/8);
-			connectivity.setMaxSize(ClockFace.width, ClockFace.height/4);
+			connectivity.setTranslateY(Controller.height/8);
+			connectivity.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(connectivity);
 			//connectivity.setOnAction(e -> SleepTracker.sleepTracker());
 
 			
-			back.setTranslateY((ClockFace.height/8)*3);
-			back.setMaxSize(ClockFace.width, ClockFace.height/4);
+			back.setTranslateY((Controller.height/8)*3);
+			back.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(back);	
 			back.setOnAction(e -> window.close());
 

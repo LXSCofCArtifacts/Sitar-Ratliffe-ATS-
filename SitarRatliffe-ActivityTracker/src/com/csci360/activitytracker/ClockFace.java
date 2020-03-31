@@ -11,46 +11,24 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
 
-public class ClockFace extends Application {
+public class ClockFace extends Controller{
 	
-	final protected static int width = 81;
-	final protected static int height = 240;
-	public static int sysMin = 50;
-	public static int sysHour = 5;
-	public static int sysDay = 01;
-	public static int sysMonth = 05;
-	public static int sysYear = 2012;
-	static int sleepGoalMin = 54;
-	static int sleepGoalHr = 8;
-	static int sleepTrackerMin = 00;
-	static int sleepTrackerHr = 8;
-	static boolean genderMale = false;
-	static int age = 20;
-	static int weight = 150;
-	static int userHeight = 72;
-	static int stepGoal = 5000;
-	static int stepCounter = 1000;
-	static int calorieGoal = 3000;
-	static int calorieCounter = 1000;
-	static Text hourDisplay;
-	static Text minDisplay;
-	@Override
 	public void start(Stage primaryStage) {
 		try {
 			primaryStage.setTitle("Clock Face");
 			StackPane sp = new StackPane();
-			Scene scene = new Scene(sp,width,height);
-			hourDisplay = new Text(sysHour+"   :");
-			minDisplay = new Text(sysMin+"");
-			minDisplay.setTranslateX(width/4);
-			hourDisplay.setTranslateX(-width/4);
+			Scene scene = new Scene(sp,Controller.width,Controller.height);
+			Controller.hourDisplay = new Text(Controller.sysHour+"   :");
+			Controller.minDisplay = new Text(Controller.sysMin+"");
+			Controller.minDisplay.setTranslateX(Controller.width/4);
+			Controller.hourDisplay.setTranslateX(-Controller.width/4);
 			Button b = new Button(); 			//same as b.setText("It's working!!!");
-			b.setLayoutX(width/2);
-			b.setLayoutY(height/2);
-			b.setMaxSize(width, height);
+			b.setLayoutX(Controller.width/2);
+			b.setLayoutY(Controller.height/2);
+			b.setMaxSize(Controller.width, Controller.height);
 			sp.getChildren().add(b);
-			sp.getChildren().add(hourDisplay);
-			sp.getChildren().add(minDisplay);
+			sp.getChildren().add(Controller.hourDisplay);
+			sp.getChildren().add(Controller.minDisplay);
 			
 			b.setOnAction(e -> MainMenu.MainMenu());
 			
@@ -63,7 +41,6 @@ public class ClockFace extends Application {
 			e.printStackTrace();
 		}
 	}
-	
 	public static void main(String[] args) {
 		launch(args);
 	}

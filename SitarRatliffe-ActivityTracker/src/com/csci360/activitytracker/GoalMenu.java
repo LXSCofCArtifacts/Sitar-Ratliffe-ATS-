@@ -12,29 +12,29 @@ public class GoalMenu{
 			Stage window = new Stage();
 			window.setTitle("Goal Menu");
 			StackPane sp = new StackPane();
-			Scene scene = new Scene(sp,ClockFace.width,ClockFace.height);
+			Scene scene = new Scene(sp,Controller.width,Controller.height);
 			Button stepgoal = new Button("Step \nGoal"); 
 			Button sleepgoal = new Button("Sleep \nGoal"); 
 			Button caloriegoal = new Button("Calorie \nGoal");
 			Button back = new Button("Back"); 
 
-			stepgoal.setTranslateY((-ClockFace.height/8)*3);
-			stepgoal.setMaxSize(ClockFace.width, ClockFace.height/4);
+			stepgoal.setTranslateY((-Controller.height/8)*3);
+			stepgoal.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(stepgoal);
 			stepgoal.setOnAction(e -> StepGoalAdjust.StepGoalAdjust());
 			
-			sleepgoal.setTranslateY(-ClockFace.height/8);
-			sleepgoal.setMaxSize(ClockFace.width, ClockFace.height/4);
+			sleepgoal.setTranslateY(-Controller.height/8);
+			sleepgoal.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(sleepgoal);
 			sleepgoal.setOnAction(e -> SleepGoalAdjust.SleepGoalAdjust());
 
-			caloriegoal.setTranslateY(ClockFace.height/8);
-			caloriegoal.setMaxSize(ClockFace.width, ClockFace.height/4);
+			caloriegoal.setTranslateY(Controller.height/8);
+			caloriegoal.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(caloriegoal);
 			caloriegoal.setOnAction(e -> CalorieGoalAdjust.CalorieGoalAdjust());
 
-			back.setTranslateY((ClockFace.height/8)*3);
-			back.setMaxSize(ClockFace.width, ClockFace.height/4);
+			back.setTranslateY((Controller.height/8)*3);
+			back.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(back);	
 			back.setOnAction(e -> window.close());
 			

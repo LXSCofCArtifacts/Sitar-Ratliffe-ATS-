@@ -12,29 +12,29 @@ public class PersonalInfoMenu{
 			Stage window = new Stage();
 			window.setTitle("Personal Info Menu");
 			StackPane sp = new StackPane();
-			Scene scene = new Scene(sp,ClockFace.width,ClockFace.height);
+			Scene scene = new Scene(sp,Controller.width,Controller.height);
 			Button personaldata = new Button("Personal Info Menu 2"); 
 			Button gender = new Button("Gender");
 			Button goals = new Button("Goal Menu"); 
 			Button back = new Button("Back"); 
 
-			personaldata.setTranslateY((-ClockFace.height/8)*3);
-			personaldata.setMaxSize(ClockFace.width, ClockFace.height/4);
+			personaldata.setTranslateY((-Controller.height/8)*3);
+			personaldata.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(personaldata);
 			personaldata.setOnAction(e -> PersonalInfoMenu2.PersonalInfoMenu2());
 			
-			gender.setTranslateY(-ClockFace.height/8);
-			gender.setMaxSize(ClockFace.width, ClockFace.height/4);
+			gender.setTranslateY(-Controller.height/8);
+			gender.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(gender);
 			gender.setOnAction(e -> GenderAdjust.GenderAdjust());
 			
-			goals.setTranslateY(ClockFace.height/8);
-			goals.setMaxSize(ClockFace.width, ClockFace.height/4);
+			goals.setTranslateY(Controller.height/8);
+			goals.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(goals);
 			goals.setOnAction(e -> GoalMenu.GoalMenu());
 			
-			back.setTranslateY((ClockFace.height/8)*3);
-			back.setMaxSize(ClockFace.width, ClockFace.height/4);
+			back.setTranslateY((Controller.height/8)*3);
+			back.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(back);	
 			back.setOnAction(e -> window.close());
 			

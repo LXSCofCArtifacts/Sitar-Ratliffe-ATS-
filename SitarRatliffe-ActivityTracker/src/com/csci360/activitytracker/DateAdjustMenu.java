@@ -19,26 +19,26 @@ public class DateAdjustMenu{
 			Stage window = new Stage();
 			window.setTitle("TimeAdjust");
 			StackPane p = new StackPane();
-			Scene scene = new Scene(p,ClockFace.width,ClockFace.height,Color.AZURE);
-			String monthTxt = Integer.toString(ClockFace.sysMonth);
-			String dayTxt = Integer.toString(ClockFace.sysDay);
-			String yearTxt = Integer.toString(ClockFace.sysYear);
+			Scene scene = new Scene(p,Controller.width,Controller.height,Color.AZURE);
+			String monthTxt = Integer.toString(Controller.sysMonth);
+			String dayTxt = Integer.toString(Controller.sysDay);
+			String yearTxt = Integer.toString(Controller.sysYear);
 
 			Button back = new Button("Back"); 
-			back.setTranslateY((ClockFace.height/8)*3);
-			back.setMaxSize(ClockFace.width, ClockFace.height/4);
+			back.setTranslateY((Controller.height/8)*3);
+			back.setMaxSize(Controller.width, Controller.height/4);
 			
 			Button day = new Button("Day");
-			day.setTranslateY((-ClockFace.height/8)*3);
-			day.setMaxSize(ClockFace.width, ClockFace.height/4);
+			day.setTranslateY((-Controller.height/8)*3);
+			day.setMaxSize(Controller.width, Controller.height/4);
 			
 			Button month = new Button("Month");
-			month.setTranslateY(-ClockFace.height/8);
-			month.setMaxSize(ClockFace.width, ClockFace.height/4);
+			month.setTranslateY(-Controller.height/8);
+			month.setMaxSize(Controller.width, Controller.height/4);
 			
 			Button year = new Button("Year");
-			year.setTranslateY(ClockFace.height/8);
-			year.setMaxSize(ClockFace.width, ClockFace.height/4);
+			year.setTranslateY(Controller.height/8);
+			year.setMaxSize(Controller.width, Controller.height/4);
 			
 			day.setOnAction(e -> DayAdjust.DayAdjust());
 			month.setOnAction(e -> MonthAdjust.MonthAdjust());

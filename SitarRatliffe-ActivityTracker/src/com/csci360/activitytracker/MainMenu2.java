@@ -12,23 +12,23 @@ public class MainMenu2{
 			Stage window = new Stage();
 			window.setTitle("Main Menu 2");
 			StackPane sp = new StackPane();
-			Scene scene = new Scene(sp,ClockFace.width,ClockFace.height);
+			Scene scene = new Scene(sp,Controller.width,Controller.height);
 			Button info = new Button("Personal \nInformation"); 
 			Button settings = new Button("Settings"); 
 			Button back = new Button("Back"); 
 
-			info.setTranslateY((-ClockFace.height/16)*5);
-			info.setMaxSize(ClockFace.width, (ClockFace.height/8)*3);
+			info.setTranslateY((-Controller.height/16)*5);
+			info.setMaxSize(Controller.width, (Controller.height/8)*3);
 			sp.getChildren().add(info);
 			info.setOnAction(e -> PersonalInfoMenu.PersonalInfoMenu());
 			
-			settings.setTranslateY(ClockFace.height/16);
-			settings.setMaxSize(ClockFace.width, (ClockFace.height/8)*3);
+			settings.setTranslateY(Controller.height/16);
+			settings.setMaxSize(Controller.width, (Controller.height/8)*3);
 			sp.getChildren().add(settings);
 			settings.setOnAction(e -> SettingsMenu.SettingsMenu());
 			
-			back.setTranslateY((ClockFace.height/8)*3);
-			back.setMaxSize(ClockFace.width, ClockFace.height/4);
+			back.setTranslateY((Controller.height/8)*3);
+			back.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(back);	
 			back.setOnAction(e -> window.close());
 			
