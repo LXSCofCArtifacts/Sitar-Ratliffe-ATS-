@@ -16,10 +16,11 @@ import javafx.event.EventHandler;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-
+import java.time.Duration;
 
 public class ClockFace extends Controller{
 	
@@ -43,6 +44,7 @@ public class ClockFace extends Controller{
             DecimalFormat decimalFormat = new DecimalFormat("#00");
 	        String StrSysMin = decimalFormat.format(sysMin);
 	        
+	        
             Controller.sysHour = cal.get(Calendar.HOUR);
             Controller.sysDay = cal.get(Calendar.DAY_OF_MONTH);
             Controller.sysMonth = cal.get(Calendar.MONTH) + 1;
@@ -50,6 +52,28 @@ public class ClockFace extends Controller{
             Controller.timeDisplay = new Text(Controller.sysHour+ " : " + StrSysMin);
 			Controller.timeDisplay.setStyle("-fx-font: 24 arial;");
 			sp.getChildren().add(Controller.timeDisplay);
+			
+			long endTime = 0;
+	        Label timeLabel = new Label();
+	        DateFormat timeFormat = new SimpleDateFormat( "HH:mm:ss" );
+	        final Timeline timeline = new Timeline(
+	            new KeyFrame(
+	                Duration.millis( 500 ),
+	                event -> {
+	                    final long diff = endTime - System.currentTimeMillis();
+	                    if ( diff < 0 ) {
+	                    //  timeLabel.setText( "00:00:00" );
+	                        timeLabel.setText( timeFormat.format( 0 ) );
+	                    } else {
+	                        timeLabel.setText( timeFormat.format( diff ) );
+	                    }
+	                }
+	            )
+	        );
+	        timeline.setCycleCount( Animation.INDEFINITE );
+	        timeline.play();
+
+			
 			
 		//	scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			window.setScene(scene);
@@ -61,20 +85,5 @@ public class ClockFace extends Controller{
 }
 
 
-
-final Timeline timeline = new Timeline(
-	    new KeyFrame(
-	        Duration.millis( 500 ),
-	        event -> {
-	            final long diff = endTime - System.currentTimeMillis();
-	            if ( diff < 0 ) {
-	            //  timeLabel.setText( "00:00:00" );
-	                timeLabel.setText( timeFormat.format( 0 ) );
-	            } else {
-	                timeLabel.setText( timeFormat.format( diff ) );
-	            }
-	        }
-	    )
-	);
 
 
