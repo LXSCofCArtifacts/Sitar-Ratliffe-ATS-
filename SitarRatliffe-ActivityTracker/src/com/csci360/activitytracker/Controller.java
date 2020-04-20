@@ -29,7 +29,7 @@ public class Controller extends Application{
 	static int calorieCounter = 1000;
 	static Text timeDisplay;
 	static LocalTime stopwatch =  LocalTime.of(0, 0, 0);
-	
+
 	@Override
 	public void start(Stage arg0) throws Exception {
 		ClockFace.ClockFace();
