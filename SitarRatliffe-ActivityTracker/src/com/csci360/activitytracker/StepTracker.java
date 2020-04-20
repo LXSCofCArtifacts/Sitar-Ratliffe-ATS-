@@ -1,16 +1,21 @@
 package com.csci360.activitytracker;
 	
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.text.DecimalFormat;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 
 public class StepTracker{
-	
 	
 	
 	public static void StepTracker(){
@@ -24,13 +29,24 @@ public class StepTracker{
 			Text stepCount = new Text("Steps:\n"+Controller.stepCounter);
 			stepCount.setTranslateY(-Controller.height/8);
 			
-			double percentage = ((Controller.stepCounter*1.0/Controller.stepGoal)*100);
 			DecimalFormat decimalFormat = new DecimalFormat("#.00");
-	        String numberAsString = decimalFormat.format(percentage);
-			Text stepGoal = new Text("Step Goal:\n  "+numberAsString+"%"); 
+			Text stepGoal = new Text(""); 
 			stepGoal.setTranslateY(Controller.height/8);
 			
 			Button back = new Button("Back"); 
+			
+			Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
+		        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+		        LocalTime localTime = LocalTime.now();
+		        localTime = localTime.plusHours(Controller.sysHourIncrement);
+		        localTime = localTime.plusMinutes(Controller.sysMinIncrement);
+		        stepCount.setText(String.valueOf(Controller.stepCounter));
+				Controller.percentage = ((Controller.stepCounter*1.0/Controller.stepGoal)*100);
+		        String numberAsString = decimalFormat.format(Controller.percentage);
+				stepGoal.setText("Step Goal:\n  "+ numberAsString +"%"); 
+		    }), new KeyFrame(Duration.seconds(1)));
+		    clock.setCycleCount(Animation.INDEFINITE);
+		    clock.play();
 			
 			sp.getChildren().add(burnedCals);
 			sp.getChildren().add(stepCount);

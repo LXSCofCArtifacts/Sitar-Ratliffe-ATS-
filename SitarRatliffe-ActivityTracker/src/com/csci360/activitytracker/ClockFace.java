@@ -48,7 +48,8 @@ public class ClockFace extends Controller{
 		        localTime = localTime.plusHours(Controller.sysHourIncrement);
 		        localTime = localTime.plusMinutes(Controller.sysMinIncrement);
 		        Controller.timeDisplay.setText((localTime).format(formatter));
-		        Controller.timeDisplay.setStyle("-fx-font: 24 arial;");
+		        Controller.timeDisplay.setStyle("-fx-font: 24 arial;");	
+		        Controller.stepCounter += 1;
 		    }), new KeyFrame(Duration.seconds(1)));
 		    clock.setCycleCount(Animation.INDEFINITE);
 		    clock.play();
