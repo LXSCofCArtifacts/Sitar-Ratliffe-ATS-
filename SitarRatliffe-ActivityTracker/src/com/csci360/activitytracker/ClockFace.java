@@ -59,3 +59,22 @@ public class ClockFace extends Controller{
 		}
 	}
 }
+
+
+
+final Timeline timeline = new Timeline(
+	    new KeyFrame(
+	        Duration.millis( 500 ),
+	        event -> {
+	            final long diff = endTime - System.currentTimeMillis();
+	            if ( diff < 0 ) {
+	            //  timeLabel.setText( "00:00:00" );
+	                timeLabel.setText( timeFormat.format( 0 ) );
+	            } else {
+	                timeLabel.setText( timeFormat.format( diff ) );
+	            }
+	        }
+	    )
+	);
+
+
