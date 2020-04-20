@@ -31,7 +31,7 @@ public class ClockFace extends Controller{
 			b.setLayoutX(Controller.width/2);
 			b.setLayoutY(Controller.height/2);
 			b.setMaxSize(Controller.width, Controller.height);
-			sp.getChildren().add(b);			
+			sp.getChildren().add(b);
 			b.setOnAction(e -> MainMenu.MainMenu());
 
 			Calendar cal = Calendar.getInstance();
@@ -39,7 +39,7 @@ public class ClockFace extends Controller{
 			Controller.sysMonth = cal.get(Calendar.MONTH) + 1;
 			Controller.sysYear = cal.get(Calendar.YEAR);
 			Controller.timeDisplay = new Text("");
-			
+
 			sp.getChildren().add(Controller.timeDisplay);
 
 			Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
@@ -61,7 +61,3 @@ public class ClockFace extends Controller{
 		}
 	}
 }
-
-
-
-
