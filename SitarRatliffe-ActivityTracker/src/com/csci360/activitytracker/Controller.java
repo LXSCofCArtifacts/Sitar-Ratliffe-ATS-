@@ -12,10 +12,10 @@ public class Controller extends Application{
 	public static int sysDay;
 	public static int sysMonth;
 	public static int sysYear;
-	static int sleepGoalMin = 54;
-	static int sleepGoalHr = 8;
-	static int sleepTrackerMin = 00;
-	static int sleepTrackerHr = 8;
+	static int sleepGoalMin = 0;
+	static int sleepGoalHr = 0;
+	static int sleepTrackerStart = 0;
+	static int sleepTrackerEnd = 0;
 	static String gender;
 	static int age = 20;
 	static int weight = 150;
