@@ -1,5 +1,7 @@
 package com.csci360.activitytracker;
 
+import java.time.LocalTime;
+
 import javafx.application.Application;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -13,7 +15,7 @@ public class Controller extends Application{
 	public static int sysMonth;
 	public static int sysYear;
 	static int sleepGoalMin = 0;
-	static int sleepGoalHr = 0;
+	static int sleepGoalHr = 7;
 	static int sleepTrackerStart = 0;
 	static int sleepTrackerEnd = 0;
 	static String gender;
@@ -25,6 +27,7 @@ public class Controller extends Application{
 	static int calorieGoal = 3000;
 	static int calorieCounter = 1000;
 	static Text timeDisplay;
+	//static LocalTime stopwatch =  LocalTime.of(0, 0, 0);
 	
 	@Override
 	public void start(Stage arg0) throws Exception {
