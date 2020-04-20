@@ -44,22 +44,7 @@ public class TimeAdjust{
 			hrUp.setTranslateX(-Controller.width/4);
 			hrUp.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					if (Controller.sysHour == 24) {
-						Controller.sysHour = 1;
-						String hourTxt = Integer.toString(Controller.sysHour);
-						t2.setText(hourTxt);
-						DecimalFormat decimalFormat = new DecimalFormat("#00.");
-				        String StrSysMin = decimalFormat.format(Controller.sysMin);
-						Controller.timeDisplay.setText(Controller.sysHour + " : " + StrSysMin);	
-					}
-					else {
-						Controller.sysHour += 1;
-						String hourTxt = Integer.toString(Controller.sysHour);
-						t2.setText(hourTxt);
-						DecimalFormat decimalFormat = new DecimalFormat("#00.");
-				        String StrSysMin = decimalFormat.format(Controller.sysMin);
-						Controller.timeDisplay.setText(Controller.sysHour + " : " + StrSysMin);		
-					}
+					Controller.sysHourIncrement += 1;
 				}
 			});
 			
@@ -69,18 +54,7 @@ public class TimeAdjust{
 			hrDown.setTranslateX(-Controller.width/4);
 			hrDown.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					if (Controller.sysHour == 1) {
-						Controller.sysHour = 12;
-						String hourTxt = Integer.toString(Controller.sysHour);
-						t2.setText(hourTxt);
-						Controller.timeDisplay.setText(Controller.sysHour + " : " + Controller.sysMin);	
-					}
-					else {
-						Controller.sysHour -= 1;
-						String hourTxt = Integer.toString(Controller.sysHour);
-						t2.setText(hourTxt);
-						Controller.timeDisplay.setText(Controller.sysHour + " : " + Controller.sysMin);	
-					}
+					Controller.sysHourIncrement -= 1;
 				}
 			});
 			
@@ -90,21 +64,7 @@ public class TimeAdjust{
 			minUp.setTranslateX(Controller.width/4);
 			minUp.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					if (Controller.sysMin == 59) {
-						Controller.sysMin = 0;
-						Controller.sysHour += 1;
-						String minTxt = Integer.toString(Controller.sysMin);
-						String hourTxt = Integer.toString(Controller.sysHour);
-						t1.setText(minTxt);
-						t2.setText(hourTxt);
-						Controller.timeDisplay.setText(Controller.sysHour + " : " + Controller.sysMin);	
-					}
-					else {
-						Controller.sysMin += 1;
-						String minTxt = Integer.toString(Controller.sysMin);
-						t1.setText(minTxt);
-						Controller.timeDisplay.setText(Controller.sysHour + " : " + Controller.sysMin);	
-					}
+					Controller.sysMinIncrement += 1;
 				}
 			});
 			
@@ -117,21 +77,7 @@ public class TimeAdjust{
 			minDown.setTranslateX(Controller.width/4);
 			minDown.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					if (Controller.sysMin == 0) {
-						Controller.sysMin = 59;
-						Controller.sysHour -= 1;
-						String minTxt = Integer.toString(Controller.sysMin);
-						String hourTxt = Integer.toString(Controller.sysHour);
-						t1.setText(minTxt);
-						t2.setText(hourTxt);
-						Controller.timeDisplay.setText(Controller.sysHour + " : " + Controller.sysMin);	
-					}
-					else {
-						Controller.sysMin -= 1;
-						String minTxt = Integer.toString(Controller.sysMin);
-						t1.setText(minTxt);
-						Controller.timeDisplay.setText(Controller.sysHour + " : " + Controller.sysMin);	
-					}
+					Controller.sysHourIncrement -= 1;
 				}
 			});
 			

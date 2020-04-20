@@ -45,25 +45,13 @@ public class ClockFace extends Controller{
 			Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
 		        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
 		        LocalTime localTime = LocalTime.now();
-		        localTime = localTime.plusHours(0);
-		        localTime = localTime.plusMinutes(0);
+		        localTime = localTime.plusHours(Controller.sysHourIncrement);
+		        localTime = localTime.plusMinutes(Controller.sysMinIncrement);
 		        Controller.timeDisplay.setText((localTime).format(formatter));
 		        Controller.timeDisplay.setStyle("-fx-font: 24 arial;");
 		    }), new KeyFrame(Duration.seconds(1)));
 		    clock.setCycleCount(Animation.INDEFINITE);
 		    clock.play();
-
-			/*
-			 * Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> { LocalTime
-			 * currentTime = LocalTime.now();
-			 * Controller.timeDisplay.setText(currentTime.getHour() + ":" +
-			 * currentTime.getMinute() + ":" + currentTime.getSecond()); }), new
-			 * KeyFrame(Duration.seconds(1)) ); clock.setCycleCount(Animation.INDEFINITE);
-			 * clock.play();
-			 */
-
-
-
 
 			//	scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			window.setScene(scene);
