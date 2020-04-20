@@ -1,9 +1,15 @@
 package com.csci360.activitytracker;
 	
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.text.DecimalFormat;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
@@ -30,17 +36,16 @@ public class StepTracker{
 			Text stepGoal = new Text("Step Goal:\n  "+numberAsString+"%"); 
 			stepGoal.setTranslateY(Controller.height/8);
 			
-			Button back = new Button("Back"); 
 			
+			
+			Button back = new Button("Back"); 
 			sp.getChildren().add(burnedCals);
 			sp.getChildren().add(stepCount);
-			sp.getChildren().add(stepGoal);			
-			
+			sp.getChildren().add(stepGoal);
 			back.setTranslateY((Controller.height/8)*3);
 			back.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(back);	
 			back.setOnAction(e -> window.close());
-			
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			window.setScene(scene);
 			window.show();

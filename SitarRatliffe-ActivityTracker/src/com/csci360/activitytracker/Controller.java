@@ -27,7 +27,7 @@ public class Controller extends Application{
 	static int calorieGoal = 3000;
 	static int calorieCounter = 1000;
 	static Text timeDisplay;
-	//static LocalTime stopwatch =  LocalTime.of(0, 0, 0);
+	static LocalTime stopwatch;
 	
 	@Override
 	public void start(Stage arg0) throws Exception {
@@ -36,5 +36,4 @@ public class Controller extends Application{
 	public static void main(String[] args) {
 		launch(args);
 	}
-
 }
