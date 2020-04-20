@@ -5,9 +5,15 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
 import java.text.DecimalFormat;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 import javafx.*;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
@@ -24,19 +30,21 @@ public class TimeAdjust{
 			window.setTitle("TimeAdjust");
 			StackPane p = new StackPane();
 			Scene scene = new Scene(p,Controller.width,Controller.height,Color.AZURE);
-			String minTxt = Integer.toString(Controller.sysMin);
-			String hourTxt = Integer.toString(Controller.sysHour);
-			Text t1 = new Text (minTxt);
-			Text t2 = new Text (hourTxt);
-			Text t3 = new Text (":");
-			Text t4 = new Text ("\n\nAm");
-			t2.setTranslateX(-Controller.width/3);
-			t1.setTranslateX(Controller.width/3);
-			t2.setTranslateY(-Controller.height/8);
-			t1.setTranslateY(-Controller.height/8);
+			//String minTxt = Integer.toString(Controller.sysMin);
+			//String hourTxt = Integer.toString(Controller.sysHour);
+			Text t3 = new Text("");
+	        t3.setStyle("-fx-font: 24 arial;");
 			t3.setTranslateY(-Controller.height/8);
-			t4.setTranslateY(-Controller.height/7);
 			
+			Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
+		        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+		        LocalTime localTime = LocalTime.now();
+		        localTime = localTime.plusHours(Controller.sysHourIncrement);
+		        localTime = localTime.plusMinutes(Controller.sysMinIncrement);
+		        t3.setText((localTime).format(formatter));
+		    }), new KeyFrame(Duration.seconds(1)));
+		    clock.setCycleCount(Animation.INDEFINITE);
+		    clock.play();
 			
 			Button hrUp = new Button("^");
 			hrUp.setMaxSize(Controller.width/2, Controller.height/4);
@@ -77,7 +85,7 @@ public class TimeAdjust{
 			minDown.setTranslateX(Controller.width/4);
 			minDown.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					Controller.sysHourIncrement -= 1;
+					Controller.sysMinIncrement -= 1;
 				}
 			});
 			
@@ -90,10 +98,7 @@ public class TimeAdjust{
 			p.getChildren().add(hrUp);
 			p.getChildren().add(minDown);
 			p.getChildren().add(minUp);
-			p.getChildren().add(t1);
-			p.getChildren().add(t2);
 			p.getChildren().add(t3);
-			p.getChildren().add(t4);
 			p.getChildren().add(back);
 			
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
