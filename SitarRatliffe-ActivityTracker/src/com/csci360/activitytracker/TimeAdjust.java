@@ -42,7 +42,7 @@ public class TimeAdjust{
 		        localTime = localTime.plusHours(Controller.sysHourIncrement);
 		        localTime = localTime.plusMinutes(Controller.sysMinIncrement);
 		        t3.setText((localTime).format(formatter));
-		    }), new KeyFrame(Duration.seconds(1)));
+		    }), new KeyFrame(Duration.seconds(.1)));
 		    clock.setCycleCount(Animation.INDEFINITE);
 		    clock.play();
 			
