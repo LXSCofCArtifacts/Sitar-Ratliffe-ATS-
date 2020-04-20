@@ -39,7 +39,7 @@ public class SleepTracker {
 	        sp.getChildren().add(s);
 	        Timeline steps = new Timeline(new KeyFrame(Duration.ZERO, e -> {
 		        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-		        LocalTime sleepTime = Controller.stopwatch.now(Controller.stopwatch)
+		        LocalTime sleepTime = Controller.stopwatch.now(Controller.stopwatch);
 		        s.setText((sleepTime).format(formatter));
 		        s.setStyle("-fx-font: 24 arial;");
 		    }), new KeyFrame(Duration.seconds(1)));
