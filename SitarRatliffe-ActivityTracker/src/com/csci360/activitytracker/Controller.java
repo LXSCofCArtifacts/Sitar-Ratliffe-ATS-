@@ -1,6 +1,8 @@
 package com.csci360.activitytracker;
 
+import java.time.Clock;
 import java.time.LocalTime;
+import java.time.ZoneId;
 
 import javafx.application.Application;
 import javafx.scene.text.Text;
@@ -28,7 +30,7 @@ public class Controller extends Application{
 	static int calorieGoal = 3000;
 	static int calorieCounter = 1000;
 	static Text timeDisplay;
-	static LocalTime stopwatch =  LocalTime.of(0, 0, 0);
+	static Clock stopwatch =  
 
 	@Override
 	public void start(Stage arg0) throws Exception {
