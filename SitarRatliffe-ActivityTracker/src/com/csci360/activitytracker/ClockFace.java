@@ -3,24 +3,18 @@ package com.csci360.activitytracker;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
-import java.time.Duration;
 import java.util.Calendar;
 
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.Event;
-import javafx.event.EventHandler;
-import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
-import java.time.Duration;
+import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class ClockFace extends Controller{
 	
@@ -58,7 +52,7 @@ public class ClockFace extends Controller{
 	        DateFormat timeFormat = new SimpleDateFormat( "HH:mm:ss" );
 	        final Timeline timeline = new Timeline(
 	            new KeyFrame(
-	                Duration.millis( 500 ),
+	                Duration.millis(1),
 	                event -> {
 	                    final long diff = endTime - System.currentTimeMillis();
 	                    if ( diff < 0 ) {
