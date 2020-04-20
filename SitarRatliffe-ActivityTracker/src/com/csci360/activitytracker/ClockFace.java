@@ -52,19 +52,7 @@ public class ClockFace extends Controller{
 		    }), new KeyFrame(Duration.seconds(1)));
 		    clock.setCycleCount(Animation.INDEFINITE);
 		    clock.play();
-
-			/*
-			 * Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> { LocalTime
-			 * currentTime = LocalTime.now();
-			 * Controller.timeDisplay.setText(currentTime.getHour() + ":" +
-			 * currentTime.getMinute() + ":" + currentTime.getSecond()); }), new
-			 * KeyFrame(Duration.seconds(1)) ); clock.setCycleCount(Animation.INDEFINITE);
-			 * clock.play();
-			 */
-
-
-
-
+		    
 			//	scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			window.setScene(scene);
 			window.show();

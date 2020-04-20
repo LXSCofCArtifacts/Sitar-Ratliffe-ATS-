@@ -21,7 +21,7 @@ public class SleepGoalAdjust{
 			window.setTitle("TimeAdjust");
 			StackPane p = new StackPane();
 			Scene scene = new Scene(p,Controller.width,Controller.height,Color.AZURE);
-			String minTxt = Integer.toString(Controller.sysMin);
+			String SYStime = Integer.toString(Controller.sysMin);
 			String hourTxt = Integer.toString(Controller.sysHour);
 			Text t1 = new Text (minTxt);
 			Text t2 = new Text (hourTxt);
