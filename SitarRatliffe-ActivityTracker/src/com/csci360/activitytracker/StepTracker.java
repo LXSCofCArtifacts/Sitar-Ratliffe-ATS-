@@ -38,7 +38,7 @@ public class StepTracker{
 		        LocalTime localTime = LocalTime.now();
 		        localTime = localTime.plusHours(Controller.sysHourIncrement);
 		        localTime = localTime.plusMinutes(Controller.sysMinIncrement);
-		        stepCount.setText(String.valueOf(Controller.stepCounter));
+		        stepCount.setText("Steps:\n"+ Controller.stepCounter);
 				Controller.percentage = ((Controller.stepCounter*1.0/Controller.stepGoal)*100);
 		        String numberAsString = decimalFormat.format(Controller.percentage);
 				stepGoal.setText("Step Goal:\n  "+ numberAsString +"%");
