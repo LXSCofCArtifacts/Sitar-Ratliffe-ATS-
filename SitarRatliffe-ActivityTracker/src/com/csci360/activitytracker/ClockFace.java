@@ -1,8 +1,11 @@
 package com.csci360.activitytracker;
-	
+
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 
 import javafx.animation.Animation;
@@ -17,7 +20,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class ClockFace extends Controller{
-	
+
 	public static void ClockFace() {
 		try {
 			Stage window = new Stage();
@@ -30,46 +33,39 @@ public class ClockFace extends Controller{
 			b.setMaxSize(Controller.width, Controller.height);
 			sp.getChildren().add(b);			
 			b.setOnAction(e -> MainMenu.MainMenu());
-			
-            DateFormat dateFormat = new SimpleDateFormat("hh:mm a");
-            Calendar cal = Calendar.getInstance();
 
-            Controller.sysMin = cal.get(Calendar.MINUTE);
-            DecimalFormat decimalFormat = new DecimalFormat("#00");
-	        String StrSysMin = decimalFormat.format(sysMin);
-	        
-	        
-            Controller.sysHour = cal.get(Calendar.HOUR);
-            Controller.sysDay = cal.get(Calendar.DAY_OF_MONTH);
-            Controller.sysMonth = cal.get(Calendar.MONTH) + 1;
-            Controller.sysYear = cal.get(Calendar.YEAR);
-            Controller.timeDisplay = new Text(Controller.sysHour+ " : " + StrSysMin);
-			Controller.timeDisplay.setStyle("-fx-font: 24 arial;");
+			Calendar cal = Calendar.getInstance();
+			Controller.sysDay = cal.get(Calendar.DAY_OF_MONTH);
+			Controller.sysMonth = cal.get(Calendar.MONTH) + 1;
+			Controller.sysYear = cal.get(Calendar.YEAR);
+			Controller.timeDisplay = new Text("");
+			
 			sp.getChildren().add(Controller.timeDisplay);
-			
-			long endTime = 0;
-	        Label timeLabel = new Label();
-	        DateFormat timeFormat = new SimpleDateFormat( "HH:mm:ss" );
-	        final Timeline timeline = new Timeline(
-	            new KeyFrame(
-	                Duration.millis(1),
-	                event -> {
-	                    final long diff = endTime - System.currentTimeMillis();
-	                    if ( diff < 0 ) {
-	                    //  timeLabel.setText( "00:00:00" );
-	                        timeLabel.setText( timeFormat.format( 0 ) );
-	                    } else {
-	                        timeLabel.setText( timeFormat.format( diff ) );
-	                    }
-	                }
-	            )
-	        );
-	        timeline.setCycleCount( Animation.INDEFINITE );
-	        timeline.play();
 
-			
-			
-		//	scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
+		        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+		        LocalTime localTime = LocalTime.now();
+		        localTime = localTime.plusHours(0);
+		        localTime = localTime.plusMinutes(0);
+		        Controller.timeDisplay.setText((localTime).format(formatter));
+		        Controller.timeDisplay.setStyle("-fx-font: 24 arial;");
+		    }), new KeyFrame(Duration.seconds(1)));
+		    clock.setCycleCount(Animation.INDEFINITE);
+		    clock.play();
+
+			/*
+			 * Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> { LocalTime
+			 * currentTime = LocalTime.now();
+			 * Controller.timeDisplay.setText(currentTime.getHour() + ":" +
+			 * currentTime.getMinute() + ":" + currentTime.getSecond()); }), new
+			 * KeyFrame(Duration.seconds(1)) ); clock.setCycleCount(Animation.INDEFINITE);
+			 * clock.play();
+			 */
+
+
+
+
+			//	scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			window.setScene(scene);
 			window.show();
 		} catch(Exception e) {

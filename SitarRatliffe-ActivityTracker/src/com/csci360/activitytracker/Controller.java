@@ -7,8 +7,8 @@ import javafx.stage.Stage;
 public class Controller extends Application{
 	final protected static int width = 81;
 	final protected static int height = 240;
-	public static int sysMin;
-	public static int sysHour;
+	public static int sysMinIncrement;
+	public static int sysHourIncrement;
 	public static int sysDay;
 	public static int sysMonth;
 	public static int sysYear;

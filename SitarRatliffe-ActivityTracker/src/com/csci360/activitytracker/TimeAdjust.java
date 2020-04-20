@@ -44,7 +44,7 @@ public class TimeAdjust{
 			hrUp.setTranslateX(-Controller.width/4);
 			hrUp.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					if (Controller.sysHour == 12) {
+					if (Controller.sysHour == 24) {
 						Controller.sysHour = 1;
 						String hourTxt = Integer.toString(Controller.sysHour);
 						t2.setText(hourTxt);
