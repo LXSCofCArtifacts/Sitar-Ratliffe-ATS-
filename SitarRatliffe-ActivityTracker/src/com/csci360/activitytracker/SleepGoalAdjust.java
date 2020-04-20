@@ -21,8 +21,8 @@ public class SleepGoalAdjust{
 			window.setTitle("TimeAdjust");
 			StackPane p = new StackPane();
 			Scene scene = new Scene(p,Controller.width,Controller.height,Color.AZURE);
-			String SYStime = Integer.toString(Controller.sysMin);
-			String hourTxt = Integer.toString(Controller.sysHour);
+			String minTxt = Integer.toString(Controller.sleepGoalMin);
+			String hourTxt = Integer.toString(Controller.sleepGoalHr);
 			Text t1 = new Text (minTxt);
 			Text t2 = new Text (hourTxt);
 			Text t3 = new Text (":");
@@ -41,16 +41,9 @@ public class SleepGoalAdjust{
 			hrUp.setTranslateX(-Controller.width/4);
 			hrUp.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					if (Controller.sleepGoalHr == 12) {
-						Controller.sleepGoalHr = 1;
-						String hourTxt = Integer.toString(Controller.sleepGoalHr);
-						t2.setText(hourTxt);
-					}
-					else {
 						Controller.sleepGoalHr += 1;
 						String hourTxt = Integer.toString(Controller.sleepGoalHr);
 						t2.setText(hourTxt);
-					}
 				}
 			});
 			
@@ -60,16 +53,9 @@ public class SleepGoalAdjust{
 			hrDown.setTranslateX(-Controller.width/4);
 			hrDown.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					if (Controller.sleepGoalHr == 1) {
-						Controller.sleepGoalHr = 12;
-						String hourTxt = Integer.toString(Controller.sleepGoalHr);
-						t2.setText(hourTxt);
-					}
-					else {
 						Controller.sleepGoalHr -= 1;
 						String hourTxt = Integer.toString(Controller.sleepGoalHr);
 						t2.setText(hourTxt);
-					}
 				}
 			});
 			
