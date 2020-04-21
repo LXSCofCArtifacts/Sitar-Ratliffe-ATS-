@@ -1,4 +1,7 @@
 package com.csci360.activitytracker;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
 import javafx.application.Application;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -31,6 +34,9 @@ public class Controller extends Application{
 	static int stopwatchMinIncrement = 0;
 	static int stopwatchSecIncrement = 0;
 	static boolean stopwatchOn = false;
+	static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+	static Text timerOn = new Text((LocalTime.MIN).format(formatter));
+	static Text timerOff = new Text((LocalTime.MIN).format(formatter));
 	
 	// when the program is run, make the first scene the clock face
 	@Override

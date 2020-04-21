@@ -28,23 +28,23 @@ public class SleepTracker {
 			Button reset = new Button("Reset");
 			reset.setTranslateY((Controller.height/8));
 			reset.setMaxSize(Controller.width, Controller.height/4);
-			Text timerOn = new Text((LocalTime.MIN).format(formatter));
-			Text timerOff = new Text((LocalTime.MIN).format(formatter));
+		
 			
 			// create button that starts the stopwatch
 			Start.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					sp.getChildren().remove(timerOn);
-					sp.getChildren().remove(timerOff);
+					Controller.stopwatchOn = true;
+					sp.getChildren().remove(Controller.timerOn);
+					sp.getChildren().remove(Controller.timerOff);
 						if((Controller.stopwatchHourIncrement == 0&&Controller.stopwatchMinIncrement == 0&&Controller.stopwatchSecIncrement == 0)) {
 							Controller.stopwatchHourIncrement=-LocalTime.now().getHour();
 							Controller.stopwatchMinIncrement=-LocalTime.now().getMinute();
 							Controller.stopwatchSecIncrement=-LocalTime.now().getSecond();
 						}
-						timerOn.setStyle("-fx-font: 20 arial;");
-						timerOn.setTranslateY(Controller.height/8);
-						timerOn.setTranslateY((-Controller.height/10)*3);
-						sp.getChildren().add(timerOn);
+						Controller.timerOn.setStyle("-fx-font: 20 arial;");
+						Controller.timerOn.setTranslateY(Controller.height/8);
+						Controller.timerOn.setTranslateY((-Controller.height/10)*3);
+						sp.getChildren().add(Controller.timerOn);
 						Controller.stopwatchOn = true;
 						System.out.println("");
 						Timeline steps = new Timeline(new KeyFrame(Duration.ZERO, e -> { LocalTime
@@ -52,8 +52,8 @@ public class SleepTracker {
 							sleepTime = sleepTime.plusHours(Controller.stopwatchHourIncrement);
 							sleepTime = sleepTime.plusMinutes(Controller.stopwatchMinIncrement);
 							sleepTime = sleepTime.plusSeconds(Controller.stopwatchSecIncrement);
-							timerOn.setText((sleepTime).format(formatter)); 
-							timerOn.setStyle("-fx-font: 20 arial;");
+							Controller.timerOn.setText((sleepTime).format(formatter)); 
+							Controller.timerOn.setStyle("-fx-font: 20 arial;");
 							}), 
 							new KeyFrame(Duration.seconds(1)));
 							steps.setCycleCount(Animation.INDEFINITE); 
@@ -64,14 +64,22 @@ public class SleepTracker {
 			// create button that stops, then resets the stopwatch
 			reset.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
+					Controller.stopwatchOn = false;
 					Controller.stopwatchHourIncrement=0;
 					Controller.stopwatchMinIncrement=0;
 					Controller.stopwatchSecIncrement=0;
-					sp.getChildren().remove(timerOn);
-					sp.getChildren().remove(timerOff);
-					sp.getChildren().add(timerOff);
+					sp.getChildren().remove(Controller.timerOn);
+					sp.getChildren().remove(Controller.timerOff);
+					sp.getChildren().add(Controller.timerOff);
 				}
 			});
+			
+			if(Controller.stopwatchOn) {
+				sp.getChildren().add(Controller.timerOn);
+			}
+			else {
+				sp.getChildren().add(Controller.timerOff);
+			}
 			
 			// button to take you back to previous scene
 			Button back = new Button("Back");
@@ -79,11 +87,10 @@ public class SleepTracker {
 			back.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(back);
 			sp.getChildren().add(Start);
-			sp.getChildren().add(timerOff);
 			sp.getChildren().add(reset);
-			timerOff.setStyle("-fx-font: 20 arial;");
-			timerOff.setTranslateY(Controller.height/8);
-			timerOff.setTranslateY((-Controller.height/10)*3);
+			Controller.timerOff.setStyle("-fx-font: 20 arial;");
+			Controller.timerOff.setTranslateY(Controller.height/8);
+			Controller.timerOff.setTranslateY((-Controller.height/10)*3);
 			back.setOnAction(e -> window.close());
 			
 			window.setScene(scene);
