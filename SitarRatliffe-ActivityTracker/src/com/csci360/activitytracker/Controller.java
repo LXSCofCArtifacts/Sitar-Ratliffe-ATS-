@@ -3,10 +3,15 @@ package com.csci360.activitytracker;
 import java.time.Clock;
 import java.time.LocalTime;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class Controller extends Application{
 	final protected static int width = 81;
@@ -30,7 +35,10 @@ public class Controller extends Application{
 	static int calorieGoal = 3000;
 	static int calorieCounter = 1000;
 	static Text timeDisplay;
-
+	static int stopwatchHourIncrement = 0;
+	static int stopwatchMinIncrement = 0;
+	static int stopwatchSecIncrement = 0;
+	static boolean stopwatchOn = false;
 
 	@Override
 	public void start(Stage arg0) throws Exception {

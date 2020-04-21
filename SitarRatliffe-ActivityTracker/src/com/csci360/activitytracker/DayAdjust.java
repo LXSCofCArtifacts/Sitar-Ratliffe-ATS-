@@ -71,6 +71,7 @@ public class DayAdjust{
 			
 			back.setOnAction(e -> window.close());
 			
+			
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			window.setScene(scene);
 			window.show();

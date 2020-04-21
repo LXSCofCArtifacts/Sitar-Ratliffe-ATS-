@@ -10,6 +10,8 @@ import javafx.animation.AnimationTimer;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import javafx.scene.Scene;
@@ -18,47 +20,53 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 
 public class SleepTracker {
-
-	@SuppressWarnings("static-access")
+	static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 	public static void SleepTracker() {
 		try {
 			Stage window = new Stage();
 			window.setTitle("Sleep Tracker");
 			StackPane sp = new StackPane();
 			Scene scene = new Scene(sp,Controller.width,Controller.height);
-
-		//	double percentage = (sleepTime.getHour()+(Controller.stopwatch.getMinute()*60))/
-			//		Controller.sleepGoalHr+(Controller.sleepGoalMin*60);
-			DecimalFormat decimalFormat = new DecimalFormat("#.00");
-	     //   String percentageAsString = decimalFormat.format(percentage);
-	     //   Text sleepGoal = new Text("Sleep Goal: \n "+percentageAsString+"%");
-			Controller.stopwatch = LocalTime.of(0, 0, 0);
-	        Text s = new Text("");
-
-	        //timer shit here
-	        sp.getChildren().add(s);
-	        Timeline steps = new Timeline(new KeyFrame(Duration.ZERO, e -> {
-		        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-		        LocalTime sleepTime = Controller.stopwatch.now(Controller.stopwatch);
-		        s.setText((sleepTime).format(formatter));
-		        s.setStyle("-fx-font: 24 arial;");
-		    }), new KeyFrame(Duration.seconds(1)));
-		    steps.setCycleCount(Animation.INDEFINITE);
-		    steps.play();
-
-	        s.setTranslateY(Controller.height/8);
-	        s.setTranslateY((-Controller.height/10)*3);
+			Text s = new Text((LocalTime.MIN).format(formatter));
+			s.setStyle("-fx-font: 24 arial;");
+			sp.getChildren().add(s);
+			Button StartStop = new Button("Start/Stop");		
+			StartStop.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					if (!Controller.stopwatchOn) {
+						Controller.stopwatchHourIncrement = -LocalTime.now().getHour();
+						Controller.stopwatchMinIncrement = -LocalTime.now().getMinute();
+						Controller.stopwatchSecIncrement = -LocalTime.now().getSecond();
+						Controller.stopwatchOn = true;
+						System.out.println("");
+						Timeline steps = new Timeline(new KeyFrame(Duration.ZERO, e -> { LocalTime
+							sleepTime = LocalTime.now();
+							sleepTime = sleepTime.plusHours(Controller.stopwatchHourIncrement);
+							sleepTime = sleepTime.plusMinutes(Controller.stopwatchMinIncrement);
+							sleepTime = sleepTime.plusSeconds(Controller.stopwatchSecIncrement);
+							s.setText((sleepTime).format(formatter)); 
+							s.setStyle("-fx-font: 24 arial;");
+							}), 
+							new KeyFrame(Duration.seconds(1)));
+							steps.setCycleCount(Animation.INDEFINITE); 
+							steps.play();
+					}
+					else {
+						
+					}
+				}
+			});	
+			s.setTranslateY(Controller.height/8);
+			s.setTranslateY((-Controller.height/10)*3);
 			//sleepGoal.setTranslateY(-height/8);
 			Button back = new Button("Back");
-
-
-		//	sp.getChildren().add(sleepGoal);
 
 			back.setTranslateY((Controller.height/8)*3);
 			back.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(back);
-			back.setOnAction(e -> window.close());
+			sp.getChildren().add(StartStop);
 
+			back.setOnAction(e -> window.close());
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			window.setScene(scene);
 			window.show();
@@ -66,5 +74,8 @@ public class SleepTracker {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+	}
+	public static void stopwatchStart() {
+
 	}
 }
