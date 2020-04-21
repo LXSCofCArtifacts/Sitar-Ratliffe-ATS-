@@ -16,6 +16,9 @@ public class Controller extends Application{
 	public static int sysDay;
 	public static int sysMonth;
 	public static int sysYear;
+	public static int sysDayInc;
+	public static int sysMonthInc;
+	public static int sysYearInc;
 	static int sleepGoalMin = 0;
 	static int sleepGoalHr = 7;
 	static int sleepTrackerStart = 0;

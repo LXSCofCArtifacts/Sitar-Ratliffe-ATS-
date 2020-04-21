@@ -39,6 +39,7 @@ public class MonthAdjust{
 					}
 					else {
 						Controller.sysMonth += 1;
+						Controller.sysMonthInc += 1;
 						String monthTxt = Integer.toString(Controller.sysMonth);
 						t.setText(" Month:\n  "+monthTxt);
 					}
@@ -58,6 +59,7 @@ public class MonthAdjust{
 					}
 					else {
 						Controller.sysMonth -= 1;
+						Controller.sysMonthInc -= 1;
 						String monthTxt = Integer.toString(Controller.sysMonth);
 						t.setText(" Month:\n  "+monthTxt);
 					}

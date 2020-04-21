@@ -33,6 +33,7 @@ public class YearAdjust{
 			up.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
 					Controller.sysYear += 1;
+					Controller.sysYearInc += 1;
 					String yearTxt = Integer.toString(Controller.sysYear);
 					t.setText(" Year:\n  "+yearTxt);
 				}
@@ -45,6 +46,7 @@ public class YearAdjust{
 			down.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
 					Controller.sysYear -= 1;
+					Controller.sysYearInc -= 1;
 					String yearTxt = Integer.toString(Controller.sysYear);
 					t.setText(" Year:\n  "+yearTxt);
 				}

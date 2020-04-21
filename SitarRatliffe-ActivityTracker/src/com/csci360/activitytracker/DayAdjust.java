@@ -35,6 +35,7 @@ public class DayAdjust{
 					}
 					else {
 						Controller.sysDay += 1;
+						Controller.sysDayInc += 1;
 						String dayTxt = Integer.toString(Controller.sysDay);
 						t.setText(" Day:\n  "+dayTxt);
 					}
@@ -51,6 +52,7 @@ public class DayAdjust{
 					// of month if reached the beginning
 					if (Controller.sysDay == 1) {
 						Controller.sysDay = 31;
+						Controller.sysDayInc -= 1;
 						String dayTxt = Integer.toString(Controller.sysDay);
 						t.setText(" Day:\n  "+dayTxt);
 					}

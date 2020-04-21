@@ -41,12 +41,14 @@ public class ClockFace extends Controller{
 			// create a calendar object that gets the current
 			// day, month and year
 			Calendar cal = Calendar.getInstance();
-			Controller.sysDay = cal.get(Calendar.DAY_OF_MONTH);
-			Controller.sysMonth = cal.get(Calendar.MONTH) + 1;
-			Controller.sysYear = cal.get(Calendar.YEAR);
 			Controller.timeDisplay = new Text("");
+	        Controller.timeDisplay.setStyle("-fx-font: 24 arial;");	
+			Text currDay = new Text("");
+			currDay.setTranslateY(18);
+			currDay.setStyle("-fx-font: 12 arial;");
 
 			sp.getChildren().add(Controller.timeDisplay);
+			sp.getChildren().add(currDay);
 
 			// create a time line so the program automatically updates the 
 			// displayed time. since we did not have a sensor to track steps,
@@ -57,8 +59,11 @@ public class ClockFace extends Controller{
 		        localTime = localTime.plusHours(Controller.sysHourIncrement);
 		        localTime = localTime.plusMinutes(Controller.sysMinIncrement);
 		        Controller.timeDisplay.setText((localTime).format(formatter));
-		        Controller.timeDisplay.setStyle("-fx-font: 24 arial;");	
 		        Controller.stepCounter += 1;
+				Controller.sysDay = cal.get(Calendar.DAY_OF_MONTH) + Controller.sysDayInc;
+				Controller.sysMonth = cal.get(Calendar.MONTH) + 1 + Controller.sysMonthInc;
+				Controller.sysYear = cal.get(Calendar.YEAR) + Controller.sysYearInc;
+				currDay.setText(Controller.sysMonth + "/" + Controller.sysDay + "/" + Controller.sysYear);
 		    }), new KeyFrame(Duration.seconds(1)));
 		    clock.setCycleCount(Animation.INDEFINITE);
 		    clock.play();
