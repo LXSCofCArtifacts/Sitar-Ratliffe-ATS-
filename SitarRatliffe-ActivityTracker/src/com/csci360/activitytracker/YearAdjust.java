@@ -16,6 +16,8 @@ import javafx.scene.text.Text;
 public class YearAdjust{
 	public static void YearAdjust() {
 		try {
+			// create a window for the YearAdjust scene
+			// set up text and translate to correct location 
 			Stage window = new Stage();
 			window.setTitle("AgeAdjust");
 			StackPane p = new StackPane();
@@ -24,6 +26,7 @@ public class YearAdjust{
 			Text t = new Text (Controller.width/2, Controller.height/2, " Year:\n  "+yearTxt);
 			t.setTranslateY(-Controller.height/8);
 			
+			// button to increment the year
 			Button up = new Button("    ^   ");
 			up.setMaxSize(Controller.width, Controller.height/4);
 			up.setTranslateY((-Controller.height/8)*3);
@@ -35,6 +38,7 @@ public class YearAdjust{
 				}
 			});	
 			
+			// button to decrement the year
 			Button down = new Button("   v   ");
 			down.setMaxSize(Controller.width, Controller.height/4);
 			down.setTranslateY(Controller.height/8);
@@ -46,6 +50,7 @@ public class YearAdjust{
 				}
 			});	
 			
+			// button to take user back to previous scene
 			Button back = new Button("Back");
 			back.setMaxSize(Controller.width, Controller.height/4);
 			back.setTranslateY((Controller.height/8)*3);
@@ -57,7 +62,6 @@ public class YearAdjust{
 			
 			back.setOnAction(e -> window.close());
 			
-			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			window.setScene(scene);
 			window.show();
 		} catch(Exception e) {

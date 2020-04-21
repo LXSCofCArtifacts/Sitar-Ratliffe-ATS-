@@ -17,6 +17,8 @@ import javafx.scene.text.Text;
 public class StepGoalAdjust{
 	public static void StepGoalAdjust() {
 		try {
+			// create a window for the StepGoalAdjust scene
+			// set up text and translate to correct location 
 			Stage window = new Stage();
 			window.setTitle("StepGoalAdjust");
 			StackPane p = new StackPane();
@@ -25,6 +27,7 @@ public class StepGoalAdjust{
 			Text t = new Text (Controller.width/2, Controller.height/2, " Steps:\n  " + stepGoalTxt);
 			t.setTranslateY((-Controller.height/8));
 			
+			// create button to increment the user's step goal
 			Button up = new Button("    ^   ");
 			up.setMaxSize(Controller.width, Controller.height/4);
 			up.setTranslateY((-Controller.height/8)*3);
@@ -36,6 +39,7 @@ public class StepGoalAdjust{
 				}
 			});
 			
+			// create button to decrement the user's step goal
 			Button down = new Button("   v   ");
 			down.setMaxSize(Controller.width, Controller.height/4);
 			down.setTranslateY(Controller.height/8);
@@ -47,6 +51,7 @@ public class StepGoalAdjust{
 				}
 			});
 
+			// button to take you back to previous scene
 			Button back = new Button("Back");
 			back.setMaxSize(Controller.width, Controller.height/4);
 			back.setTranslateY((Controller.height/8)*3);
@@ -57,7 +62,6 @@ public class StepGoalAdjust{
 			p.getChildren().add(t);
 			p.getChildren().add(back);
 			
-			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			window.setScene(scene);
 			window.show();
 		} catch(Exception e) {

@@ -23,6 +23,10 @@ public class ClockFace extends Controller{
 
 	public static void ClockFace() {
 		try {
+			// create a window for the ClockFace scene
+			// set up text and translate to correct location 
+			// this will be the window that opens up every time
+			// the program is run
 			Stage window = new Stage();
 			window.setTitle("Clock Face");
 			StackPane sp = new StackPane();
@@ -34,6 +38,8 @@ public class ClockFace extends Controller{
 			sp.getChildren().add(b);
 			b.setOnAction(e -> MainMenu.MainMenu());
 
+			// create a calendar object that gets the current
+			// day, month and year
 			Calendar cal = Calendar.getInstance();
 			Controller.sysDay = cal.get(Calendar.DAY_OF_MONTH);
 			Controller.sysMonth = cal.get(Calendar.MONTH) + 1;
@@ -42,6 +48,9 @@ public class ClockFace extends Controller{
 
 			sp.getChildren().add(Controller.timeDisplay);
 
+			// create a time line so the program automatically updates the 
+			// displayed time. since we did not have a sensor to track steps,
+			// we made it so the system counts a step every second
 			Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
 		        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
 		        LocalTime localTime = LocalTime.now();
@@ -54,7 +63,6 @@ public class ClockFace extends Controller{
 		    clock.setCycleCount(Animation.INDEFINITE);
 		    clock.play();
 
-			//	scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			window.setScene(scene);
 			window.show();
 		} catch(Exception e) {

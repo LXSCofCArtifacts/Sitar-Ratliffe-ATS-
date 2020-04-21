@@ -16,6 +16,8 @@ public class SleepTracker {
 	static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 	public static void SleepTracker() {
 		try {
+			// create a window for the SleepTracker scene
+			// set up text and buttons and translate to correct location 
 			StackPane sp = new StackPane();
 			Stage window = new Stage();
 			window.setTitle("Sleep Tracker");
@@ -28,6 +30,8 @@ public class SleepTracker {
 			reset.setMaxSize(Controller.width, Controller.height/4);
 			Text timerOn = new Text((LocalTime.MIN).format(formatter));
 			Text timerOff = new Text((LocalTime.MIN).format(formatter));
+			
+			// create button that starts the stopwatch
 			Start.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
 					sp.getChildren().remove(timerOn);
@@ -56,6 +60,8 @@ public class SleepTracker {
 							steps.play();
 					}
 				});	
+			
+			// create button that stops, then resets the stopwatch
 			reset.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
 					Controller.stopwatchHourIncrement=0;
@@ -66,6 +72,8 @@ public class SleepTracker {
 					sp.getChildren().add(timerOff);
 				}
 			});
+			
+			// button to take you back to previous scene
 			Button back = new Button("Back");
 			back.setTranslateY((Controller.height/8)*3);
 			back.setMaxSize(Controller.width, Controller.height/4);
@@ -77,6 +85,7 @@ public class SleepTracker {
 			timerOff.setTranslateY(Controller.height/8);
 			timerOff.setTranslateY((-Controller.height/10)*3);
 			back.setOnAction(e -> window.close());
+			
 			window.setScene(scene);
 			window.show();
 		} catch(Exception e) {

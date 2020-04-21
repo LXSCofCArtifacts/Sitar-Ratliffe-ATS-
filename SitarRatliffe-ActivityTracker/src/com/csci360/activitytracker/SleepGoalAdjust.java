@@ -17,6 +17,8 @@ import javafx.scene.text.Text;
 public class SleepGoalAdjust{
 	public static void SleepGoalAdjust() {
 		try {
+			// create a window for the SleepGoalAdjust scene
+			// set up text and translate to correct location 
 			Stage window = new Stage();
 			window.setTitle("TimeAdjust");
 			StackPane p = new StackPane();
@@ -34,7 +36,7 @@ public class SleepGoalAdjust{
 			t3.setTranslateY(-Controller.height/8);
 			t4.setTranslateY(-Controller.height/7);
 			
-			
+			//create button to increment hours of user's sleep goal
 			Button hrUp = new Button("^");
 			hrUp.setMaxSize(Controller.width/2, Controller.height/4);
 			hrUp.setTranslateY((-Controller.height/8)*3);
@@ -47,6 +49,7 @@ public class SleepGoalAdjust{
 				}
 			});
 			
+			// create button to decrement hours of user's sleep goal
 			Button hrDown = new Button("v");
 			hrDown.setMaxSize(Controller.width/2, Controller.height/4);
 			hrDown.setTranslateY((Controller.height/8));
@@ -59,6 +62,7 @@ public class SleepGoalAdjust{
 				}
 			});
 			
+			//create button to increment mins of user's sleep goal
 			Button minUp = new Button("^");
 			minUp.setMaxSize(Controller.width/2, Controller.height/4);
 			minUp.setTranslateY((-Controller.height/8)*3);
@@ -81,6 +85,7 @@ public class SleepGoalAdjust{
 				}
 			});
 			
+			// create button to decrement mins of user's sleep goal
 			Button minDown = new Button("v");
 			minDown.setMaxSize(Controller.width/2, Controller.height/4);
 			minDown.setTranslateY((Controller.height/8));
@@ -103,11 +108,13 @@ public class SleepGoalAdjust{
 				}
 			});
 			
+			// create back button
 			Button back = new Button("Back");
 			back.setMaxSize(Controller.width, Controller.height/4);
 			back.setTranslateY((Controller.height/8)*3);
 			back.setOnAction(e -> window.close());
 			
+			// add buttons and texts to stack pane
 			p.getChildren().add(hrDown);
 			p.getChildren().add(hrUp);
 			p.getChildren().add(minDown);
@@ -118,7 +125,6 @@ public class SleepGoalAdjust{
 			p.getChildren().add(t4);
 			p.getChildren().add(back);
 			
-			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			window.setScene(scene);
 			window.show();
 		} catch(Exception e) {

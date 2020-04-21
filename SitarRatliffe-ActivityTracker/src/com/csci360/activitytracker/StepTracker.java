@@ -14,6 +14,8 @@ import javafx.scene.text.Text;
 public class StepTracker{
 	public static void StepTracker(){
 		try {
+			// create a window for the StepTracker scene
+			// set up text and translate to correct location    
 			Stage window = new Stage();
 			window.setTitle("Step Tracker");
 			StackPane sp = new StackPane();
@@ -25,6 +27,8 @@ public class StepTracker{
 			DecimalFormat decimalFormat = new DecimalFormat("#.00");
 			Text stepGoal = new Text("");
 			stepGoal.setTranslateY(Controller.height/8);
+			// create time line in order to constantly 
+			// update the steps and goal percentage
 			Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
 		        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
 		        LocalTime localTime = LocalTime.now();
@@ -40,13 +44,19 @@ public class StepTracker{
 		    }), new KeyFrame(Duration.seconds(1)));
 		    clock.setCycleCount(Animation.INDEFINITE);
 		    clock.play();
-			Button back = new Button("Back");
+		    
+		    // add text to the stack pane
 			sp.getChildren().add(burnedCals);
 			sp.getChildren().add(stepCount);
 			sp.getChildren().add(stepGoal);
+		    
+		    // create a back button, set an onAction event,
+			// and add the button to the stack pane
+			Button back = new Button("Back");
 			back.setTranslateY((Controller.height/8)*3);
 			back.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(back);
+			// if back button is clicked, close the window
 			back.setOnAction(e -> window.close());
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			window.setScene(scene);

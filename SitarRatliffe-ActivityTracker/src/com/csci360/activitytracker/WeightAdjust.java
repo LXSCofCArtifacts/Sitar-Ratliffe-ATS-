@@ -17,6 +17,8 @@ import javafx.scene.text.Text;
 public class WeightAdjust{
 	public static void WeightAdjust() {
 		try {
+			// create a window for the WeightAdjust scene
+			// set up text and translate to correct location 
 			Stage window = new Stage();
 			window.setTitle("AgeAdjust");
 			StackPane p = new StackPane();
@@ -25,6 +27,7 @@ public class WeightAdjust{
 			Text t = new Text (Controller.width/2, Controller.height/2, " Weight:\n  " + weightTxt + " lbs");
 			t.setTranslateY((-Controller.height/8));
 			
+			// button to increment the weight of the user
 			Button up = new Button("    ^   ");
 			up.setMaxSize(Controller.width, Controller.height/4);
 			up.setTranslateY((-Controller.height/8)*3);
@@ -36,6 +39,7 @@ public class WeightAdjust{
 				}
 			});
 			
+			// button to decrement the weight of the user
 			Button down = new Button("   v   ");
 			down.setMaxSize(Controller.width, Controller.height/4);
 			down.setTranslateY(Controller.height/8);
@@ -47,6 +51,7 @@ public class WeightAdjust{
 				}
 			});
 
+			// button to take the user back to previous scene
 			Button back = new Button("Back");
 			back.setMaxSize(Controller.width, Controller.height/4);
 			back.setTranslateY((Controller.height/8)*3);
@@ -57,7 +62,6 @@ public class WeightAdjust{
 			p.getChildren().add(t);
 			p.getChildren().add(back);
 			
-			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			window.setScene(scene);
 			window.show();
 		} catch(Exception e) {

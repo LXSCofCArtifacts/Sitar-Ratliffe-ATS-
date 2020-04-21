@@ -3,6 +3,9 @@ import javafx.application.Application;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 public class Controller extends Application{
+	// controller class stores all the variables for the program
+	// and is how the program initially begins
+	// most values assigned are just default until the user changes them
 	final protected static int width = 81;
 	final protected static int height = 240;
 	public static int sysMinIncrement;
@@ -28,6 +31,8 @@ public class Controller extends Application{
 	static int stopwatchMinIncrement = 0;
 	static int stopwatchSecIncrement = 0;
 	static boolean stopwatchOn = false;
+	
+	// when the program is run, make the first scene the clock face
 	@Override
 	public void start(Stage arg0) throws Exception {
 		ClockFace.ClockFace();

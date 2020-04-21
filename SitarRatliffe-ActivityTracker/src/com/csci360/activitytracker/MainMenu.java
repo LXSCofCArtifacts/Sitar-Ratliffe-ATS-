@@ -11,6 +11,8 @@ import javafx.scene.layout.StackPane;
 public class MainMenu{
 	public static void MainMenu() {
 		try {
+			// create a window for the MainMenu scene
+			// set up text and buttons and translate to correct location 
 			Stage window = new Stage();
 			window.setTitle("Menu");
 			StackPane sp = new StackPane();
@@ -20,6 +22,7 @@ public class MainMenu{
 			Button main2 = new Button("Main Menu 2"); 
 			Button back = new Button("Back"); 
 
+			// each button is going to take you to its own separate scene
 			steps.setTranslateY((-Controller.height/8)*3);
 			steps.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(steps);
@@ -35,16 +38,14 @@ public class MainMenu{
 			sp.getChildren().add(main2);
 			main2.setOnAction(e -> MainMenu2.MainMenu2());
 
-			
+			// back button takes you to previous scene
 			back.setTranslateY((Controller.height/8)*3);
 			back.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(back);	
 			back.setOnAction(e -> window.close());
 			
-			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			window.setScene(scene);
 			window.show();
-			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

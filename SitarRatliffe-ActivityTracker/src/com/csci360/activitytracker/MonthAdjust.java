@@ -16,6 +16,8 @@ import javafx.scene.text.Text;
 public class MonthAdjust{
 	public static void MonthAdjust() {
 		try {
+			// create a window for the MonthAdjust scene
+			// set up text and translate to correct location 
 			Stage window = new Stage();
 			window.setTitle("AgeAdjust");
 			StackPane p = new StackPane();
@@ -24,6 +26,7 @@ public class MonthAdjust{
 			Text t = new Text (Controller.width/2, Controller.height/2, " Month:\n  "+monthTxt);
 			t.setTranslateY(-Controller.height/8);
 			
+			// button to increment the month
 			Button up = new Button("    ^   ");
 			up.setMaxSize(Controller.width, Controller.height/4);
 			up.setTranslateY((-Controller.height/8)*3);
@@ -42,6 +45,7 @@ public class MonthAdjust{
 				}
 			});	
 			
+			// button to decrement the month
 			Button down = new Button("   v   ");
 			down.setMaxSize(Controller.width, Controller.height/4);
 			down.setTranslateY(Controller.height/8);
@@ -60,6 +64,7 @@ public class MonthAdjust{
 				}
 			});	
 			
+			// button to go back
 			Button back = new Button("Back");
 			back.setMaxSize(Controller.width, Controller.height/4);
 			back.setTranslateY((Controller.height/8)*3);
@@ -68,10 +73,8 @@ public class MonthAdjust{
 			p.getChildren().add(down);
 			p.getChildren().add(t);
 			p.getChildren().add(back);
-			
 			back.setOnAction(e -> window.close());
 			
-			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			window.setScene(scene);
 			window.show();
 		} catch(Exception e) {

@@ -9,6 +9,8 @@ import javafx.scene.layout.StackPane;
 public class PersonalInfoMenu{
 	public static void PersonalInfoMenu() {
 		try {
+			// create a window for the PersonalInfoMenu scene
+			// set up text and buttons and translate to correct location 
 			Stage window = new Stage();
 			window.setTitle("Personal Info Menu");
 			StackPane sp = new StackPane();
@@ -18,6 +20,7 @@ public class PersonalInfoMenu{
 			Button goals = new Button("Goal Menu"); 
 			Button back = new Button("Back"); 
 
+			// buttons will take you to own specific scene
 			personaldata.setTranslateY((-Controller.height/8)*3);
 			personaldata.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(personaldata);
@@ -33,12 +36,12 @@ public class PersonalInfoMenu{
 			sp.getChildren().add(goals);
 			goals.setOnAction(e -> GoalMenu.GoalMenu());
 			
+			// back button to take you to previous scene
 			back.setTranslateY((Controller.height/8)*3);
 			back.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(back);	
 			back.setOnAction(e -> window.close());
 			
-			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			window.setScene(scene);
 			window.show();
 			

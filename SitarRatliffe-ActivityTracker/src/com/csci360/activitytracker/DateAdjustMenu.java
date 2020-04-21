@@ -16,6 +16,8 @@ import javafx.scene.text.Text;
 public class DateAdjustMenu{	
 	public static void DateAdjustMenu() {
 		try {
+			// create a window for the DateAdjustMenu scene
+			// set up text and translate to correct location 
 			Stage window = new Stage();
 			window.setTitle("TimeAdjust");
 			StackPane p = new StackPane();
@@ -24,18 +26,22 @@ public class DateAdjustMenu{
 			String dayTxt = Integer.toString(Controller.sysDay);
 			String yearTxt = Integer.toString(Controller.sysYear);
 
+			// create back button
 			Button back = new Button("Back"); 
 			back.setTranslateY((Controller.height/8)*3);
 			back.setMaxSize(Controller.width, Controller.height/4);
 			
+			// create button to access the day
 			Button day = new Button("Day");
 			day.setTranslateY((-Controller.height/8)*3);
 			day.setMaxSize(Controller.width, Controller.height/4);
 			
+			// create button to access the month
 			Button month = new Button("Month");
 			month.setTranslateY(-Controller.height/8);
 			month.setMaxSize(Controller.width, Controller.height/4);
 			
+			// create button to access the year
 			Button year = new Button("Year");
 			year.setTranslateY(Controller.height/8);
 			year.setMaxSize(Controller.width, Controller.height/4);

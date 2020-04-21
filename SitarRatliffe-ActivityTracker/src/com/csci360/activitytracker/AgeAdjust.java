@@ -9,6 +9,8 @@ import javafx.scene.text.Text;
 public class AgeAdjust{
 	public static void AgeAdjust() {
 		try {
+			// create a window for the AgeAdjust scene
+			// set up text and translate to correct location 			
 			Stage window = new Stage();
 			window.setTitle("AgeAdjust");
 			StackPane p = new StackPane();
@@ -17,6 +19,7 @@ public class AgeAdjust{
 			Text t = new Text (Controller.width/2, Controller.height/2, " Age:\n  "+ageTxt);
 			t.setTranslateY((-Controller.height/8));
 			
+			// create a button to increment the users age
 			Button up = new Button("    ^   ");
 			up.setMaxSize(Controller.width, Controller.height/4);
 			up.setTranslateY((-Controller.height/8)*3);
@@ -27,6 +30,7 @@ public class AgeAdjust{
 					t.setText(" Age:\n  " + ageTxt);
 				}
 			});
+			// create a button to decrement the users age			
 			Button down = new Button("   v   ");
 			down.setMaxSize(Controller.width, Controller.height/4);
 			down.setTranslateY(Controller.height/8);
@@ -37,10 +41,13 @@ public class AgeAdjust{
 					t.setText(" Age:\n  " + ageTxt);
 				}
 			});
+			// create a button to return to the previous window
+			// and close the current window
 			Button back = new Button("Back");
 			back.setMaxSize(Controller.width, Controller.height/4);
 			back.setTranslateY((Controller.height/8)*3);
 			back.setOnAction(e -> window.close());
+			// add the buttons and text to the stack pane
 			p.getChildren().add(up);
 			p.getChildren().add(down);
 			p.getChildren().add(t);

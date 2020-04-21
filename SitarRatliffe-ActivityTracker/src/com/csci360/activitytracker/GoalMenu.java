@@ -9,6 +9,8 @@ import javafx.scene.layout.StackPane;
 public class GoalMenu{
 	public static void GoalMenu() {
 		try {
+			// create a window for the GoalMenu scene
+			// set up text and buttons and translate to correct location 
 			Stage window = new Stage();
 			window.setTitle("Goal Menu");
 			StackPane sp = new StackPane();
@@ -18,6 +20,8 @@ public class GoalMenu{
 			Button caloriegoal = new Button("Calorie \nGoal");
 			Button back = new Button("Back"); 
 
+			// setOnAction for each button to take you to
+			// their own scene
 			stepgoal.setTranslateY((-Controller.height/8)*3);
 			stepgoal.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(stepgoal);
@@ -33,15 +37,15 @@ public class GoalMenu{
 			sp.getChildren().add(caloriegoal);
 			caloriegoal.setOnAction(e -> CalorieGoalAdjust.CalorieGoalAdjust());
 
+			// back button to take you to previous window
 			back.setTranslateY((Controller.height/8)*3);
 			back.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(back);	
 			back.setOnAction(e -> window.close());
 			
-			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			
 			window.setScene(scene);
 			window.show();
-			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

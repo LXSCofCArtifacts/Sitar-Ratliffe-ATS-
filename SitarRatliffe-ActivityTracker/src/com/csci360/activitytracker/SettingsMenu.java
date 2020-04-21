@@ -9,6 +9,8 @@ import javafx.scene.layout.StackPane;
 public class SettingsMenu{
 	public static void SettingsMenu(){
 		try {
+			// create a window for the SettingsMenu scene
+			// set up text and buttons and translate to correct location 
 			Stage window = new Stage();
 			window.setTitle("Settings");
 			StackPane sp = new StackPane();
@@ -18,34 +20,29 @@ public class SettingsMenu{
 			Button connectivity = new Button("Connectivity"); 
 			Button back = new Button("Back"); 
 
+			// create buttons to take you to specifc scenes when clicked
 			timesetting.setTranslateY((-Controller.height/8)*3);
 			timesetting.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(timesetting);
 			timesetting.setOnAction(e -> TimeAdjust.TimeAdjust());
 
-			
 			datesetting.setTranslateY(-Controller.height/8);
 			datesetting.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(datesetting);
 			datesetting.setOnAction(e -> DateAdjustMenu.DateAdjustMenu());
 
-			
 			connectivity.setTranslateY(Controller.height/8);
 			connectivity.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(connectivity);
-			//connectivity.setOnAction(e -> SleepTracker.sleepTracker());
-
 			
+			// back button to take you to previous page
 			back.setTranslateY((Controller.height/8)*3);
 			back.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(back);	
 			back.setOnAction(e -> window.close());
 
-			
-			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			window.setScene(scene);
 			window.show();
-			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

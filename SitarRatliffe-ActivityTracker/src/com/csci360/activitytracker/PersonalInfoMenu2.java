@@ -9,6 +9,8 @@ import javafx.scene.layout.StackPane;
 public class PersonalInfoMenu2{
 	public static void PersonalInfoMenu2() {
 		try {
+			// create a window for the PersonalInfoMenu2 scene
+			// set up text and buttons and translate to correct location 
 			Stage window = new Stage();
 			window.setTitle("Personal Info Menu 2");
 			StackPane sp = new StackPane();
@@ -18,6 +20,7 @@ public class PersonalInfoMenu2{
 			Button userHeight = new Button("Height"); 
 			Button back = new Button("Back"); 
 
+			// create buttons to take you to specific scenes
 			userage.setTranslateY((-Controller.height/8)*3);
 			userage.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(userage);
@@ -33,15 +36,14 @@ public class PersonalInfoMenu2{
 			sp.getChildren().add(userHeight);
 			userHeight.setOnAction(e -> HeightAdjust.HeightAdjust());
 			
+			// create a button to take you to previous scene
 			back.setTranslateY((Controller.height/8)*3);
 			back.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(back);	
 			back.setOnAction(e -> window.close());
 			
-			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			window.setScene(scene);
 			window.show();
-			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

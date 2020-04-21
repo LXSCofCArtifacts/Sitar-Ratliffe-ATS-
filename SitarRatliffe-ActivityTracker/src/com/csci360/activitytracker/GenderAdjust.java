@@ -8,6 +8,8 @@ import javafx.scene.layout.StackPane;
 public class GenderAdjust{
 	public static void GenderAdjust() {
 		try {
+			// create a window for the GenderAdjust scene
+			// set up text  and buttons and translate to correct location 
 			Stage window = new Stage();
 			window.setTitle("Gender");
 			StackPane sp = new StackPane();
@@ -19,11 +21,14 @@ public class GenderAdjust{
 			male.setTranslateY((-Controller.height/8)*3);
 			male.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(male);
+			// male button to set gender boolean to true
 			male.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
 					Controller.gender = true;
 				}
 			});
+			
+			// female and other button to set gender boolean to false
 			female.setTranslateY(-Controller.height/8);
 			female.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(female);
@@ -40,6 +45,8 @@ public class GenderAdjust{
 					Controller.gender = false;
 				}
 			});
+			
+			// create a back button
 			back.setTranslateY((Controller.height/8)*3);
 			back.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(back);

@@ -26,6 +26,8 @@ import javafx.scene.text.Text;
 public class TimeAdjust{
 	public static void TimeAdjust() {
 		try {
+			// create a window for the TimeAdjust scene
+			// set up text and translate to correct location 
 			Stage window = new Stage();
 			window.setTitle("TimeAdjust");
 			StackPane p = new StackPane();
@@ -36,9 +38,14 @@ public class TimeAdjust{
 	        t3.setStyle("-fx-font: 24 arial;");
 			t3.setTranslateY(-Controller.height/8);
 			
+			// create a time line to automatically update
+			// whatever time the user chooses
 			Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
 		        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
 		        LocalTime localTime = LocalTime.now();
+		        // add offset depending on how many times the user
+		        // increments/decrements the hour or minute so that it
+		        // changes the display of time on the ClockFace
 		        localTime = localTime.plusHours(Controller.sysHourIncrement);
 		        localTime = localTime.plusMinutes(Controller.sysMinIncrement);
 		        t3.setText((localTime).format(formatter));
@@ -46,6 +53,7 @@ public class TimeAdjust{
 		    clock.setCycleCount(Animation.INDEFINITE);
 		    clock.play();
 			
+		    // button to increment the hour
 			Button hrUp = new Button("^");
 			hrUp.setMaxSize(Controller.width/2, Controller.height/4);
 			hrUp.setTranslateY((-Controller.height/8)*3);
@@ -56,6 +64,7 @@ public class TimeAdjust{
 				}
 			});
 			
+			// button to decrement the hour
 			Button hrDown = new Button("v");
 			hrDown.setMaxSize(Controller.width/2, Controller.height/4);
 			hrDown.setTranslateY((Controller.height/8));
@@ -66,6 +75,7 @@ public class TimeAdjust{
 				}
 			});
 			
+			//button to increment the minute
 			Button minUp = new Button("^");
 			minUp.setMaxSize(Controller.width/2, Controller.height/4);
 			minUp.setTranslateY((-Controller.height/8)*3);
@@ -76,6 +86,7 @@ public class TimeAdjust{
 				}
 			});
 			
+			// button to decrement the minute
 			Button minDown = new Button("v");
 			minDown.setMaxSize(Controller.width/2, Controller.height/4);
 			minDown.setTranslateY((Controller.height/8));
@@ -89,6 +100,7 @@ public class TimeAdjust{
 				}
 			});
 			
+			// button to take you back to previous scene
 			Button back = new Button("Back");
 			back.setMaxSize(Controller.width, Controller.height/4);
 			back.setTranslateY((Controller.height/8)*3);
@@ -101,7 +113,6 @@ public class TimeAdjust{
 			p.getChildren().add(t3);
 			p.getChildren().add(back);
 			
-			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			window.setScene(scene);
 			window.show();
 		} catch(Exception e) {
