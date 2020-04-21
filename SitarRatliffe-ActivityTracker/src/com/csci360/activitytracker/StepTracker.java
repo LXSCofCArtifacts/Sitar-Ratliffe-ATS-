@@ -1,12 +1,9 @@
 package com.csci360.activitytracker;
-
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
 import java.text.DecimalFormat;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -16,7 +13,6 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 
 public class StepTracker{
-
 	public static void StepTracker(){
 		try {
 			Stage window = new Stage();
@@ -27,11 +23,9 @@ public class StepTracker{
 			burnedCals.setTranslateY((-Controller.height/8)*3);
 			Text stepCount = new Text("");
 			stepCount.setTranslateY(-Controller.height/8);
-
 			DecimalFormat decimalFormat = new DecimalFormat("#.00");
 			Text stepGoal = new Text("");
 			stepGoal.setTranslateY(Controller.height/8);
-
 			Timeline clock = new Timeline(new KeyFrame(Duration.ZERO, e -> {
 		        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
 		        LocalTime localTime = LocalTime.now();
@@ -47,7 +41,6 @@ public class StepTracker{
 		    }), new KeyFrame(Duration.seconds(1)));
 		    clock.setCycleCount(Animation.INDEFINITE);
 		    clock.play();
-
 			Button back = new Button("Back");
 			sp.getChildren().add(burnedCals);
 			sp.getChildren().add(stepCount);
@@ -59,10 +52,8 @@ public class StepTracker{
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			window.setScene(scene);
 			window.show();
-
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
-
 }

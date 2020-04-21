@@ -1,18 +1,7 @@
 package com.csci360.activitytracker;
-
-import java.time.Clock;
-import java.time.LocalTime;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
-
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.util.Duration;
-
 public class Controller extends Application{
 	final protected static int width = 81;
 	final protected static int height = 240;
@@ -39,7 +28,6 @@ public class Controller extends Application{
 	static int stopwatchMinIncrement = 0;
 	static int stopwatchSecIncrement = 0;
 	static boolean stopwatchOn = false;
-
 	@Override
 	public void start(Stage arg0) throws Exception {
 		ClockFace.ClockFace();
