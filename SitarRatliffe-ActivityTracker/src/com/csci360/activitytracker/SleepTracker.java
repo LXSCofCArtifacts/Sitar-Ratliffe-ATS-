@@ -20,21 +20,24 @@ public class SleepTracker {
 			Stage window = new Stage();
 			window.setTitle("Sleep Tracker");
 			Scene scene = new Scene(sp,Controller.width,Controller.height);
-			Button StartStop = new Button("Start/Stop");
-			StartStop.setTranslateY((Controller.height/8));
-			StartStop.setMaxSize(Controller.width, Controller.height/4);
+			Button Start = new Button("Start");
+			Start.setTranslateY((-Controller.height/8));
+			Start.setMaxSize(Controller.width, Controller.height/4);
 			Button reset = new Button("Reset");
-			reset.setTranslateY((-Controller.height/8));
+			reset.setTranslateY((Controller.height/8));
 			reset.setMaxSize(Controller.width, Controller.height/4);
 			Text timerOn = new Text((LocalTime.MIN).format(formatter));
 			Text timerOff = new Text((LocalTime.MIN).format(formatter));
-			StartStop.setOnAction(new EventHandler<ActionEvent>() {
+			Start.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
 					sp.getChildren().remove(timerOn);
 					sp.getChildren().remove(timerOff);
-					if (!Controller.stopwatchOn) {
-						
-						timerOn.setStyle("-fx-font: 24 arial;");
+						if((Controller.stopwatchHourIncrement == 0&&Controller.stopwatchMinIncrement == 0&&Controller.stopwatchSecIncrement == 0)) {
+							Controller.stopwatchHourIncrement=-LocalTime.now().getHour();
+							Controller.stopwatchMinIncrement=-LocalTime.now().getMinute();
+							Controller.stopwatchSecIncrement=-LocalTime.now().getSecond();
+						}
+						timerOn.setStyle("-fx-font: 20 arial;");
 						timerOn.setTranslateY(Controller.height/8);
 						timerOn.setTranslateY((-Controller.height/10)*3);
 						sp.getChildren().add(timerOn);
@@ -46,26 +49,31 @@ public class SleepTracker {
 							sleepTime = sleepTime.plusMinutes(Controller.stopwatchMinIncrement);
 							sleepTime = sleepTime.plusSeconds(Controller.stopwatchSecIncrement);
 							timerOn.setText((sleepTime).format(formatter)); 
-							timerOn.setStyle("-fx-font: 24 arial;");
+							timerOn.setStyle("-fx-font: 20 arial;");
 							}), 
 							new KeyFrame(Duration.seconds(1)));
 							steps.setCycleCount(Animation.INDEFINITE); 
 							steps.play();
 					}
-					else {
-						Controller.stopwatchOn = false;
-						sp.getChildren().add(timerOff); 
-					}
+				});	
+			reset.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					Controller.stopwatchHourIncrement=0;
+					Controller.stopwatchMinIncrement=0;
+					Controller.stopwatchSecIncrement=0;
+					sp.getChildren().remove(timerOn);
+					sp.getChildren().remove(timerOff);
+					sp.getChildren().add(timerOff);
 				}
-			});	
+			});
 			Button back = new Button("Back");
 			back.setTranslateY((Controller.height/8)*3);
 			back.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(back);
-			sp.getChildren().add(StartStop);
+			sp.getChildren().add(Start);
 			sp.getChildren().add(timerOff);
 			sp.getChildren().add(reset);
-			timerOff.setStyle("-fx-font: 24 arial;");
+			timerOff.setStyle("-fx-font: 20 arial;");
 			timerOff.setTranslateY(Controller.height/8);
 			timerOff.setTranslateY((-Controller.height/10)*3);
 			back.setOnAction(e -> window.close());
@@ -75,5 +83,4 @@ public class SleepTracker {
 			e.printStackTrace();
 		}
 	}
-	
 }
