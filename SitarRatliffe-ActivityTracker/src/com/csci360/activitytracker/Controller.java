@@ -20,15 +20,15 @@ public class Controller extends Application{
 	static int sleepGoalHr = 7;
 	static int sleepTrackerStart = 0;
 	static int sleepTrackerEnd = 0;
-	static String gender;
+	static boolean gender;
 	static int age = 20;
 	static int weight = 150;
 	static int userHeight = 72;
 	static int stepGoal = 5000;
-	static int stepCounter = 1000;
+	static int stepCounter = 0;
 	static double percentage;
 	static int calorieGoal = 3000;
-	static int calorieCounter = 1000;
+	static double calorieCounter = 0;
 	static Text timeDisplay;
 
 

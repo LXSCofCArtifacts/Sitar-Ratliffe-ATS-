@@ -17,16 +17,15 @@ import javafx.scene.text.Text;
 
 public class StepTracker{
 
-
 	public static void StepTracker(){
 		try {
 			Stage window = new Stage();
 			window.setTitle("Step Tracker");
 			StackPane sp = new StackPane();
 			Scene scene = new Scene(sp,Controller.width,Controller.height);
-			Text burnedCals = new Text("Calories: \n  "+Controller.calorieCounter);
+			Text burnedCals = new Text("");
 			burnedCals.setTranslateY((-Controller.height/8)*3);
-			Text stepCount = new Text("Steps:\n"+Controller.stepCounter);
+			Text stepCount = new Text("");
 			stepCount.setTranslateY(-Controller.height/8);
 
 			DecimalFormat decimalFormat = new DecimalFormat("#.00");
@@ -40,8 +39,11 @@ public class StepTracker{
 		        localTime = localTime.plusMinutes(Controller.sysMinIncrement);
 		        stepCount.setText("Steps:\n"+ Controller.stepCounter);
 				Controller.percentage = ((Controller.stepCounter*1.0/Controller.stepGoal)*100);
-		        String numberAsString = decimalFormat.format(Controller.percentage);
-				stepGoal.setText("Step Goal:\n  "+ numberAsString +"%");
+		        String stepsAsString = decimalFormat.format(Controller.percentage);
+				stepGoal.setText("Step Goal:\n  "+ stepsAsString +"%");
+			    Controller.calorieCounter = Controller.stepCounter * .04;
+			    String calsAsString = decimalFormat.format(Controller.calorieCounter);
+			    burnedCals.setText("Calories \n Burned: \n  " + calsAsString);
 		    }), new KeyFrame(Duration.seconds(1)));
 		    clock.setCycleCount(Animation.INDEFINITE);
 		    clock.play();
