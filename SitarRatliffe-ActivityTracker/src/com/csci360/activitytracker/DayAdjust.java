@@ -52,12 +52,12 @@ public class DayAdjust{
 					// of month if reached the beginning
 					if (Controller.sysDay == 1) {
 						Controller.sysDay = 31;
-						Controller.sysDayInc -= 1;
 						String dayTxt = Integer.toString(Controller.sysDay);
 						t.setText(" Day:\n  "+dayTxt);
 					}
 					else {
 						Controller.sysDay -= 1;
+						Controller.sysDayInc -= 1;
 						String dayTxt = Integer.toString(Controller.sysDay);
 						t.setText(" Day:\n  "+dayTxt);
 					}
@@ -72,7 +72,13 @@ public class DayAdjust{
 			p.getChildren().add(down);
 			p.getChildren().add(t);
 			p.getChildren().add(back);
-			back.setOnAction(e -> window.close());
+			//back.setOnAction(e -> window.close());
+			back.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					DateAdjustMenu.DateAdjustMenu();
+					window.close();
+				} 
+			});
 			window.setScene(scene);
 			window.show();
 		} catch(Exception e) {

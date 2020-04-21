@@ -7,6 +7,8 @@ import java.time.format.DateTimeFormatter;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
@@ -57,8 +59,13 @@ public class StepTracker{
 			back.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(back);
 			// if back button is clicked, close the window
-			back.setOnAction(e -> window.close());
-			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			//back.setOnAction(e -> window.close());
+			back.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					MainMenu.MainMenu();
+					window.close();
+				} 
+			});
 			window.setScene(scene);
 			window.show();
 		} catch(Exception e) {

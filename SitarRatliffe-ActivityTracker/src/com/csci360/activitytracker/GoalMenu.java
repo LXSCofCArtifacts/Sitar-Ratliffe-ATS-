@@ -1,6 +1,8 @@
 package com.csci360.activitytracker;
 	
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -42,6 +44,12 @@ public class GoalMenu{
 			back.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(back);	
 			back.setOnAction(e -> window.close());
+			back.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					PersonalInfoMenu.PersonalInfoMenu();
+					window.close();
+				} 
+			});
 			
 			
 			window.setScene(scene);

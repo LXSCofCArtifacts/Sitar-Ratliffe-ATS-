@@ -55,7 +55,13 @@ public class DateAdjustMenu{
 			p.getChildren().add(year);
 			p.getChildren().add(back);
 			
-			back.setOnAction(e -> window.close());
+			//back.setOnAction(e -> window.close());
+			back.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					SettingsMenu.SettingsMenu();
+					window.close();
+				} 
+			});
 			
 			//scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			window.setScene(scene);

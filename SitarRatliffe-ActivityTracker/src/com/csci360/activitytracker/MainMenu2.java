@@ -1,6 +1,8 @@
 package com.csci360.activitytracker;
 	
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -34,8 +36,13 @@ public class MainMenu2{
 			back.setTranslateY((Controller.height/8)*3);
 			back.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(back);	
-			back.setOnAction(e -> window.close());
-			
+			//back.setOnAction(e -> window.close());
+			back.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					MainMenu.MainMenu();
+					window.close();
+				} 
+			});
 			window.setScene(scene);
 			window.show();
 		} catch(Exception e) {

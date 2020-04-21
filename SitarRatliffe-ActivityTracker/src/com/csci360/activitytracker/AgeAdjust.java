@@ -46,7 +46,13 @@ public class AgeAdjust{
 			Button back = new Button("Back");
 			back.setMaxSize(Controller.width, Controller.height/4);
 			back.setTranslateY((Controller.height/8)*3);
-			back.setOnAction(e -> window.close());
+			//back.setOnAction(e -> window.close());
+			back.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					PersonalInfoMenu2.PersonalInfoMenu2();
+					window.close();
+				} 
+			});
 			// add the buttons and text to the stack pane
 			p.getChildren().add(up);
 			p.getChildren().add(down);
