@@ -72,13 +72,8 @@ public class DayAdjust{
 			p.getChildren().add(down);
 			p.getChildren().add(t);
 			p.getChildren().add(back);
-			//back.setOnAction(e -> window.close());
-			back.setOnAction(new EventHandler<ActionEvent>() {
-				public void handle(ActionEvent event) {
-					DateAdjustMenu.DateAdjustMenu();
-					window.close();
-				} 
-			});
+			back.setOnAction(e -> window.close());
+
 			window.setScene(scene);
 			window.show();
 		} catch(Exception e) {

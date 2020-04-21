@@ -42,13 +42,7 @@ public class MainMenu{
 			back.setTranslateY((Controller.height/8)*3);
 			back.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(back);	
-			//back.setOnAction(e -> window.close());
-			back.setOnAction(new EventHandler<ActionEvent>() {
-				public void handle(ActionEvent event) {
-					ClockFace.ClockFace();
-					window.close();
-				} 
-			});
+			back.setOnAction(e -> window.close());
 			window.setScene(scene);
 			window.show();
 		} catch(Exception e) {

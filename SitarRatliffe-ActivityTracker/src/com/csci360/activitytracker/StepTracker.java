@@ -59,13 +59,8 @@ public class StepTracker{
 			back.setMaxSize(Controller.width, Controller.height/4);
 			sp.getChildren().add(back);
 			// if back button is clicked, close the window
-			//back.setOnAction(e -> window.close());
-			back.setOnAction(new EventHandler<ActionEvent>() {
-				public void handle(ActionEvent event) {
-					MainMenu.MainMenu();
-					window.close();
-				} 
-			});
+			back.setOnAction(e -> window.close());
+
 			window.setScene(scene);
 			window.show();
 		} catch(Exception e) {

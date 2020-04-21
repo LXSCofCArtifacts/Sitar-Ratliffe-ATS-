@@ -104,13 +104,8 @@ public class TimeAdjust{
 			Button back = new Button("Back");
 			back.setMaxSize(Controller.width, Controller.height/4);
 			back.setTranslateY((Controller.height/8)*3);
-			//back.setOnAction(e -> window.close());		
-			back.setOnAction(new EventHandler<ActionEvent>() {
-				public void handle(ActionEvent event) {
-					SettingsMenu.SettingsMenu();
-					window.close();
-				} 
-			});
+			back.setOnAction(e -> window.close());		
+
 			p.getChildren().add(hrDown);
 			p.getChildren().add(hrUp);
 			p.getChildren().add(minDown);

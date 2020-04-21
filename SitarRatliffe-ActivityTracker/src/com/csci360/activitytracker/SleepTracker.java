@@ -91,13 +91,8 @@ public class SleepTracker {
 			Controller.timerOff.setStyle("-fx-font: 20 arial;");
 			Controller.timerOff.setTranslateY(Controller.height/8);
 			Controller.timerOff.setTranslateY((-Controller.height/10)*3);
-			//back.setOnAction(e -> window.close());
-			back.setOnAction(new EventHandler<ActionEvent>() {
-				public void handle(ActionEvent event) {
-					MainMenu.MainMenu();
-					window.close();
-				} 
-			});
+			back.setOnAction(e -> window.close());
+
 			window.setScene(scene);
 			window.show();
 		} catch(Exception e) {
