@@ -19,7 +19,7 @@ public class MonthAdjust{
 			// create a window for the MonthAdjust scene
 			// set up text and translate to correct location 
 			Stage window = new Stage();
-			window.setTitle("AgeAdjust");
+			window.setTitle("MonthAdjust");
 			StackPane p = new StackPane();
 			Scene scene = new Scene(p,Controller.width,Controller.height,Color.AZURE);
 			String monthTxt = Integer.toString(Controller.sysMonth);

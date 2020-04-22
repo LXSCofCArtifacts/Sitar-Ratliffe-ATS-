@@ -14,7 +14,7 @@ public class MainMenu2{
 			// create a window for the MainMenu2 scene
 			// set up text and buttons and translate to correct location 
 			Stage window = new Stage();
-			window.setTitle("Main Menu 2");
+			window.setTitle("MainMenu2");
 			StackPane sp = new StackPane();
 			Scene scene = new Scene(sp,Controller.width,Controller.height);
 			Button info = new Button("Personal \nInformation"); 

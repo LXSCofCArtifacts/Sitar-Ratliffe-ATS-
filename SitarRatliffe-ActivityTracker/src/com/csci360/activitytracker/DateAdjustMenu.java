@@ -19,7 +19,7 @@ public class DateAdjustMenu{
 			// create a window for the DateAdjustMenu scene
 			// set up text and translate to correct location 
 			Stage window = new Stage();
-			window.setTitle("TimeAdjust");
+			window.setTitle("DateAdjustMenu");
 			StackPane p = new StackPane();
 			Scene scene = new Scene(p,Controller.width,Controller.height,Color.AZURE);
 			String monthTxt = Integer.toString(Controller.sysMonth);

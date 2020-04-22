@@ -14,7 +14,7 @@ public class MainMenu{
 			// create a window for the MainMenu scene
 			// set up text and buttons and translate to correct location 
 			Stage window = new Stage();
-			window.setTitle("Menu");
+			window.setTitle("MainMenu");
 			StackPane sp = new StackPane();
 			Scene scene = new Scene(sp,Controller.width,Controller.height);
 			Button steps = new Button("Step \n Tracker"); 

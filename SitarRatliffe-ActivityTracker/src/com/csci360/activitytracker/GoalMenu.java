@@ -14,7 +14,7 @@ public class GoalMenu{
 			// create a window for the GoalMenu scene
 			// set up text and buttons and translate to correct location 
 			Stage window = new Stage();
-			window.setTitle("Goal Menu");
+			window.setTitle("GoalMenu");
 			StackPane sp = new StackPane();
 			Scene scene = new Scene(sp,Controller.width,Controller.height);
 			Button stepgoal = new Button("Step \nGoal"); 

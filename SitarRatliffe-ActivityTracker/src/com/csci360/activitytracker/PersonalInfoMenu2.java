@@ -14,7 +14,7 @@ public class PersonalInfoMenu2{
 			// create a window for the PersonalInfoMenu2 scene
 			// set up text and buttons and translate to correct location 
 			Stage window = new Stage();
-			window.setTitle("Personal Info Menu 2");
+			window.setTitle("PersonalInfoMenu2");
 			StackPane sp = new StackPane();
 			Scene scene = new Scene(sp,Controller.width,Controller.height);
 			Button userage = new Button("Age"); 

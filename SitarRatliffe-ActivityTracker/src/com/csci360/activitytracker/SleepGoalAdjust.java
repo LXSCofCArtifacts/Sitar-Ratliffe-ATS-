@@ -20,7 +20,7 @@ public class SleepGoalAdjust{
 			// create a window for the SleepGoalAdjust scene
 			// set up text and translate to correct location 
 			Stage window = new Stage();
-			window.setTitle("TimeAdjust");
+			window.setTitle("SleepGoalAdjust");
 			StackPane p = new StackPane();
 			Scene scene = new Scene(p,Controller.width,Controller.height,Color.AZURE);
 			String minTxt = Integer.toString(Controller.sleepGoalMin);

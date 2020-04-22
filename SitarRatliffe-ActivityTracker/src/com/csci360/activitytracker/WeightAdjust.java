@@ -20,7 +20,7 @@ public class WeightAdjust{
 			// create a window for the WeightAdjust scene
 			// set up text and translate to correct location 
 			Stage window = new Stage();
-			window.setTitle("AgeAdjust");
+			window.setTitle("WeightAdjust");
 			StackPane p = new StackPane();
 			Scene scene = new Scene(p,Controller.width,Controller.height,Color.AZURE);
 			String weightTxt = Integer.toString(Controller.weight);

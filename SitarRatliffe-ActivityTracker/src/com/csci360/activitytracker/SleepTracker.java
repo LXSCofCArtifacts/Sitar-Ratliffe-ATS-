@@ -20,7 +20,7 @@ public class SleepTracker {
 			// set up text and buttons and translate to correct location 
 			StackPane sp = new StackPane();
 			Stage window = new Stage();
-			window.setTitle("Sleep Tracker");
+			window.setTitle("SleepTracker");
 			Scene scene = new Scene(sp,Controller.width,Controller.height);
 			Button Start = new Button("Start");
 			Start.setTranslateY((-Controller.height/8));

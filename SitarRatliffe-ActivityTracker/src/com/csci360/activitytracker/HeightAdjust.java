@@ -20,7 +20,7 @@ public class HeightAdjust{
 			// create a window for the HeightAdjust scene
 			// set up text and translate to correct location 
 			Stage window = new Stage();
-			window.setTitle("AgeAdjust");
+			window.setTitle("HeightAdjust");
 			StackPane p = new StackPane();
 			Scene scene = new Scene(p,Controller.width,Controller.height,Color.AZURE);
 			String heightTxt = Integer.toString(Controller.userHeight);

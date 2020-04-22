@@ -28,7 +28,7 @@ public class ClockFace extends Controller{
 			// this will be the window that opens up every time
 			// the program is run
 			Stage window = new Stage();
-			window.setTitle("Clock Face");
+			window.setTitle("ClockFace");
 			StackPane sp = new StackPane();
 			Scene scene = new Scene(sp,Controller.width,Controller.height);
 			Button b = new Button(); 			//same as b.setText("It's working!!!");

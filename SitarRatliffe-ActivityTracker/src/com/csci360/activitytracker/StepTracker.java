@@ -19,7 +19,7 @@ public class StepTracker{
 			// create a window for the StepTracker scene
 			// set up text and translate to correct location    
 			Stage window = new Stage();
-			window.setTitle("Step Tracker");
+			window.setTitle("StepTracker");
 			StackPane sp = new StackPane();
 			Scene scene = new Scene(sp,Controller.width,Controller.height);
 			Text burnedCals = new Text("");

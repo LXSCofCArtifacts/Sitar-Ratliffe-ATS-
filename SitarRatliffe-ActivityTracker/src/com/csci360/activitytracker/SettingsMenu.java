@@ -14,7 +14,7 @@ public class SettingsMenu{
 			// create a window for the SettingsMenu scene
 			// set up text and buttons and translate to correct location 
 			Stage window = new Stage();
-			window.setTitle("Settings");
+			window.setTitle("SettingsMenu");
 			StackPane sp = new StackPane();
 			Scene scene = new Scene(sp,Controller.width,Controller.height);
 			Button timesetting = new Button("Time \nSettings"); 
